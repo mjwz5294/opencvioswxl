@@ -1,0 +1,627 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		56398327C09504B68053075F /* libPods-opencvioswxl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */; };
+		AF4C59631F47DF93007F97F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C59621F47DF93007F97F9 /* main.m */; };
+		AF4C59661F47DF93007F97F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C59651F47DF93007F97F9 /* AppDelegate.m */; };
+		AF4C59691F47DF93007F97F9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C59681F47DF93007F97F9 /* ViewController.m */; };
+		AF4C596C1F47DF93007F97F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF4C596A1F47DF93007F97F9 /* Main.storyboard */; };
+		AF4C596E1F47DF93007F97F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF4C596D1F47DF93007F97F9 /* Assets.xcassets */; };
+		AF4C59711F47DF93007F97F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF4C596F1F47DF93007F97F9 /* LaunchScreen.storyboard */; };
+		AF4C597C1F47DF93007F97F9 /* opencvioswxlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C597B1F47DF93007F97F9 /* opencvioswxlTests.m */; };
+		AF4C59871F47DF93007F97F9 /* opencvioswxlUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C59861F47DF93007F97F9 /* opencvioswxlUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF4C59781F47DF93007F97F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF4C59561F47DF93007F97F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF4C595D1F47DF93007F97F9;
+			remoteInfo = opencvioswxl;
+		};
+		AF4C59831F47DF93007F97F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF4C59561F47DF93007F97F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF4C595D1F47DF93007F97F9;
+			remoteInfo = opencvioswxl;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		28A02051932DD99EB4F37BCA /* Pods-opencvioswxl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opencvioswxl.release.xcconfig"; path = "Pods/Target Support Files/Pods-opencvioswxl/Pods-opencvioswxl.release.xcconfig"; sourceTree = "<group>"; };
+		6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-opencvioswxl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF4C595E1F47DF93007F97F9 /* opencvioswxl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = opencvioswxl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF4C59621F47DF93007F97F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AF4C59641F47DF93007F97F9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AF4C59651F47DF93007F97F9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AF4C59671F47DF93007F97F9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AF4C59681F47DF93007F97F9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AF4C596B1F47DF93007F97F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF4C596D1F47DF93007F97F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF4C59701F47DF93007F97F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AF4C59721F47DF93007F97F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF4C59771F47DF93007F97F9 /* opencvioswxlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = opencvioswxlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF4C597B1F47DF93007F97F9 /* opencvioswxlTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = opencvioswxlTests.m; sourceTree = "<group>"; };
+		AF4C597D1F47DF93007F97F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF4C59821F47DF93007F97F9 /* opencvioswxlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = opencvioswxlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF4C59861F47DF93007F97F9 /* opencvioswxlUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = opencvioswxlUITests.m; sourceTree = "<group>"; };
+		AF4C59881F47DF93007F97F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF4C59941F47E0B1007F97F9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		E41A1175DF31519FA425E353 /* Pods-opencvioswxl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opencvioswxl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-opencvioswxl/Pods-opencvioswxl.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF4C595B1F47DF93007F97F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56398327C09504B68053075F /* libPods-opencvioswxl.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF4C59741F47DF93007F97F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF4C597F1F47DF93007F97F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		270C0002A6A7DE48CE5FDA3E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E41A1175DF31519FA425E353 /* Pods-opencvioswxl.debug.xcconfig */,
+				28A02051932DD99EB4F37BCA /* Pods-opencvioswxl.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AF4C59551F47DF93007F97F9 = {
+			isa = PBXGroup;
+			children = (
+				AF4C59601F47DF93007F97F9 /* opencvioswxl */,
+				AF4C597A1F47DF93007F97F9 /* opencvioswxlTests */,
+				AF4C59851F47DF93007F97F9 /* opencvioswxlUITests */,
+				AF4C595F1F47DF93007F97F9 /* Products */,
+				270C0002A6A7DE48CE5FDA3E /* Pods */,
+				D9CE47F04B78FEC362F9578C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AF4C595F1F47DF93007F97F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF4C595E1F47DF93007F97F9 /* opencvioswxl.app */,
+				AF4C59771F47DF93007F97F9 /* opencvioswxlTests.xctest */,
+				AF4C59821F47DF93007F97F9 /* opencvioswxlUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF4C59601F47DF93007F97F9 /* opencvioswxl */ = {
+			isa = PBXGroup;
+			children = (
+				AF4C59641F47DF93007F97F9 /* AppDelegate.h */,
+				AF4C59651F47DF93007F97F9 /* AppDelegate.m */,
+				AF4C59671F47DF93007F97F9 /* ViewController.h */,
+				AF4C59681F47DF93007F97F9 /* ViewController.m */,
+				AF4C596A1F47DF93007F97F9 /* Main.storyboard */,
+				AF4C596D1F47DF93007F97F9 /* Assets.xcassets */,
+				AF4C596F1F47DF93007F97F9 /* LaunchScreen.storyboard */,
+				AF4C59721F47DF93007F97F9 /* Info.plist */,
+				AF4C59611F47DF93007F97F9 /* Supporting Files */,
+			);
+			path = opencvioswxl;
+			sourceTree = "<group>";
+		};
+		AF4C59611F47DF93007F97F9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF4C59621F47DF93007F97F9 /* main.m */,
+				AF4C59941F47E0B1007F97F9 /* PrefixHeader.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AF4C597A1F47DF93007F97F9 /* opencvioswxlTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF4C597B1F47DF93007F97F9 /* opencvioswxlTests.m */,
+				AF4C597D1F47DF93007F97F9 /* Info.plist */,
+			);
+			path = opencvioswxlTests;
+			sourceTree = "<group>";
+		};
+		AF4C59851F47DF93007F97F9 /* opencvioswxlUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AF4C59861F47DF93007F97F9 /* opencvioswxlUITests.m */,
+				AF4C59881F47DF93007F97F9 /* Info.plist */,
+			);
+			path = opencvioswxlUITests;
+			sourceTree = "<group>";
+		};
+		D9CE47F04B78FEC362F9578C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF4C595D1F47DF93007F97F9 /* opencvioswxl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF4C598B1F47DF93007F97F9 /* Build configuration list for PBXNativeTarget "opencvioswxl" */;
+			buildPhases = (
+				7EDB5C9A2A694F03BB0B1EE7 /* [CP] Check Pods Manifest.lock */,
+				AF4C595A1F47DF93007F97F9 /* Sources */,
+				AF4C595B1F47DF93007F97F9 /* Frameworks */,
+				AF4C595C1F47DF93007F97F9 /* Resources */,
+				60488F0B09D9AB935C860995 /* [CP] Embed Pods Frameworks */,
+				D50D35EBAC6606E7AD55ADAE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = opencvioswxl;
+			productName = opencvioswxl;
+			productReference = AF4C595E1F47DF93007F97F9 /* opencvioswxl.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF4C59761F47DF93007F97F9 /* opencvioswxlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF4C598E1F47DF93007F97F9 /* Build configuration list for PBXNativeTarget "opencvioswxlTests" */;
+			buildPhases = (
+				AF4C59731F47DF93007F97F9 /* Sources */,
+				AF4C59741F47DF93007F97F9 /* Frameworks */,
+				AF4C59751F47DF93007F97F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF4C59791F47DF93007F97F9 /* PBXTargetDependency */,
+			);
+			name = opencvioswxlTests;
+			productName = opencvioswxlTests;
+			productReference = AF4C59771F47DF93007F97F9 /* opencvioswxlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AF4C59811F47DF93007F97F9 /* opencvioswxlUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF4C59911F47DF93007F97F9 /* Build configuration list for PBXNativeTarget "opencvioswxlUITests" */;
+			buildPhases = (
+				AF4C597E1F47DF93007F97F9 /* Sources */,
+				AF4C597F1F47DF93007F97F9 /* Frameworks */,
+				AF4C59801F47DF93007F97F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF4C59841F47DF93007F97F9 /* PBXTargetDependency */,
+			);
+			name = opencvioswxlUITests;
+			productName = opencvioswxlUITests;
+			productReference = AF4C59821F47DF93007F97F9 /* opencvioswxlUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF4C59561F47DF93007F97F9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = mjwz5294;
+				TargetAttributes = {
+					AF4C595D1F47DF93007F97F9 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = TU5QH7P4TH;
+						ProvisioningStyle = Automatic;
+					};
+					AF4C59761F47DF93007F97F9 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = TU5QH7P4TH;
+						ProvisioningStyle = Automatic;
+						TestTargetID = AF4C595D1F47DF93007F97F9;
+					};
+					AF4C59811F47DF93007F97F9 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = TU5QH7P4TH;
+						ProvisioningStyle = Automatic;
+						TestTargetID = AF4C595D1F47DF93007F97F9;
+					};
+				};
+			};
+			buildConfigurationList = AF4C59591F47DF93007F97F9 /* Build configuration list for PBXProject "opencvioswxl" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AF4C59551F47DF93007F97F9;
+			productRefGroup = AF4C595F1F47DF93007F97F9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF4C595D1F47DF93007F97F9 /* opencvioswxl */,
+				AF4C59761F47DF93007F97F9 /* opencvioswxlTests */,
+				AF4C59811F47DF93007F97F9 /* opencvioswxlUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF4C595C1F47DF93007F97F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF4C59711F47DF93007F97F9 /* LaunchScreen.storyboard in Resources */,
+				AF4C596E1F47DF93007F97F9 /* Assets.xcassets in Resources */,
+				AF4C596C1F47DF93007F97F9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF4C59751F47DF93007F97F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF4C59801F47DF93007F97F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		60488F0B09D9AB935C860995 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-opencvioswxl/Pods-opencvioswxl-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7EDB5C9A2A694F03BB0B1EE7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D50D35EBAC6606E7AD55ADAE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-opencvioswxl/Pods-opencvioswxl-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF4C595A1F47DF93007F97F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF4C59691F47DF93007F97F9 /* ViewController.m in Sources */,
+				AF4C59661F47DF93007F97F9 /* AppDelegate.m in Sources */,
+				AF4C59631F47DF93007F97F9 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF4C59731F47DF93007F97F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF4C597C1F47DF93007F97F9 /* opencvioswxlTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF4C597E1F47DF93007F97F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF4C59871F47DF93007F97F9 /* opencvioswxlUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF4C59791F47DF93007F97F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF4C595D1F47DF93007F97F9 /* opencvioswxl */;
+			targetProxy = AF4C59781F47DF93007F97F9 /* PBXContainerItemProxy */;
+		};
+		AF4C59841F47DF93007F97F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF4C595D1F47DF93007F97F9 /* opencvioswxl */;
+			targetProxy = AF4C59831F47DF93007F97F9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AF4C596A1F47DF93007F97F9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF4C596B1F47DF93007F97F9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AF4C596F1F47DF93007F97F9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF4C59701F47DF93007F97F9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF4C59891F47DF93007F97F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AF4C598A1F47DF93007F97F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF4C598C1F47DF93007F97F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E41A1175DF31519FA425E353 /* Pods-opencvioswxl.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TU5QH7P4TH;
+				ENABLE_BITCODE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/wuxiaolong/git/opencvioswxl/opencvioswxl/PrefixHeader.pch;
+				INFOPLIST_FILE = opencvioswxl/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mjwz5294.opencvioswxl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AF4C598D1F47DF93007F97F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28A02051932DD99EB4F37BCA /* Pods-opencvioswxl.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TU5QH7P4TH;
+				ENABLE_BITCODE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/wuxiaolong/git/opencvioswxl/opencvioswxl/PrefixHeader.pch;
+				INFOPLIST_FILE = opencvioswxl/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mjwz5294.opencvioswxl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AF4C598F1F47DF93007F97F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = TU5QH7P4TH;
+				INFOPLIST_FILE = opencvioswxlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mjwz5294.opencvioswxlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/opencvioswxl.app/opencvioswxl";
+			};
+			name = Debug;
+		};
+		AF4C59901F47DF93007F97F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = TU5QH7P4TH;
+				INFOPLIST_FILE = opencvioswxlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mjwz5294.opencvioswxlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/opencvioswxl.app/opencvioswxl";
+			};
+			name = Release;
+		};
+		AF4C59921F47DF93007F97F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = TU5QH7P4TH;
+				INFOPLIST_FILE = opencvioswxlUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mjwz5294.opencvioswxlUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = opencvioswxl;
+			};
+			name = Debug;
+		};
+		AF4C59931F47DF93007F97F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = TU5QH7P4TH;
+				INFOPLIST_FILE = opencvioswxlUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mjwz5294.opencvioswxlUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = opencvioswxl;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF4C59591F47DF93007F97F9 /* Build configuration list for PBXProject "opencvioswxl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF4C59891F47DF93007F97F9 /* Debug */,
+				AF4C598A1F47DF93007F97F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF4C598B1F47DF93007F97F9 /* Build configuration list for PBXNativeTarget "opencvioswxl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF4C598C1F47DF93007F97F9 /* Debug */,
+				AF4C598D1F47DF93007F97F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF4C598E1F47DF93007F97F9 /* Build configuration list for PBXNativeTarget "opencvioswxlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF4C598F1F47DF93007F97F9 /* Debug */,
+				AF4C59901F47DF93007F97F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF4C59911F47DF93007F97F9 /* Build configuration list for PBXNativeTarget "opencvioswxlUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF4C59921F47DF93007F97F9 /* Debug */,
+				AF4C59931F47DF93007F97F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF4C59561F47DF93007F97F9 /* Project object */;
+}
