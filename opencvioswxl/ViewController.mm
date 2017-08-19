@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <opencv2/opencv.hpp>
 
 @interface ViewController ()
 
