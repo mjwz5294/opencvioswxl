@@ -16,6 +16,8 @@
 		AF4C59711F47DF93007F97F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF4C596F1F47DF93007F97F9 /* LaunchScreen.storyboard */; };
 		AF4C597C1F47DF93007F97F9 /* opencvioswxlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C597B1F47DF93007F97F9 /* opencvioswxlTests.m */; };
 		AF4C59871F47DF93007F97F9 /* opencvioswxlUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C59861F47DF93007F97F9 /* opencvioswxlUITests.m */; };
+		AF4C59971F47E39A007F97F9 /* 1、初始化项目 in Resources */ = {isa = PBXBuildFile; fileRef = AF4C59961F47E39A007F97F9 /* 1、初始化项目 */; };
+		AF4C59991F47E3E1007F97F9 /* 2、编译C++库 in Resources */ = {isa = PBXBuildFile; fileRef = AF4C59981F47E3E1007F97F9 /* 2、编译C++库 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		AF4C59861F47DF93007F97F9 /* opencvioswxlUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = opencvioswxlUITests.m; sourceTree = "<group>"; };
 		AF4C59881F47DF93007F97F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF4C59941F47E0B1007F97F9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		AF4C59961F47E39A007F97F9 /* 1、初始化项目 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "1、初始化项目"; sourceTree = "<group>"; };
+		AF4C59981F47E3E1007F97F9 /* 2、编译C++库 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2、编译C++库"; sourceTree = "<group>"; };
 		E41A1175DF31519FA425E353 /* Pods-opencvioswxl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opencvioswxl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-opencvioswxl/Pods-opencvioswxl.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +138,7 @@
 		AF4C59611F47DF93007F97F9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AF4C59951F47E39A007F97F9 /* note */,
 				AF4C59621F47DF93007F97F9 /* main.m */,
 				AF4C59941F47E0B1007F97F9 /* PrefixHeader.pch */,
 			);
@@ -156,6 +161,15 @@
 				AF4C59881F47DF93007F97F9 /* Info.plist */,
 			);
 			path = opencvioswxlUITests;
+			sourceTree = "<group>";
+		};
+		AF4C59951F47E39A007F97F9 /* note */ = {
+			isa = PBXGroup;
+			children = (
+				AF4C59961F47E39A007F97F9 /* 1、初始化项目 */,
+				AF4C59981F47E3E1007F97F9 /* 2、编译C++库 */,
+			);
+			path = note;
 			sourceTree = "<group>";
 		};
 		D9CE47F04B78FEC362F9578C /* Frameworks */ = {
@@ -280,6 +294,8 @@
 			files = (
 				AF4C59711F47DF93007F97F9 /* LaunchScreen.storyboard in Resources */,
 				AF4C596E1F47DF93007F97F9 /* Assets.xcassets in Resources */,
+				AF4C59971F47E39A007F97F9 /* 1、初始化项目 in Resources */,
+				AF4C59991F47E3E1007F97F9 /* 2、编译C++库 in Resources */,
 				AF4C596C1F47DF93007F97F9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
