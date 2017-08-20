@@ -15,6 +15,12 @@
 #endif /* PrefixHeader_pch */
 
 
-#ifdef __cplusplus__
-//#import <opencv2/opencv.hpp>
+#ifdef __cplusplus
+    #import <opencv2/opencv.hpp>
+#endif
+
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 #endif
