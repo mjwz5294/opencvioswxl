@@ -19,6 +19,13 @@
 		AF4C59971F47E39A007F97F9 /* 1、初始化项目 in Resources */ = {isa = PBXBuildFile; fileRef = AF4C59961F47E39A007F97F9 /* 1、初始化项目 */; };
 		AF4C59991F47E3E1007F97F9 /* 2、编译C++库 in Resources */ = {isa = PBXBuildFile; fileRef = AF4C59981F47E3E1007F97F9 /* 2、编译C++库 */; };
 		AF6435151F493459006A8725 /* opencviosinterface.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF6435141F493459006A8725 /* opencviosinterface.mm */; };
+		AFC54D7E1F4C020A00F9A407 /* cat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AFC54D7D1F4C020A00F9A407 /* cat.jpeg */; };
+		AFF487701F4BDB0600AC4A63 /* MMOpenCVHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = AFF4876F1F4BDB0600AC4A63 /* MMOpenCVHelper.mm */; };
+		AFF487C51F4BDDC000AC4A63 /* UIColor+HexRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF487C01F4BDDC000AC4A63 /* UIColor+HexRepresentation.m */; };
+		AFF487C61F4BDDC000AC4A63 /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF487C21F4BDDC000AC4A63 /* UIImage+fixOrientation.m */; };
+		AFF487C71F4BDDC000AC4A63 /* UIImageView+ContentFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF487C41F4BDDC000AC4A63 /* UIImageView+ContentFrame.m */; };
+		AFF487CC1F4BDE6000AC4A63 /* MMCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF487C91F4BDE6000AC4A63 /* MMCropView.m */; };
+		AFF487CD1F4BDE6000AC4A63 /* MTGeometry.c in Sources */ = {isa = PBXBuildFile; fileRef = AFF487CA1F4BDE6000AC4A63 /* MTGeometry.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +69,19 @@
 		AF4C59981F47E3E1007F97F9 /* 2、编译C++库 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2、编译C++库"; sourceTree = "<group>"; };
 		AF6435131F493459006A8725 /* opencviosinterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opencviosinterface.h; sourceTree = "<group>"; };
 		AF6435141F493459006A8725 /* opencviosinterface.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = opencviosinterface.mm; sourceTree = "<group>"; };
+		AFC54D7D1F4C020A00F9A407 /* cat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpeg; sourceTree = "<group>"; };
+		AFF4876E1F4BDB0600AC4A63 /* MMOpenCVHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMOpenCVHelper.h; sourceTree = "<group>"; };
+		AFF4876F1F4BDB0600AC4A63 /* MMOpenCVHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMOpenCVHelper.mm; sourceTree = "<group>"; };
+		AFF487BF1F4BDDC000AC4A63 /* UIColor+HexRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexRepresentation.h"; sourceTree = "<group>"; };
+		AFF487C01F4BDDC000AC4A63 /* UIColor+HexRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexRepresentation.m"; sourceTree = "<group>"; };
+		AFF487C11F4BDDC000AC4A63 /* UIImage+fixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+fixOrientation.h"; sourceTree = "<group>"; };
+		AFF487C21F4BDDC000AC4A63 /* UIImage+fixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+fixOrientation.m"; sourceTree = "<group>"; };
+		AFF487C31F4BDDC000AC4A63 /* UIImageView+ContentFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ContentFrame.h"; sourceTree = "<group>"; };
+		AFF487C41F4BDDC000AC4A63 /* UIImageView+ContentFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ContentFrame.m"; sourceTree = "<group>"; };
+		AFF487C81F4BDE6000AC4A63 /* MMCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCropView.h; sourceTree = "<group>"; };
+		AFF487C91F4BDE6000AC4A63 /* MMCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCropView.m; sourceTree = "<group>"; };
+		AFF487CA1F4BDE6000AC4A63 /* MTGeometry.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MTGeometry.c; sourceTree = "<group>"; };
+		AFF487CB1F4BDE6000AC4A63 /* MTGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGeometry.h; sourceTree = "<group>"; };
 		E41A1175DF31519FA425E353 /* Pods-opencvioswxl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opencvioswxl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-opencvioswxl/Pods-opencvioswxl.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +149,7 @@
 				AF4C59651F47DF93007F97F9 /* AppDelegate.m */,
 				AF4C59671F47DF93007F97F9 /* ViewController.h */,
 				AF4C59681F47DF93007F97F9 /* ViewController.mm */,
+				AFF487BE1F4BDDC000AC4A63 /* UIImage Cat */,
 				AF6435121F493403006A8725 /* opencviosinterface */,
 				AF4C596A1F47DF93007F97F9 /* Main.storyboard */,
 				AF4C596D1F47DF93007F97F9 /* Assets.xcassets */,
@@ -144,6 +165,7 @@
 			children = (
 				AF4C59951F47E39A007F97F9 /* note */,
 				AF4C59621F47DF93007F97F9 /* main.m */,
+				AFC54D7D1F4C020A00F9A407 /* cat.jpeg */,
 				AF4C59941F47E0B1007F97F9 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
@@ -181,8 +203,27 @@
 			children = (
 				AF6435131F493459006A8725 /* opencviosinterface.h */,
 				AF6435141F493459006A8725 /* opencviosinterface.mm */,
+				AFF4876E1F4BDB0600AC4A63 /* MMOpenCVHelper.h */,
+				AFF4876F1F4BDB0600AC4A63 /* MMOpenCVHelper.mm */,
+				AFF487C81F4BDE6000AC4A63 /* MMCropView.h */,
+				AFF487C91F4BDE6000AC4A63 /* MMCropView.m */,
+				AFF487CA1F4BDE6000AC4A63 /* MTGeometry.c */,
+				AFF487CB1F4BDE6000AC4A63 /* MTGeometry.h */,
 			);
 			name = opencviosinterface;
+			sourceTree = "<group>";
+		};
+		AFF487BE1F4BDDC000AC4A63 /* UIImage Cat */ = {
+			isa = PBXGroup;
+			children = (
+				AFF487BF1F4BDDC000AC4A63 /* UIColor+HexRepresentation.h */,
+				AFF487C01F4BDDC000AC4A63 /* UIColor+HexRepresentation.m */,
+				AFF487C11F4BDDC000AC4A63 /* UIImage+fixOrientation.h */,
+				AFF487C21F4BDDC000AC4A63 /* UIImage+fixOrientation.m */,
+				AFF487C31F4BDDC000AC4A63 /* UIImageView+ContentFrame.h */,
+				AFF487C41F4BDDC000AC4A63 /* UIImageView+ContentFrame.m */,
+			);
+			path = "UIImage Cat";
 			sourceTree = "<group>";
 		};
 		D9CE47F04B78FEC362F9578C /* Frameworks */ = {
@@ -307,6 +348,7 @@
 			files = (
 				AF4C59711F47DF93007F97F9 /* LaunchScreen.storyboard in Resources */,
 				AF4C596E1F47DF93007F97F9 /* Assets.xcassets in Resources */,
+				AFC54D7E1F4C020A00F9A407 /* cat.jpeg in Resources */,
 				AF4C59971F47E39A007F97F9 /* 1、初始化项目 in Resources */,
 				AF4C59991F47E3E1007F97F9 /* 2、编译C++库 in Resources */,
 				AF4C596C1F47DF93007F97F9 /* Main.storyboard in Resources */,
@@ -383,7 +425,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF4C59691F47DF93007F97F9 /* ViewController.mm in Sources */,
+				AFF487C61F4BDDC000AC4A63 /* UIImage+fixOrientation.m in Sources */,
+				AFF487C71F4BDDC000AC4A63 /* UIImageView+ContentFrame.m in Sources */,
 				AF4C59661F47DF93007F97F9 /* AppDelegate.m in Sources */,
+				AFF487CD1F4BDE6000AC4A63 /* MTGeometry.c in Sources */,
+				AFF487C51F4BDDC000AC4A63 /* UIColor+HexRepresentation.m in Sources */,
+				AFF487CC1F4BDE6000AC4A63 /* MMCropView.m in Sources */,
+				AFF487701F4BDB0600AC4A63 /* MMOpenCVHelper.mm in Sources */,
 				AF6435151F493459006A8725 /* opencviosinterface.mm in Sources */,
 				AF4C59631F47DF93007F97F9 /* main.m in Sources */,
 			);
@@ -540,6 +588,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = /Users/wuxiaolong/git/opencvioswxl/opencvioswxl/PrefixHeader.pch;
 				INFOPLIST_FILE = opencvioswxl/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mjwz5294.opencvioswxl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -556,6 +605,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = /Users/wuxiaolong/git/opencvioswxl/opencvioswxl/PrefixHeader.pch;
 				INFOPLIST_FILE = opencvioswxl/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mjwz5294.opencvioswxl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
