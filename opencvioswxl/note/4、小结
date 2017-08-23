@@ -14,3 +14,13 @@
 现阶段玩两个事情，都要兼顾：
 1、opencv的ios版本应用
 2、游戏的客户端和服务端都要理顺
+
+
+20170823 
+今天偶然看到了ios11、iphone8深度摄像头、arkit、机器学习库等，感觉到ios应用的下一波热潮可能要来了，其技术热潮的核心就是视觉。当然机器学习也是一个核心，将来官方应该会提供很多训练好的模型吧。这可以更加坚定我的想法，完成以下任务后，可以去职场试水了：
+1、opencv玩熟悉；
+2、ARKit；
+3、Core ML、机器学习；
+4、苹果自带的人脸识别：http://www.jianshu.com/p/ae480461bcc5
+5、图像文字识别：http://www.jianshu.com/p/b1c952b8593a
+6、ios与tensorflow：http://www.jianshu.com/p/f096fe2212ce
