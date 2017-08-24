@@ -21,6 +21,20 @@
 
 @implementation ViewController
 
+- (IBAction)centerBtnTapped:(id)sender {
+    [self pushToGallery];
+    
+}
+
+-(void)pushToGallery{
+    
+    NSString* vcId = @"GalleryVC";
+    
+    UIViewController* tmpVC = [self.storyboard instantiateViewControllerWithIdentifier:vcId];
+    [self.navigationController pushViewController:tmpVC animated:YES];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.

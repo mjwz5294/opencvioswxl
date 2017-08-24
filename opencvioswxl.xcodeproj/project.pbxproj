@@ -19,6 +19,11 @@
 		AF4C59971F47E39A007F97F9 /* 1、初始化项目 in Resources */ = {isa = PBXBuildFile; fileRef = AF4C59961F47E39A007F97F9 /* 1、初始化项目 */; };
 		AF4C59991F47E3E1007F97F9 /* 2、编译C++库 in Resources */ = {isa = PBXBuildFile; fileRef = AF4C59981F47E3E1007F97F9 /* 2、编译C++库 */; };
 		AF6435151F493459006A8725 /* opencviosinterface.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF6435141F493459006A8725 /* opencviosinterface.mm */; };
+		AF7C16EE1F4E629A00484C3D /* PostcardPrinter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF7C16EC1F4E629A00484C3D /* PostcardPrinter.cpp */; };
+		AF7C16F11F4E637300484C3D /* GalleryVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF7C16F01F4E637300484C3D /* GalleryVC.mm */; };
+		AF7C16F41F4E687200484C3D /* text.png in Resources */ = {isa = PBXBuildFile; fileRef = AF7C16F21F4E687200484C3D /* text.png */; };
+		AF7C16F51F4E687200484C3D /* texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF7C16F31F4E687200484C3D /* texture.jpg */; };
+		AF7C16F71F4EBF7500484C3D /* haarcascade_frontalface_alt2.xml in Resources */ = {isa = PBXBuildFile; fileRef = AF7C16F61F4EBF7500484C3D /* haarcascade_frontalface_alt2.xml */; };
 		AFC54D7E1F4C020A00F9A407 /* cat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AFC54D7D1F4C020A00F9A407 /* cat.jpeg */; };
 		AFC54D841F4C145100F9A407 /* haarcascade_frontalface_alt.xml in Resources */ = {isa = PBXBuildFile; fileRef = AFC54D831F4C145100F9A407 /* haarcascade_frontalface_alt.xml */; };
 		AFC54D861F4C148000F9A407 /* lena.png in Resources */ = {isa = PBXBuildFile; fileRef = AFC54D851F4C148000F9A407 /* lena.png */; };
@@ -73,6 +78,13 @@
 		AF4C59981F47E3E1007F97F9 /* 2、编译C++库 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2、编译C++库"; sourceTree = "<group>"; };
 		AF6435131F493459006A8725 /* opencviosinterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opencviosinterface.h; sourceTree = "<group>"; };
 		AF6435141F493459006A8725 /* opencviosinterface.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = opencviosinterface.mm; sourceTree = "<group>"; };
+		AF7C16EC1F4E629A00484C3D /* PostcardPrinter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PostcardPrinter.cpp; sourceTree = "<group>"; };
+		AF7C16ED1F4E629A00484C3D /* PostcardPrinter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PostcardPrinter.hpp; sourceTree = "<group>"; };
+		AF7C16EF1F4E637300484C3D /* GalleryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleryVC.h; sourceTree = "<group>"; };
+		AF7C16F01F4E637300484C3D /* GalleryVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GalleryVC.mm; sourceTree = "<group>"; };
+		AF7C16F21F4E687200484C3D /* text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text.png; sourceTree = "<group>"; };
+		AF7C16F31F4E687200484C3D /* texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = texture.jpg; sourceTree = "<group>"; };
+		AF7C16F61F4EBF7500484C3D /* haarcascade_frontalface_alt2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt2.xml; sourceTree = "<group>"; };
 		AFC54D7D1F4C020A00F9A407 /* cat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpeg; sourceTree = "<group>"; };
 		AFC54D831F4C145100F9A407 /* haarcascade_frontalface_alt.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt.xml; sourceTree = "<group>"; };
 		AFC54D851F4C148000F9A407 /* lena.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lena.png; sourceTree = "<group>"; };
@@ -157,6 +169,8 @@
 				AF4C59651F47DF93007F97F9 /* AppDelegate.m */,
 				AF4C59671F47DF93007F97F9 /* ViewController.h */,
 				AF4C59681F47DF93007F97F9 /* ViewController.mm */,
+				AF7C16EF1F4E637300484C3D /* GalleryVC.h */,
+				AF7C16F01F4E637300484C3D /* GalleryVC.mm */,
 				AFF487BE1F4BDDC000AC4A63 /* UIImage Cat */,
 				AF6435121F493403006A8725 /* opencviosinterface */,
 				AF4C596A1F47DF93007F97F9 /* Main.storyboard */,
@@ -173,9 +187,12 @@
 			children = (
 				AF4C59951F47E39A007F97F9 /* note */,
 				AF4C59621F47DF93007F97F9 /* main.m */,
+				AF7C16F21F4E687200484C3D /* text.png */,
+				AF7C16F31F4E687200484C3D /* texture.jpg */,
 				AFC54D7D1F4C020A00F9A407 /* cat.jpeg */,
 				AFC54D851F4C148000F9A407 /* lena.png */,
 				AFC54D871F4C189D00F9A407 /* meinv.jpg */,
+				AF7C16F61F4EBF7500484C3D /* haarcascade_frontalface_alt2.xml */,
 				AFC54D831F4C145100F9A407 /* haarcascade_frontalface_alt.xml */,
 				AF4C59941F47E0B1007F97F9 /* PrefixHeader.pch */,
 			);
@@ -215,6 +232,8 @@
 			children = (
 				AF6435131F493459006A8725 /* opencviosinterface.h */,
 				AF6435141F493459006A8725 /* opencviosinterface.mm */,
+				AF7C16EC1F4E629A00484C3D /* PostcardPrinter.cpp */,
+				AF7C16ED1F4E629A00484C3D /* PostcardPrinter.hpp */,
 				AFF4876E1F4BDB0600AC4A63 /* MMOpenCVHelper.h */,
 				AFF4876F1F4BDB0600AC4A63 /* MMOpenCVHelper.mm */,
 				AFF487C81F4BDE6000AC4A63 /* MMCropView.h */,
@@ -359,12 +378,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFC54D881F4C189D00F9A407 /* meinv.jpg in Resources */,
+				AF7C16F71F4EBF7500484C3D /* haarcascade_frontalface_alt2.xml in Resources */,
 				AF4C59711F47DF93007F97F9 /* LaunchScreen.storyboard in Resources */,
 				AF4C596E1F47DF93007F97F9 /* Assets.xcassets in Resources */,
+				AF7C16F51F4E687200484C3D /* texture.jpg in Resources */,
 				AFC54D7E1F4C020A00F9A407 /* cat.jpeg in Resources */,
 				AFC54D861F4C148000F9A407 /* lena.png in Resources */,
 				AFC54D8A1F4C1B3700F9A407 /* 3、脸部识别 in Resources */,
 				AF4C59971F47E39A007F97F9 /* 1、初始化项目 in Resources */,
+				AF7C16F41F4E687200484C3D /* text.png in Resources */,
 				AF4C59991F47E3E1007F97F9 /* 2、编译C++库 in Resources */,
 				AFC54D841F4C145100F9A407 /* haarcascade_frontalface_alt.xml in Resources */,
 				AF4C596C1F47DF93007F97F9 /* Main.storyboard in Resources */,
@@ -446,10 +468,12 @@
 				AF4C59661F47DF93007F97F9 /* AppDelegate.m in Sources */,
 				AFF487CD1F4BDE6000AC4A63 /* MTGeometry.c in Sources */,
 				AFF487C51F4BDDC000AC4A63 /* UIColor+HexRepresentation.m in Sources */,
+				AF7C16EE1F4E629A00484C3D /* PostcardPrinter.cpp in Sources */,
 				AFF487CC1F4BDE6000AC4A63 /* MMCropView.m in Sources */,
 				AFF487701F4BDB0600AC4A63 /* MMOpenCVHelper.mm in Sources */,
 				AF6435151F493459006A8725 /* opencviosinterface.mm in Sources */,
 				AF4C59631F47DF93007F97F9 /* main.m in Sources */,
+				AF7C16F11F4E637300484C3D /* GalleryVC.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
