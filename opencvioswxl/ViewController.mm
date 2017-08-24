@@ -14,6 +14,7 @@
     cv::Mat cvImage;
     UIImage* testImg;
     UIImageView* testImgView;
+    cv::CascadeClassifier faceDetector;
 }
 
 @end
@@ -24,7 +25,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    testImg = [UIImage imageNamed:@"cat"];
+//    testImg = [UIImage imageNamed:@"lena.png"];
+//    testImg = [UIImage imageNamed:@"cat"];
+    testImg = [UIImage imageNamed:@"meinv.jpg"];
     testImgView = [[UIImageView alloc] initWithImage:testImg];
     [self.view addSubview:testImgView];
     
@@ -32,7 +35,7 @@
     /*
      下面有三种转换的方式，第一种不太明白，后面两种基本都是先转为NSData，然后转成cv::mat
      */
-    cvImage = [[[opencviosinterface alloc] init] cvMatFromUIImage:[UIImage imageNamed:@"cat"]];
+    cvImage = [[[opencviosinterface alloc] init] cvMatFromUIImage:testImg];
     
     if (0){
         NSString* filePath = [[NSBundle mainBundle]
@@ -63,9 +66,51 @@
     //实验
     if (!cvImage.empty())
     {
-        [self cannyTest];
+        [self faceDetectTest];
     }
     
+    
+    
+    
+    
+    
+}
+
+-(void)faceDetectTest{
+    // Load cascade classifier from the XML file
+    NSString* cascadePath = [[NSBundle mainBundle]
+                             pathForResource:@"haarcascade_frontalface_alt"
+                             ofType:@"xml"];
+    faceDetector.load([cascadePath UTF8String]);
+    
+    //Load image with face
+    cv::Mat faceImage = [[[opencviosinterface alloc] init] cvMatFromUIImage:testImg];
+    
+    // Convert to grayscale
+    cv::Mat gray;
+    cvtColor(faceImage, gray, CV_BGR2GRAY);
+    
+    // Detect faces
+    std::vector<cv::Rect> faces;
+    faceDetector.detectMultiScale(gray, faces, 1.1,
+                                  2, 0|CV_HAAR_SCALE_IMAGE, cv::Size(30, 30));
+    
+    // Draw all detected faces
+    for(unsigned int i = 0; i < faces.size(); i++)
+    {
+        const cv::Rect& face = faces[i];
+        // Get top-left and bottom-right corner points
+        cv::Point tl(face.x, face.y);
+        cv::Point br = tl + cv::Point(face.width, face.height);
+        
+        // Draw rectangle around the face
+        cv::Scalar magenta = cv::Scalar(255, 0, 255);
+        cv::rectangle(faceImage, tl, br, magenta, 4, 8, 0);
+    }
+    
+    // Show resulting image
+//    testImgView.image = MatToUIImage(faceImage);
+    testImgView.image = [[[opencviosinterface alloc] init] UIImageFromCVMat:faceImage];
 }
 
 -(void)cannyTest{

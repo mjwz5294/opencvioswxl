@@ -1,0 +1,5 @@
+这次添加了一个采用opencv实现脸部识别的例子，代码什么的还是很清晰：
+1、比较好奇的还是那个xml文件，它帮助我们识别了脸；
+2、CascadeClassifier为脸部识别类，识别到了之后，我们在脸部区域用方框框住；
+3、iOS自带了脸部识别类，叫CIDetector，它相对于CascadeClassifier灵活性还是差点，但若是只需要识别脸部，可以不需要其它训练数据。
+4、当然，我们还可以识别其它东西而不只是脸部，这里（https://github.com/opencv/opencv/tree/master/data）有一些classifiers。另外你也可以自己训练分类器，但这个工作可没那么简单咯，参考：http://docs.opencv.org/2.4/doc/user_guide/ug_traincascade.html。
