@@ -31,6 +31,7 @@
 		AF937E641F4FE737002B573A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AF937E611F4FE737002B573A /* Default.png */; };
 		AF937E651F4FE737002B573A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF937E621F4FE737002B573A /* Default@2x.png */; };
 		AF937E691F4FE7CA002B573A /* retroVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF937E681F4FE7CA002B573A /* retroVC.mm */; };
+		AF937E6C1F5007CE002B573A /* photoFromCamVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF937E6B1F5007CE002B573A /* photoFromCamVC.mm */; };
 		AFC54D7E1F4C020A00F9A407 /* cat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AFC54D7D1F4C020A00F9A407 /* cat.jpeg */; };
 		AFC54D841F4C145100F9A407 /* haarcascade_frontalface_alt.xml in Resources */ = {isa = PBXBuildFile; fileRef = AFC54D831F4C145100F9A407 /* haarcascade_frontalface_alt.xml */; };
 		AFC54D861F4C148000F9A407 /* lena.png in Resources */ = {isa = PBXBuildFile; fileRef = AFC54D851F4C148000F9A407 /* lena.png */; };
@@ -101,6 +102,8 @@
 		AF937E621F4FE737002B573A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		AF937E671F4FE7CA002B573A /* retroVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = retroVC.h; sourceTree = "<group>"; };
 		AF937E681F4FE7CA002B573A /* retroVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = retroVC.mm; sourceTree = "<group>"; };
+		AF937E6A1F5007CE002B573A /* photoFromCamVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = photoFromCamVC.h; sourceTree = "<group>"; };
+		AF937E6B1F5007CE002B573A /* photoFromCamVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = photoFromCamVC.mm; sourceTree = "<group>"; };
 		AFC54D7D1F4C020A00F9A407 /* cat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpeg; sourceTree = "<group>"; };
 		AFC54D831F4C145100F9A407 /* haarcascade_frontalface_alt.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt.xml; sourceTree = "<group>"; };
 		AFC54D851F4C148000F9A407 /* lena.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lena.png; sourceTree = "<group>"; };
@@ -273,6 +276,8 @@
 				AF7C16F01F4E637300484C3D /* GalleryVC.mm */,
 				AF937E671F4FE7CA002B573A /* retroVC.h */,
 				AF937E681F4FE7CA002B573A /* retroVC.mm */,
+				AF937E6A1F5007CE002B573A /* photoFromCamVC.h */,
+				AF937E6B1F5007CE002B573A /* photoFromCamVC.mm */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -505,6 +510,7 @@
 				AFF487C61F4BDDC000AC4A63 /* UIImage+fixOrientation.m in Sources */,
 				AFF487C71F4BDDC000AC4A63 /* UIImageView+ContentFrame.m in Sources */,
 				AF4C59661F47DF93007F97F9 /* AppDelegate.m in Sources */,
+				AF937E6C1F5007CE002B573A /* photoFromCamVC.mm in Sources */,
 				AFF487CD1F4BDE6000AC4A63 /* MTGeometry.c in Sources */,
 				AFF487C51F4BDDC000AC4A63 /* UIColor+HexRepresentation.m in Sources */,
 				AF7C16EE1F4E629A00484C3D /* PostcardPrinter.cpp in Sources */,

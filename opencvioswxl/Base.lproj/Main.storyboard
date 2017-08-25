@@ -155,5 +155,58 @@
             </objects>
             <point key="canvasLocation" x="1695" y="735"/>
         </scene>
+        <!--Photo From CamVC-->
+        <scene sceneID="9mf-ZR-x1v">
+            <objects>
+                <viewController storyboardIdentifier="photoFromCamVC" id="alI-7k-bCK" customClass="photoFromCamVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Phj-kw-iQM"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qdl-WU-Lof"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZVM-pD-g0i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yxY-sA-ZDs">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NIc-Sl-HyH">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Start capture" id="GpU-0V-nW7">
+                                        <connections>
+                                            <action selector="startCaptureButtonPressed:" destination="alI-7k-bCK" id="WIc-B2-yyG"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Take photo" id="21C-cy-VfT">
+                                        <connections>
+                                            <action selector="takePhotoButtonPressed:" destination="alI-7k-bCK" id="k7X-Gv-lQJ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yxY-sA-ZDs" firstAttribute="leading" secondItem="ZVM-pD-g0i" secondAttribute="leading" id="1EQ-Dk-MpX"/>
+                            <constraint firstItem="NIc-Sl-HyH" firstAttribute="bottom" secondItem="ZVM-pD-g0i" secondAttribute="bottom" id="CPx-td-BaJ"/>
+                            <constraint firstItem="yxY-sA-ZDs" firstAttribute="top" secondItem="ZVM-pD-g0i" secondAttribute="top" id="OvB-Yd-2js"/>
+                            <constraint firstItem="yxY-sA-ZDs" firstAttribute="trailing" secondItem="ZVM-pD-g0i" secondAttribute="trailing" id="cnr-EX-5eI"/>
+                            <constraint firstItem="NIc-Sl-HyH" firstAttribute="trailing" secondItem="ZVM-pD-g0i" secondAttribute="trailing" id="i16-Of-x2f"/>
+                            <constraint firstItem="NIc-Sl-HyH" firstAttribute="top" secondItem="yxY-sA-ZDs" secondAttribute="bottom" id="i7p-Lj-5HC"/>
+                            <constraint firstItem="NIc-Sl-HyH" firstAttribute="leading" secondItem="ZVM-pD-g0i" secondAttribute="leading" id="mHb-Cq-IyQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="yxY-sA-ZDs" id="J9C-xb-vf2"/>
+                        <outlet property="startCaptureButton" destination="GpU-0V-nW7" id="9NT-T4-gPa"/>
+                        <outlet property="takePhotoButton" destination="21C-cy-VfT" id="ORj-jf-NdD"/>
+                        <outlet property="toolbar" destination="NIc-Sl-HyH" id="QvG-ns-7ba"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aWU-3m-Ko5" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2577" y="707"/>
+        </scene>
     </scenes>
 </document>
