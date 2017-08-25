@@ -28,7 +28,8 @@
 
 -(void)pushToGallery{
     
-    NSString* vcId = @"GalleryVC";
+//    NSString* vcId = @"GalleryVC";
+    NSString* vcId = @"retroVC";
     
     UIViewController* tmpVC = [self.storyboard instantiateViewControllerWithIdentifier:vcId];
     [self.navigationController pushViewController:tmpVC animated:YES];

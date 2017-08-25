@@ -24,6 +24,13 @@
 		AF7C16F41F4E687200484C3D /* text.png in Resources */ = {isa = PBXBuildFile; fileRef = AF7C16F21F4E687200484C3D /* text.png */; };
 		AF7C16F51F4E687200484C3D /* texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF7C16F31F4E687200484C3D /* texture.jpg */; };
 		AF7C16F71F4EBF7500484C3D /* haarcascade_frontalface_alt2.xml in Resources */ = {isa = PBXBuildFile; fileRef = AF7C16F61F4EBF7500484C3D /* haarcascade_frontalface_alt2.xml */; };
+		AF937E5B1F4FE6AD002B573A /* RetroFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF937E591F4FE6AD002B573A /* RetroFilter.cpp */; };
+		AF937E5E1F4FE6F4002B573A /* fuzzyBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = AF937E5C1F4FE6F4002B573A /* fuzzyBorder.png */; };
+		AF937E5F1F4FE6F4002B573A /* scratches.png in Resources */ = {isa = PBXBuildFile; fileRef = AF937E5D1F4FE6F4002B573A /* scratches.png */; };
+		AF937E631F4FE737002B573A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF937E601F4FE737002B573A /* Default-568h@2x.png */; };
+		AF937E641F4FE737002B573A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AF937E611F4FE737002B573A /* Default.png */; };
+		AF937E651F4FE737002B573A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF937E621F4FE737002B573A /* Default@2x.png */; };
+		AF937E691F4FE7CA002B573A /* retroVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF937E681F4FE7CA002B573A /* retroVC.mm */; };
 		AFC54D7E1F4C020A00F9A407 /* cat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AFC54D7D1F4C020A00F9A407 /* cat.jpeg */; };
 		AFC54D841F4C145100F9A407 /* haarcascade_frontalface_alt.xml in Resources */ = {isa = PBXBuildFile; fileRef = AFC54D831F4C145100F9A407 /* haarcascade_frontalface_alt.xml */; };
 		AFC54D861F4C148000F9A407 /* lena.png in Resources */ = {isa = PBXBuildFile; fileRef = AFC54D851F4C148000F9A407 /* lena.png */; };
@@ -85,6 +92,15 @@
 		AF7C16F21F4E687200484C3D /* text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text.png; sourceTree = "<group>"; };
 		AF7C16F31F4E687200484C3D /* texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = texture.jpg; sourceTree = "<group>"; };
 		AF7C16F61F4EBF7500484C3D /* haarcascade_frontalface_alt2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt2.xml; sourceTree = "<group>"; };
+		AF937E591F4FE6AD002B573A /* RetroFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RetroFilter.cpp; sourceTree = "<group>"; };
+		AF937E5A1F4FE6AD002B573A /* RetroFilter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RetroFilter.hpp; sourceTree = "<group>"; };
+		AF937E5C1F4FE6F4002B573A /* fuzzyBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fuzzyBorder.png; sourceTree = "<group>"; };
+		AF937E5D1F4FE6F4002B573A /* scratches.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scratches.png; sourceTree = "<group>"; };
+		AF937E601F4FE737002B573A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AF937E611F4FE737002B573A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		AF937E621F4FE737002B573A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		AF937E671F4FE7CA002B573A /* retroVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = retroVC.h; sourceTree = "<group>"; };
+		AF937E681F4FE7CA002B573A /* retroVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = retroVC.mm; sourceTree = "<group>"; };
 		AFC54D7D1F4C020A00F9A407 /* cat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpeg; sourceTree = "<group>"; };
 		AFC54D831F4C145100F9A407 /* haarcascade_frontalface_alt.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt.xml; sourceTree = "<group>"; };
 		AFC54D851F4C148000F9A407 /* lena.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lena.png; sourceTree = "<group>"; };
@@ -167,10 +183,7 @@
 			children = (
 				AF4C59641F47DF93007F97F9 /* AppDelegate.h */,
 				AF4C59651F47DF93007F97F9 /* AppDelegate.m */,
-				AF4C59671F47DF93007F97F9 /* ViewController.h */,
-				AF4C59681F47DF93007F97F9 /* ViewController.mm */,
-				AF7C16EF1F4E637300484C3D /* GalleryVC.h */,
-				AF7C16F01F4E637300484C3D /* GalleryVC.mm */,
+				AF937E661F4FE797002B573A /* VC */,
 				AFF487BE1F4BDDC000AC4A63 /* UIImage Cat */,
 				AF6435121F493403006A8725 /* opencviosinterface */,
 				AF4C596A1F47DF93007F97F9 /* Main.storyboard */,
@@ -187,6 +200,11 @@
 			children = (
 				AF4C59951F47E39A007F97F9 /* note */,
 				AF4C59621F47DF93007F97F9 /* main.m */,
+				AF937E601F4FE737002B573A /* Default-568h@2x.png */,
+				AF937E611F4FE737002B573A /* Default.png */,
+				AF937E621F4FE737002B573A /* Default@2x.png */,
+				AF937E5C1F4FE6F4002B573A /* fuzzyBorder.png */,
+				AF937E5D1F4FE6F4002B573A /* scratches.png */,
 				AF7C16F21F4E687200484C3D /* text.png */,
 				AF7C16F31F4E687200484C3D /* texture.jpg */,
 				AFC54D7D1F4C020A00F9A407 /* cat.jpeg */,
@@ -234,6 +252,8 @@
 				AF6435141F493459006A8725 /* opencviosinterface.mm */,
 				AF7C16EC1F4E629A00484C3D /* PostcardPrinter.cpp */,
 				AF7C16ED1F4E629A00484C3D /* PostcardPrinter.hpp */,
+				AF937E591F4FE6AD002B573A /* RetroFilter.cpp */,
+				AF937E5A1F4FE6AD002B573A /* RetroFilter.hpp */,
 				AFF4876E1F4BDB0600AC4A63 /* MMOpenCVHelper.h */,
 				AFF4876F1F4BDB0600AC4A63 /* MMOpenCVHelper.mm */,
 				AFF487C81F4BDE6000AC4A63 /* MMCropView.h */,
@@ -242,6 +262,19 @@
 				AFF487CB1F4BDE6000AC4A63 /* MTGeometry.h */,
 			);
 			name = opencviosinterface;
+			sourceTree = "<group>";
+		};
+		AF937E661F4FE797002B573A /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				AF4C59671F47DF93007F97F9 /* ViewController.h */,
+				AF4C59681F47DF93007F97F9 /* ViewController.mm */,
+				AF7C16EF1F4E637300484C3D /* GalleryVC.h */,
+				AF7C16F01F4E637300484C3D /* GalleryVC.mm */,
+				AF937E671F4FE7CA002B573A /* retroVC.h */,
+				AF937E681F4FE7CA002B573A /* retroVC.mm */,
+			);
+			name = VC;
 			sourceTree = "<group>";
 		};
 		AFF487BE1F4BDDC000AC4A63 /* UIImage Cat */ = {
@@ -380,14 +413,19 @@
 				AFC54D881F4C189D00F9A407 /* meinv.jpg in Resources */,
 				AF7C16F71F4EBF7500484C3D /* haarcascade_frontalface_alt2.xml in Resources */,
 				AF4C59711F47DF93007F97F9 /* LaunchScreen.storyboard in Resources */,
+				AF937E5F1F4FE6F4002B573A /* scratches.png in Resources */,
 				AF4C596E1F47DF93007F97F9 /* Assets.xcassets in Resources */,
 				AF7C16F51F4E687200484C3D /* texture.jpg in Resources */,
 				AFC54D7E1F4C020A00F9A407 /* cat.jpeg in Resources */,
+				AF937E641F4FE737002B573A /* Default.png in Resources */,
 				AFC54D861F4C148000F9A407 /* lena.png in Resources */,
 				AFC54D8A1F4C1B3700F9A407 /* 3、脸部识别 in Resources */,
+				AF937E5E1F4FE6F4002B573A /* fuzzyBorder.png in Resources */,
 				AF4C59971F47E39A007F97F9 /* 1、初始化项目 in Resources */,
+				AF937E651F4FE737002B573A /* Default@2x.png in Resources */,
 				AF7C16F41F4E687200484C3D /* text.png in Resources */,
 				AF4C59991F47E3E1007F97F9 /* 2、编译C++库 in Resources */,
+				AF937E631F4FE737002B573A /* Default-568h@2x.png in Resources */,
 				AFC54D841F4C145100F9A407 /* haarcascade_frontalface_alt.xml in Resources */,
 				AF4C596C1F47DF93007F97F9 /* Main.storyboard in Resources */,
 			);
@@ -463,12 +501,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF4C59691F47DF93007F97F9 /* ViewController.mm in Sources */,
+				AF937E691F4FE7CA002B573A /* retroVC.mm in Sources */,
 				AFF487C61F4BDDC000AC4A63 /* UIImage+fixOrientation.m in Sources */,
 				AFF487C71F4BDDC000AC4A63 /* UIImageView+ContentFrame.m in Sources */,
 				AF4C59661F47DF93007F97F9 /* AppDelegate.m in Sources */,
 				AFF487CD1F4BDE6000AC4A63 /* MTGeometry.c in Sources */,
 				AFF487C51F4BDDC000AC4A63 /* UIColor+HexRepresentation.m in Sources */,
 				AF7C16EE1F4E629A00484C3D /* PostcardPrinter.cpp in Sources */,
+				AF937E5B1F4FE6AD002B573A /* RetroFilter.cpp in Sources */,
 				AFF487CC1F4BDE6000AC4A63 /* MMCropView.m in Sources */,
 				AFF487701F4BDB0600AC4A63 /* MMOpenCVHelper.mm in Sources */,
 				AF6435151F493459006A8725 /* opencviosinterface.mm in Sources */,
