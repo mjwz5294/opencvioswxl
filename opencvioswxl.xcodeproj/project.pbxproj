@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		56398327C09504B68053075F /* libPods-opencvioswxl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */; };
+		AF4B41A61F5070350064287B /* 4、使用opencv相机 in Resources */ = {isa = PBXBuildFile; fileRef = AF4B41A51F5070350064287B /* 4、使用opencv相机 */; };
 		AF4C59631F47DF93007F97F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C59621F47DF93007F97F9 /* main.m */; };
 		AF4C59661F47DF93007F97F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C59651F47DF93007F97F9 /* AppDelegate.m */; };
 		AF4C59691F47DF93007F97F9 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF4C59681F47DF93007F97F9 /* ViewController.mm */; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		28A02051932DD99EB4F37BCA /* Pods-opencvioswxl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opencvioswxl.release.xcconfig"; path = "Pods/Target Support Files/Pods-opencvioswxl/Pods-opencvioswxl.release.xcconfig"; sourceTree = "<group>"; };
 		6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-opencvioswxl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF4B41A51F5070350064287B /* 4、使用opencv相机 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "4、使用opencv相机"; sourceTree = "<group>"; };
 		AF4C595E1F47DF93007F97F9 /* opencvioswxl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = opencvioswxl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF4C59621F47DF93007F97F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AF4C59641F47DF93007F97F9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				AF4C59961F47E39A007F97F9 /* 1、初始化项目 */,
 				AF4C59981F47E3E1007F97F9 /* 2、编译C++库 */,
 				AFC54D891F4C1B3700F9A407 /* 3、脸部识别 */,
+				AF4B41A51F5070350064287B /* 4、使用opencv相机 */,
 			);
 			path = note;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				AF4C59711F47DF93007F97F9 /* LaunchScreen.storyboard in Resources */,
 				AF937E5F1F4FE6F4002B573A /* scratches.png in Resources */,
 				AF4C596E1F47DF93007F97F9 /* Assets.xcassets in Resources */,
+				AF4B41A61F5070350064287B /* 4、使用opencv相机 in Resources */,
 				AF7C16F51F4E687200484C3D /* texture.jpg in Resources */,
 				AFC54D7E1F4C020A00F9A407 /* cat.jpeg in Resources */,
 				AF937E641F4FE737002B573A /* Default.png in Resources */,
