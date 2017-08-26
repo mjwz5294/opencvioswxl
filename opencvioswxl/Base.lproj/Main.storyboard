@@ -208,5 +208,57 @@
             </objects>
             <point key="canvasLocation" x="2577" y="707"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="rbf-wv-4sv">
+            <objects>
+                <viewController id="QW1-75-Zj7" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="92E-dT-3pZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="dRH-UC-NHk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WAT-TQ-px2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xsJ-is-YDQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qTA-5T-2Y1">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Start capture" id="6zc-pi-ihz">
+                                        <connections>
+                                            <action selector="startCaptureButtonPressed:" destination="QW1-75-Zj7" id="CqB-ge-our"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Stop capture" id="cKK-Dk-mxK">
+                                        <connections>
+                                            <action selector="stopCaptureButtonPressed:" destination="QW1-75-Zj7" id="VBs-33-pOw"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xsJ-is-YDQ" firstAttribute="trailing" secondItem="WAT-TQ-px2" secondAttribute="trailing" id="9pj-Bi-3tn"/>
+                            <constraint firstItem="qTA-5T-2Y1" firstAttribute="bottom" secondItem="WAT-TQ-px2" secondAttribute="bottom" id="Cqg-KJ-wyt"/>
+                            <constraint firstItem="qTA-5T-2Y1" firstAttribute="trailing" secondItem="WAT-TQ-px2" secondAttribute="trailing" id="QuK-e3-Dqn"/>
+                            <constraint firstItem="xsJ-is-YDQ" firstAttribute="top" secondItem="WAT-TQ-px2" secondAttribute="top" id="XL4-Au-uJV"/>
+                            <constraint firstItem="qTA-5T-2Y1" firstAttribute="leading" secondItem="WAT-TQ-px2" secondAttribute="leading" id="a0v-8w-VEY"/>
+                            <constraint firstItem="qTA-5T-2Y1" firstAttribute="top" secondItem="xsJ-is-YDQ" secondAttribute="bottom" id="jjD-3X-bse"/>
+                            <constraint firstItem="xsJ-is-YDQ" firstAttribute="leading" secondItem="WAT-TQ-px2" secondAttribute="leading" id="nyb-gg-3cl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="xsJ-is-YDQ" id="skx-TJ-i6M"/>
+                        <outlet property="startCaptureButton" destination="6zc-pi-ihz" id="iJ3-wB-PgA"/>
+                        <outlet property="stopCaptureButton" destination="cKK-Dk-mxK" id="SIE-dF-gyA"/>
+                        <outlet property="toolbar" destination="qTA-5T-2Y1" id="PkC-hC-d3V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tp6-RK-36E" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
 </document>

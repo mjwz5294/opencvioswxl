@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		56398327C09504B68053075F /* libPods-opencvioswxl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */; };
+		AF30FC641F512655001F2425 /* videoFromCamVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF30FC631F512655001F2425 /* videoFromCamVC.mm */; };
 		AF4B41A61F5070350064287B /* 4、使用opencv相机 in Resources */ = {isa = PBXBuildFile; fileRef = AF4B41A51F5070350064287B /* 4、使用opencv相机 */; };
 		AF4C59631F47DF93007F97F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C59621F47DF93007F97F9 /* main.m */; };
 		AF4C59661F47DF93007F97F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C59651F47DF93007F97F9 /* AppDelegate.m */; };
@@ -66,6 +67,11 @@
 /* Begin PBXFileReference section */
 		28A02051932DD99EB4F37BCA /* Pods-opencvioswxl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opencvioswxl.release.xcconfig"; path = "Pods/Target Support Files/Pods-opencvioswxl/Pods-opencvioswxl.release.xcconfig"; sourceTree = "<group>"; };
 		6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-opencvioswxl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF30FC621F512655001F2425 /* videoFromCamVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = videoFromCamVC.h; sourceTree = "<group>"; };
+		AF30FC631F512655001F2425 /* videoFromCamVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = videoFromCamVC.mm; sourceTree = "<group>"; };
+		AF30FC651F513D78001F2425 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		AF30FC671F513D87001F2425 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		AF30FC691F513D95001F2425 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		AF4B41A51F5070350064287B /* 4、使用opencv相机 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "4、使用opencv相机"; sourceTree = "<group>"; };
 		AF4C595E1F47DF93007F97F9 /* opencvioswxl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = opencvioswxl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF4C59621F47DF93007F97F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -281,6 +287,8 @@
 				AF937E681F4FE7CA002B573A /* retroVC.mm */,
 				AF937E6A1F5007CE002B573A /* photoFromCamVC.h */,
 				AF937E6B1F5007CE002B573A /* photoFromCamVC.mm */,
+				AF30FC621F512655001F2425 /* videoFromCamVC.h */,
+				AF30FC631F512655001F2425 /* videoFromCamVC.mm */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -301,6 +309,9 @@
 		D9CE47F04B78FEC362F9578C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF30FC691F513D95001F2425 /* CoreMedia.framework */,
+				AF30FC671F513D87001F2425 /* AssetsLibrary.framework */,
+				AF30FC651F513D78001F2425 /* CoreVideo.framework */,
 				6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */,
 			);
 			name = Frameworks;
@@ -509,6 +520,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF30FC641F512655001F2425 /* videoFromCamVC.mm in Sources */,
 				AF4C59691F47DF93007F97F9 /* ViewController.mm in Sources */,
 				AF937E691F4FE7CA002B573A /* retroVC.mm in Sources */,
 				AFF487C61F4BDDC000AC4A63 /* UIImage+fixOrientation.m in Sources */,
