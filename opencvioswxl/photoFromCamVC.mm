@@ -45,14 +45,14 @@ UIBarButtonItem* startCaptureButton;
     [super viewDidLoad];
     
     // Initialize camera
-//    photoCamera = [[CvPhotoCamera alloc] initWithParentView:imageView];
-//    photoCamera.delegate = self;
-//    photoCamera.defaultAVCaptureDevicePosition =
-//    AVCaptureDevicePositionFront;
-//    photoCamera.defaultAVCaptureSessionPreset =
-//    AVCaptureSessionPresetPhoto;
-//    photoCamera.defaultAVCaptureVideoOrientation =
-//    AVCaptureVideoOrientationPortrait;
+    photoCamera = [[CvPhotoCamera alloc] initWithParentView:imageView];
+    photoCamera.delegate = self;
+    photoCamera.defaultAVCaptureDevicePosition =
+    AVCaptureDevicePositionFront;
+    photoCamera.defaultAVCaptureSessionPreset =
+    AVCaptureSessionPresetPhoto;
+    photoCamera.defaultAVCaptureVideoOrientation =
+    AVCaptureVideoOrientationPortrait;
     
     // Load images
     UIImage* resImage = [UIImage imageNamed:@"scratches.png"];

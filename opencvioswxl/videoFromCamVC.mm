@@ -36,20 +36,19 @@ UIBarButtonItem* stopCaptureButton;
     [super viewDidLoad];
     
 //    CvVideoCamera* testCam = [[CvVideoCamera alloc] init];
-//    NSLog(testCam);
     
-//    self.videoCamera = [[CvVideoCamera alloc]
-//                        initWithParentView:_imageView];
-//    self.videoCamera.delegate = self;
-//    self.videoCamera.defaultAVCaptureDevicePosition =
-//    AVCaptureDevicePositionFront;
-//    self.videoCamera.defaultAVCaptureSessionPreset =
-//    AVCaptureSessionPreset640x480;
-//    self.videoCamera.defaultAVCaptureVideoOrientation =
-//    AVCaptureVideoOrientationPortrait;
-//    self.videoCamera.defaultFPS = 30;
-//    
-//    isCapturing = NO;
+    self.videoCamera = [[CvVideoCamera alloc]
+                        initWithParentView:_imageView];
+    self.videoCamera.delegate = self;
+    self.videoCamera.defaultAVCaptureDevicePosition =
+    AVCaptureDevicePositionFront;
+    self.videoCamera.defaultAVCaptureSessionPreset =
+    AVCaptureSessionPreset640x480;
+    self.videoCamera.defaultAVCaptureVideoOrientation =
+    AVCaptureVideoOrientationPortrait;
+    self.videoCamera.defaultFPS = 30;
+    
+    isCapturing = NO;
 }
 
 - (NSInteger)supportedInterfaceOrientations
