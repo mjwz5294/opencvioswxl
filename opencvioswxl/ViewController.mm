@@ -32,8 +32,9 @@
 //    NSString* vcId = @"retroVC";
 //    NSString* vcId = @"photoFromCamVC";
 //    NSString* vcId = @"videoFromCamVC";
-    NSString* vcId = @"advanceCamControlVC";
+//    NSString* vcId = @"advanceCamControlVC";
 //    NSString* vcId = @"processionVideoVC";
+    NSString* vcId = @"savevideoVC";
     
     UIViewController* tmpVC = [self.storyboard instantiateViewControllerWithIdentifier:vcId];
     [self.navigationController pushViewController:tmpVC animated:YES];

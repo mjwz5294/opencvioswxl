@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3411B4CF1F5407A500D32A3F /* advanceCamControlVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3411B4CE1F5407A500D32A3F /* advanceCamControlVC.mm */; };
 		3411B4D91F54115A00D32A3F /* processionVideoVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3411B4D81F54115A00D32A3F /* processionVideoVC.mm */; };
+		3411B4DD1F541CFD00D32A3F /* savevideoVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3411B4DC1F541CFD00D32A3F /* savevideoVC.mm */; };
 		34C48C6C1F5269EB00000373 /* 5、从头开始，死磕一天 in Resources */ = {isa = PBXBuildFile; fileRef = 34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */; };
 		56398327C09504B68053075F /* libPods-opencvioswxl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */; };
 		AF30FC641F512655001F2425 /* videoFromCamVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF30FC631F512655001F2425 /* videoFromCamVC.mm */; };
@@ -73,6 +74,8 @@
 		3411B4CE1F5407A500D32A3F /* advanceCamControlVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = advanceCamControlVC.mm; sourceTree = "<group>"; };
 		3411B4D71F54115A00D32A3F /* processionVideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = processionVideoVC.h; sourceTree = "<group>"; };
 		3411B4D81F54115A00D32A3F /* processionVideoVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = processionVideoVC.mm; sourceTree = "<group>"; };
+		3411B4DB1F541CFD00D32A3F /* savevideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = savevideoVC.h; sourceTree = "<group>"; };
+		3411B4DC1F541CFD00D32A3F /* savevideoVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = savevideoVC.mm; sourceTree = "<group>"; };
 		34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "5、从头开始，死磕一天"; sourceTree = "<group>"; };
 		6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-opencvioswxl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF30FC621F512655001F2425 /* videoFromCamVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = videoFromCamVC.h; sourceTree = "<group>"; };
@@ -302,6 +305,8 @@
 				3411B4CE1F5407A500D32A3F /* advanceCamControlVC.mm */,
 				3411B4D71F54115A00D32A3F /* processionVideoVC.h */,
 				3411B4D81F54115A00D32A3F /* processionVideoVC.mm */,
+				3411B4DB1F541CFD00D32A3F /* savevideoVC.h */,
+				3411B4DC1F541CFD00D32A3F /* savevideoVC.mm */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -545,6 +550,7 @@
 				AF4C59661F47DF93007F97F9 /* AppDelegate.m in Sources */,
 				AF937E6C1F5007CE002B573A /* photoFromCamVC.mm in Sources */,
 				AFF487CD1F4BDE6000AC4A63 /* MTGeometry.c in Sources */,
+				3411B4DD1F541CFD00D32A3F /* savevideoVC.mm in Sources */,
 				AFF487C51F4BDDC000AC4A63 /* UIColor+HexRepresentation.m in Sources */,
 				3411B4D91F54115A00D32A3F /* processionVideoVC.mm in Sources */,
 				AF7C16EE1F4E629A00484C3D /* PostcardPrinter.cpp in Sources */,
