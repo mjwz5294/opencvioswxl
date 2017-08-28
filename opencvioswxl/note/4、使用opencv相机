@@ -15,3 +15,5 @@ photoCamera = [[CvPhotoCamera alloc] initWithParentView:imageView];
 1、把系统重装了；
 2、opencv使用了3.2版本；
 3、照相的时候奔溃，原因居然是资源图片的名字写错了，汗。。。
+4、另外，之前UIImageToMat方法用opencviosinterface替代才不会报错，现在必须替换回去，不然会出问题。
+5、终于一切回到正规，但bug查找真麻烦，很多信息看不懂。
