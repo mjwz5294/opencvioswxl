@@ -260,5 +260,90 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tp6-RK-36E" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Advance Cam ControlVC-->
+        <scene sceneID="JP5-bA-sib">
+            <objects>
+                <viewController storyboardIdentifier="advanceCamControlVC" id="qgF-0W-Wd7" customClass="advanceCamControlVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="csa-6A-lRB"/>
+                        <viewControllerLayoutGuide type="bottom" id="cJh-pq-vMZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1bX-KG-Qiz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MhF-Xx-W5H">
+                                <rect key="frame" x="0.0" y="44" width="375" height="579"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OVn-Yu-3og">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Start " id="XLu-Dr-FbQ">
+                                        <connections>
+                                            <action selector="startCaptureButtonPressed:" destination="qgF-0W-Wd7" id="omI-es-SR3"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Stop " id="vNZ-P4-jjS">
+                                        <connections>
+                                            <action selector="stopCaptureButtonPressed:" destination="qgF-0W-Wd7" id="g2U-KI-dAo"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Rotation mode" id="vVg-FM-EAN">
+                                        <connections>
+                                            <action selector="rotationButtonPressed:" destination="qgF-0W-Wd7" id="oJx-1J-SwV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2x-PG-FkN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Lock focus" id="wag-7M-9Ht">
+                                        <connections>
+                                            <action selector="actionLockFocus:" destination="qgF-0W-Wd7" id="Hxp-mc-n72"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Lock exposure" id="A5S-YC-hYV">
+                                        <connections>
+                                            <action selector="actionLockExposure:" destination="qgF-0W-Wd7" id="NUq-G8-zpr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Lock balance" id="qSp-zy-7xS">
+                                        <connections>
+                                            <action selector="actionLockBalance:" destination="qgF-0W-Wd7" id="3nd-9r-pcV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OVn-Yu-3og" firstAttribute="top" secondItem="MhF-Xx-W5H" secondAttribute="bottom" id="5eu-sO-YVa"/>
+                            <constraint firstItem="OVn-Yu-3og" firstAttribute="leading" secondItem="1bX-KG-Qiz" secondAttribute="leading" id="J6N-TH-A8E"/>
+                            <constraint firstItem="MhF-Xx-W5H" firstAttribute="leading" secondItem="1bX-KG-Qiz" secondAttribute="leading" id="KDQ-70-3WA"/>
+                            <constraint firstItem="OVn-Yu-3og" firstAttribute="bottom" secondItem="1bX-KG-Qiz" secondAttribute="bottom" id="Pju-ak-cC7"/>
+                            <constraint firstItem="MhF-Xx-W5H" firstAttribute="top" secondItem="t2x-PG-FkN" secondAttribute="bottom" id="YEP-xF-ACP"/>
+                            <constraint firstItem="t2x-PG-FkN" firstAttribute="leading" secondItem="1bX-KG-Qiz" secondAttribute="leading" id="aED-MH-mrs"/>
+                            <constraint firstItem="OVn-Yu-3og" firstAttribute="trailing" secondItem="1bX-KG-Qiz" secondAttribute="trailing" id="cMS-eu-Kqb"/>
+                            <constraint firstItem="t2x-PG-FkN" firstAttribute="top" secondItem="1bX-KG-Qiz" secondAttribute="top" id="eHv-16-Cnm"/>
+                            <constraint firstItem="MhF-Xx-W5H" firstAttribute="trailing" secondItem="1bX-KG-Qiz" secondAttribute="trailing" id="iSp-YR-VfE"/>
+                            <constraint firstItem="t2x-PG-FkN" firstAttribute="trailing" secondItem="1bX-KG-Qiz" secondAttribute="trailing" id="oMO-Pz-xiF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="MhF-Xx-W5H" id="I91-UV-D9W"/>
+                        <outlet property="lockBalanceButton" destination="qSp-zy-7xS" id="VXZ-eC-3wK"/>
+                        <outlet property="lockExposureButton" destination="A5S-YC-hYV" id="Qxv-Uw-wOd"/>
+                        <outlet property="lockFocusButton" destination="wag-7M-9Ht" id="nVU-CR-OBL"/>
+                        <outlet property="rotationButton" destination="vVg-FM-EAN" id="3ya-Iv-E9N"/>
+                        <outlet property="startCaptureButton" destination="XLu-Dr-FbQ" id="ZtW-SJ-Fg2"/>
+                        <outlet property="stopCaptureButton" destination="vNZ-P4-jjS" id="Tas-yW-IUp"/>
+                        <outlet property="toolbar" destination="OVn-Yu-3og" id="YHN-Sm-s4I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w59-IY-uee" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="791" y="707"/>
+        </scene>
     </scenes>
 </document>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3411B4CF1F5407A500D32A3F /* advanceCamControlVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3411B4CE1F5407A500D32A3F /* advanceCamControlVC.mm */; };
 		34C48C6C1F5269EB00000373 /* 5、从头开始，死磕一天 in Resources */ = {isa = PBXBuildFile; fileRef = 34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */; };
 		56398327C09504B68053075F /* libPods-opencvioswxl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */; };
 		AF30FC641F512655001F2425 /* videoFromCamVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF30FC631F512655001F2425 /* videoFromCamVC.mm */; };
@@ -67,6 +68,8 @@
 
 /* Begin PBXFileReference section */
 		28A02051932DD99EB4F37BCA /* Pods-opencvioswxl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opencvioswxl.release.xcconfig"; path = "Pods/Target Support Files/Pods-opencvioswxl/Pods-opencvioswxl.release.xcconfig"; sourceTree = "<group>"; };
+		3411B4CD1F5407A500D32A3F /* advanceCamControlVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = advanceCamControlVC.h; sourceTree = "<group>"; };
+		3411B4CE1F5407A500D32A3F /* advanceCamControlVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = advanceCamControlVC.mm; sourceTree = "<group>"; };
 		34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "5、从头开始，死磕一天"; sourceTree = "<group>"; };
 		6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-opencvioswxl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF30FC621F512655001F2425 /* videoFromCamVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = videoFromCamVC.h; sourceTree = "<group>"; };
@@ -292,6 +295,8 @@
 				AF937E6B1F5007CE002B573A /* photoFromCamVC.mm */,
 				AF30FC621F512655001F2425 /* videoFromCamVC.h */,
 				AF30FC631F512655001F2425 /* videoFromCamVC.mm */,
+				3411B4CD1F5407A500D32A3F /* advanceCamControlVC.h */,
+				3411B4CE1F5407A500D32A3F /* advanceCamControlVC.mm */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -537,6 +542,7 @@
 				AFF487CD1F4BDE6000AC4A63 /* MTGeometry.c in Sources */,
 				AFF487C51F4BDDC000AC4A63 /* UIColor+HexRepresentation.m in Sources */,
 				AF7C16EE1F4E629A00484C3D /* PostcardPrinter.cpp in Sources */,
+				3411B4CF1F5407A500D32A3F /* advanceCamControlVC.mm in Sources */,
 				AF937E5B1F4FE6AD002B573A /* RetroFilter.cpp in Sources */,
 				AFF487CC1F4BDE6000AC4A63 /* MMCropView.m in Sources */,
 				AFF487701F4BDB0600AC4A63 /* MMOpenCVHelper.mm in Sources */,

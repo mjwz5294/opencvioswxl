@@ -30,8 +30,9 @@
     
 //    NSString* vcId = @"GalleryVC";
 //    NSString* vcId = @"retroVC";
-    NSString* vcId = @"photoFromCamVC";
+//    NSString* vcId = @"photoFromCamVC";
 //    NSString* vcId = @"videoFromCamVC";
+    NSString* vcId = @"advanceCamControlVC";
     
     UIViewController* tmpVC = [self.storyboard instantiateViewControllerWithIdentifier:vcId];
     [self.navigationController pushViewController:tmpVC animated:YES];
