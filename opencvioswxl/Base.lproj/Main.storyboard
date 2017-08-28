@@ -17,7 +17,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -330,6 +330,7 @@
                             <constraint firstItem="t2x-PG-FkN" firstAttribute="trailing" secondItem="1bX-KG-Qiz" secondAttribute="trailing" id="oMO-Pz-xiF"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="imageView" destination="MhF-Xx-W5H" id="I91-UV-D9W"/>
                         <outlet property="lockBalanceButton" destination="qSp-zy-7xS" id="VXZ-eC-3wK"/>
@@ -344,6 +345,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w59-IY-uee" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="791" y="707"/>
+        </scene>
+        <!--Procession VideoVC-->
+        <scene sceneID="bxa-d9-ysX">
+            <objects>
+                <viewController storyboardIdentifier="processionVideoVC" id="Rvo-yk-jCt" customClass="processionVideoVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N86-Cs-Yec"/>
+                        <viewControllerLayoutGuide type="bottom" id="esX-67-ncH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SsF-xJ-IY6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSP-TE-esa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mn4-2D-3Nf">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Start capture" id="t0x-Aw-pBU">
+                                        <connections>
+                                            <action selector="startCaptureButtonPressed:" destination="Rvo-yk-jCt" id="htD-FZ-R6X"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Stop capture" id="MLj-ft-iub">
+                                        <connections>
+                                            <action selector="stopCaptureButtonPressed:" destination="Rvo-yk-jCt" id="zmo-RY-rZz"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mn4-2D-3Nf" firstAttribute="leading" secondItem="SsF-xJ-IY6" secondAttribute="leading" id="05p-AX-7lS"/>
+                            <constraint firstItem="tSP-TE-esa" firstAttribute="leading" secondItem="SsF-xJ-IY6" secondAttribute="leading" id="CjT-8T-4Uz"/>
+                            <constraint firstItem="mn4-2D-3Nf" firstAttribute="top" secondItem="tSP-TE-esa" secondAttribute="bottom" id="Hoh-ur-L01"/>
+                            <constraint firstItem="mn4-2D-3Nf" firstAttribute="bottom" secondItem="SsF-xJ-IY6" secondAttribute="bottom" id="O9o-vy-PII"/>
+                            <constraint firstItem="tSP-TE-esa" firstAttribute="top" secondItem="SsF-xJ-IY6" secondAttribute="top" id="Wjo-oc-Ru1"/>
+                            <constraint firstItem="mn4-2D-3Nf" firstAttribute="trailing" secondItem="SsF-xJ-IY6" secondAttribute="trailing" id="pFG-4v-0wO"/>
+                            <constraint firstItem="tSP-TE-esa" firstAttribute="trailing" secondItem="SsF-xJ-IY6" secondAttribute="trailing" id="qoW-XL-uSU"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="imageView" destination="tSP-TE-esa" id="cek-er-667"/>
+                        <outlet property="startCaptureButton" destination="t0x-Aw-pBU" id="2YR-KY-3aM"/>
+                        <outlet property="stopCaptureButton" destination="MLj-ft-iub" id="4Vy-5x-q6b"/>
+                        <outlet property="toolbar" destination="mn4-2D-3Nf" id="uCF-2f-XOv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3vI-5g-xba" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
 </document>

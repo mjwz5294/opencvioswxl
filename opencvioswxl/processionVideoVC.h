@@ -1,5 +1,5 @@
 //
-//  advanceCamControlVC.h
+//  processionVideoVC.h
 //  opencvioswxl
 //
 //  Created by longgege on 17/8/28.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-//注意顶上有几个按钮，将ubder topbar设置为no，才能看到
-@interface advanceCamControlVC : UIViewController
+//将ubder topbar设置为no，才能看到fps
+@interface processionVideoVC : UIViewController
 
 @end
