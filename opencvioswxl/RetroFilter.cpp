@@ -68,11 +68,10 @@ void RetroFilter::applyToPhoto(const Mat& frame, Mat& retroFrame)
     // Add scratches
     Scalar meanColor = mean(luminance.row(luminance.rows / 2));
     scratchColor_.setTo(meanColor * 2.0);
-    //TODO: 吴晓龙20170825将这段刮痕代码注释掉，奔溃的原因暂时没找到
-//    int x = rng_.uniform(0, params_.scratches.cols - luminance.cols);
-//    int y = rng_.uniform(0, params_.scratches.rows - luminance.rows);
-//    cv::Rect roi(cv::Point(x, y), luminance.size());
-//    scratchColor_.copyTo(luminance, params_.scratches(roi));
+    int x = rng_.uniform(0, params_.scratches.cols - luminance.cols);
+    int y = rng_.uniform(0, params_.scratches.rows - luminance.rows);
+    cv::Rect roi(cv::Point(x, y), luminance.size());
+    scratchColor_.copyTo(luminance, params_.scratches(roi));
     
     // Add fuzzy border
     borderColor_.setTo(meanColor * 1.5);

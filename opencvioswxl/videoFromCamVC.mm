@@ -8,7 +8,6 @@
 
 #import "videoFromCamVC.h"
 #import <opencv2/imgcodecs/ios.h>
-#import "opencviosinterface.h"
 #import <opencv2/videoio/cap_ios.h>
 
 @interface videoFromCamVC ()<CvVideoCameraDelegate>
@@ -34,8 +33,6 @@ UIBarButtonItem* stopCaptureButton;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-//    CvVideoCamera* testCam = [[CvVideoCamera alloc] init];
     
     self.videoCamera = [[CvVideoCamera alloc]
                         initWithParentView:_imageView];

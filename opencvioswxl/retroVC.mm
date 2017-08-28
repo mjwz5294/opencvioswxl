@@ -8,7 +8,6 @@
 
 #import "retroVC.h"
 #import <opencv2/imgcodecs/ios.h>
-#import "opencviosinterface.h"
 
 @interface retroVC ()
 
@@ -28,12 +27,10 @@
     
     // Load images
     UIImage* resImage = [UIImage imageNamed:@"scratches.png"];
-//    UIImageToMat(resImage, params.scratches);
-    params.scratches = [[[opencviosinterface alloc] init] cvMatFromUIImage:resImage];
+    UIImageToMat(resImage, params.scratches);
     
     resImage = [UIImage imageNamed:@"fuzzyBorder.png"];
-//    UIImageToMat(resImage, params.fuzzyBorder);
-    params.fuzzyBorder = [[[opencviosinterface alloc] init] cvMatFromUIImage:resImage];
+    UIImageToMat(resImage, params.fuzzyBorder);
     
     [saveButton setEnabled:NO];
 }
@@ -47,8 +44,7 @@
 - (UIImage*)applyFilter:(UIImage*)inputImage;
 {
     cv::Mat frame;
-//    UIImageToMat(inputImage, frame);
-    frame = [[[opencviosinterface alloc] init] cvMatFromUIImage:inputImage];
+    UIImageToMat(inputImage, frame);
     
     
     params.frameSize = frame.size();
@@ -57,8 +53,7 @@
     cv::Mat finalFrame;
     retroFilter.applyToPhoto(frame, finalFrame);
     
-    return [[[opencviosinterface alloc] init] UIImageFromCVMat:finalFrame];
-//    return MatToUIImage(finalFrame);
+    return MatToUIImage(finalFrame);
 }
 
 - (void)imagePickerController: (UIImagePickerController*)picker

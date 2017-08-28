@@ -9,7 +9,6 @@
 #import "photoFromCamVC.h"
 #import <opencv2/imgcodecs/ios.h>
 #import <opencv2/videoio/cap_ios.h>
-#import "opencviosinterface.h"
 
 @interface photoFromCamVC ()<CvPhotoCameraDelegate>
 {
@@ -53,15 +52,14 @@ UIBarButtonItem* startCaptureButton;
     AVCaptureSessionPresetPhoto;
     photoCamera.defaultAVCaptureVideoOrientation =
     AVCaptureVideoOrientationPortrait;
-    
+
     // Load images
     UIImage* resImage = [UIImage imageNamed:@"scratches.png"];
-//    UIImageToMat(resImage, params.scratches);
-    params.scratches = [[[opencviosinterface alloc] init] cvMatFromUIImage:resImage];
+    UIImageToMat(resImage, params.scratches);
     
-    resImage = [UIImage imageNamed:@"fuzzy_border.png"];
-//    UIImageToMat(resImage, params.fuzzyBorder);
-    params.fuzzyBorder = [[[opencviosinterface alloc] init] cvMatFromUIImage:resImage];
+    //之前这边一直报错，拍照也会崩溃，原来是图片资源问题。然后继续查看问题，发现居然是因为名字写错了，这里为什么要把名字写成fuzzy_border.png。。。
+    resImage = [UIImage imageNamed:@"fuzzyBorder.png"];
+    UIImageToMat(resImage, params.fuzzyBorder);
     
     [takePhotoButton setEnabled:NO];
 }
@@ -88,8 +86,7 @@ UIBarButtonItem* startCaptureButton;
 - (UIImage*)applyEffect:(UIImage*)image;
 {
     cv::Mat frame;
-//    UIImageToMat(image, frame);
-    frame = [[[opencviosinterface alloc] init] cvMatFromUIImage:image];
+    UIImageToMat(image, frame);
     
     params.frameSize = frame.size();
     RetroFilter retroFilter(params);
@@ -97,8 +94,7 @@ UIBarButtonItem* startCaptureButton;
     cv::Mat finalFrame;
     retroFilter.applyToPhoto(frame, finalFrame);
     
-//    UIImage* result = MatToUIImage(finalFrame);
-    UIImage* result = [[[opencviosinterface alloc] init] UIImageFromCVMat:finalFrame];
+    UIImage* result = MatToUIImage(finalFrame);
     return [UIImage imageWithCGImage:[result CGImage]
                                scale:1.0
                          orientation:UIImageOrientationLeftMirrored];

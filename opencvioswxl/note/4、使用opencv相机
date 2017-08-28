@@ -8,3 +8,10 @@
 3、回头继续调试，用了个笨办法（由于看不出来问题出在哪一行代码，只好分模块注释代码，最后发现奔溃居然发生在一个想不到的地方）
 photoCamera = [[CvPhotoCamera alloc] initWithParentView:imageView];
     初始化CvPhotoCamera，就报错: "_OBJC_CLASS_$_CvPhotoCamera", referenced from:是在想不通。所以暂时放着吧，据说CvVideoCamera类没问题可以玩。
+
+
+
+20170828
+1、把系统重装了；
+2、opencv使用了3.2版本；
+3、照相的时候奔溃，原因居然是资源图片的名字写错了，汗。。。
