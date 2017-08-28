@@ -10,6 +10,11 @@
 		3411B4CF1F5407A500D32A3F /* advanceCamControlVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3411B4CE1F5407A500D32A3F /* advanceCamControlVC.mm */; };
 		3411B4D91F54115A00D32A3F /* processionVideoVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3411B4D81F54115A00D32A3F /* processionVideoVC.mm */; };
 		3411B4DD1F541CFD00D32A3F /* savevideoVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3411B4DC1F541CFD00D32A3F /* savevideoVC.mm */; };
+		3412AF401F54634500AD918B /* FaceAnimator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3412AF3A1F54634500AD918B /* FaceAnimator.cpp */; };
+		3412AF411F54634500AD918B /* Processing_Accelerate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3412AF3C1F54634500AD918B /* Processing_Accelerate.cpp */; };
+		3412AF421F54634500AD918B /* Processing_NEON.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3412AF3D1F54634500AD918B /* Processing_NEON.cpp */; };
+		3412AF431F54634500AD918B /* Processing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3412AF3E1F54634500AD918B /* Processing.cpp */; };
+		3412AF461F54637900AD918B /* neonVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3412AF451F54637900AD918B /* neonVC.mm */; };
 		34C48C6C1F5269EB00000373 /* 5、从头开始，死磕一天 in Resources */ = {isa = PBXBuildFile; fileRef = 34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */; };
 		56398327C09504B68053075F /* libPods-opencvioswxl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */; };
 		AF30FC641F512655001F2425 /* videoFromCamVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF30FC631F512655001F2425 /* videoFromCamVC.mm */; };
@@ -76,6 +81,14 @@
 		3411B4D81F54115A00D32A3F /* processionVideoVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = processionVideoVC.mm; sourceTree = "<group>"; };
 		3411B4DB1F541CFD00D32A3F /* savevideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = savevideoVC.h; sourceTree = "<group>"; };
 		3411B4DC1F541CFD00D32A3F /* savevideoVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = savevideoVC.mm; sourceTree = "<group>"; };
+		3412AF3A1F54634500AD918B /* FaceAnimator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FaceAnimator.cpp; sourceTree = "<group>"; };
+		3412AF3B1F54634500AD918B /* FaceAnimator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FaceAnimator.hpp; sourceTree = "<group>"; };
+		3412AF3C1F54634500AD918B /* Processing_Accelerate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Processing_Accelerate.cpp; sourceTree = "<group>"; };
+		3412AF3D1F54634500AD918B /* Processing_NEON.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Processing_NEON.cpp; sourceTree = "<group>"; };
+		3412AF3E1F54634500AD918B /* Processing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Processing.cpp; sourceTree = "<group>"; };
+		3412AF3F1F54634500AD918B /* Processing.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Processing.hpp; sourceTree = "<group>"; };
+		3412AF441F54637900AD918B /* neonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = neonVC.h; sourceTree = "<group>"; };
+		3412AF451F54637900AD918B /* neonVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = neonVC.mm; sourceTree = "<group>"; };
 		34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "5、从头开始，死磕一天"; sourceTree = "<group>"; };
 		6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-opencvioswxl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF30FC621F512655001F2425 /* videoFromCamVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = videoFromCamVC.h; sourceTree = "<group>"; };
@@ -284,6 +297,12 @@
 				AFF487C91F4BDE6000AC4A63 /* MMCropView.m */,
 				AFF487CA1F4BDE6000AC4A63 /* MTGeometry.c */,
 				AFF487CB1F4BDE6000AC4A63 /* MTGeometry.h */,
+				3412AF3A1F54634500AD918B /* FaceAnimator.cpp */,
+				3412AF3B1F54634500AD918B /* FaceAnimator.hpp */,
+				3412AF3C1F54634500AD918B /* Processing_Accelerate.cpp */,
+				3412AF3D1F54634500AD918B /* Processing_NEON.cpp */,
+				3412AF3E1F54634500AD918B /* Processing.cpp */,
+				3412AF3F1F54634500AD918B /* Processing.hpp */,
 			);
 			name = opencviosinterface;
 			sourceTree = "<group>";
@@ -307,6 +326,8 @@
 				3411B4D81F54115A00D32A3F /* processionVideoVC.mm */,
 				3411B4DB1F541CFD00D32A3F /* savevideoVC.h */,
 				3411B4DC1F541CFD00D32A3F /* savevideoVC.mm */,
+				3412AF441F54637900AD918B /* neonVC.h */,
+				3412AF451F54637900AD918B /* neonVC.mm */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -542,6 +563,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3412AF421F54634500AD918B /* Processing_NEON.cpp in Sources */,
 				AF30FC641F512655001F2425 /* videoFromCamVC.mm in Sources */,
 				AF4C59691F47DF93007F97F9 /* ViewController.mm in Sources */,
 				AF937E691F4FE7CA002B573A /* retroVC.mm in Sources */,
@@ -553,11 +575,15 @@
 				3411B4DD1F541CFD00D32A3F /* savevideoVC.mm in Sources */,
 				AFF487C51F4BDDC000AC4A63 /* UIColor+HexRepresentation.m in Sources */,
 				3411B4D91F54115A00D32A3F /* processionVideoVC.mm in Sources */,
+				3412AF431F54634500AD918B /* Processing.cpp in Sources */,
+				3412AF401F54634500AD918B /* FaceAnimator.cpp in Sources */,
 				AF7C16EE1F4E629A00484C3D /* PostcardPrinter.cpp in Sources */,
 				3411B4CF1F5407A500D32A3F /* advanceCamControlVC.mm in Sources */,
 				AF937E5B1F4FE6AD002B573A /* RetroFilter.cpp in Sources */,
 				AFF487CC1F4BDE6000AC4A63 /* MMCropView.m in Sources */,
 				AFF487701F4BDB0600AC4A63 /* MMOpenCVHelper.mm in Sources */,
+				3412AF411F54634500AD918B /* Processing_Accelerate.cpp in Sources */,
+				3412AF461F54637900AD918B /* neonVC.mm in Sources */,
 				AF6435151F493459006A8725 /* opencviosinterface.mm in Sources */,
 				AF4C59631F47DF93007F97F9 /* main.m in Sources */,
 				AF7C16F11F4E637300484C3D /* GalleryVC.mm in Sources */,

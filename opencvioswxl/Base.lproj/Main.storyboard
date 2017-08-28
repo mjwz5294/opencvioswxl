@@ -17,7 +17,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -450,6 +450,59 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T3e-YD-ggI" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--NeonVC-->
+        <scene sceneID="caD-sh-3fS">
+            <objects>
+                <viewController storyboardIdentifier="neonVC" id="k4p-oY-ie1" customClass="neonVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eIQ-m8-wQK"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jaz-S2-Dzn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="54b-mE-Urj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9o-SZ-vvN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="av7-fv-2Mr">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Start capture" id="DsT-jS-Wxk">
+                                        <connections>
+                                            <action selector="startCaptureButtonPressed:" destination="k4p-oY-ie1" id="A0f-e7-WOP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Stop capture" id="7x2-MM-NjT">
+                                        <connections>
+                                            <action selector="stopCaptureButtonPressed:" destination="k4p-oY-ie1" id="6O2-gl-3ZV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="av7-fv-2Mr" firstAttribute="top" secondItem="u9o-SZ-vvN" secondAttribute="bottom" id="Nbn-Ud-A3m"/>
+                            <constraint firstItem="av7-fv-2Mr" firstAttribute="leading" secondItem="54b-mE-Urj" secondAttribute="leading" id="PNm-m6-lT5"/>
+                            <constraint firstItem="u9o-SZ-vvN" firstAttribute="top" secondItem="54b-mE-Urj" secondAttribute="top" id="WDH-IO-BM6"/>
+                            <constraint firstItem="av7-fv-2Mr" firstAttribute="bottom" secondItem="54b-mE-Urj" secondAttribute="bottom" id="bTJ-5T-rtw"/>
+                            <constraint firstItem="av7-fv-2Mr" firstAttribute="trailing" secondItem="54b-mE-Urj" secondAttribute="trailing" id="ojr-3P-ZrJ"/>
+                            <constraint firstItem="u9o-SZ-vvN" firstAttribute="trailing" secondItem="54b-mE-Urj" secondAttribute="trailing" id="y2t-yY-EFe"/>
+                            <constraint firstItem="u9o-SZ-vvN" firstAttribute="leading" secondItem="54b-mE-Urj" secondAttribute="leading" id="zhd-dx-QDS"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="imageView" destination="u9o-SZ-vvN" id="WjY-S4-66n"/>
+                        <outlet property="startCaptureButton" destination="DsT-jS-Wxk" id="UyI-8o-VHB"/>
+                        <outlet property="stopCaptureButton" destination="7x2-MM-NjT" id="phD-5N-7Zp"/>
+                        <outlet property="toolbar" destination="av7-fv-2Mr" id="XQo-k1-9vC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vl1-nQ-MVd" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>

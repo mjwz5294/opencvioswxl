@@ -1,36 +1,17 @@
 /*****************************************************************************
  *   RetroFilter.cpp
  ******************************************************************************
- *   by Kirill Kornyakov and Alexander Shishkov, 15th May 2013
- ******************************************************************************
- *   Chapter 7 of the "OpenCV for iOS" book
- *
- *   Applying a retro effect demonstrates another interesting photo
- *   effect that makes photos look old.
- *
+ *   by Kirill Kornyakov and Alexander Shishkov, 13th May 2013
+ ****************************************************************************** *
  *   Copyright Packt Publishing 2013.
  *   http://bit.ly/OpenCV_for_iOS_book
  *****************************************************************************/
 
 #include "RetroFilter.hpp"
+#include "Processing.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 
 using namespace cv;
-
-void alphaBlendC1(Mat src, Mat dst, Mat alpha)
-{
-    for (int i = 0; i < src.rows; i++)
-        for (int j = 0; j < src.cols; j++)
-        {
-            uchar alphaVal = alpha.at<uchar>(i, j);
-            if (alphaVal != 0)
-            {
-                float weight = static_cast<float>(alphaVal) / 255.0f;
-                dst.at<uchar>(i, j) = weight * src.at<uchar>(i, j) +
-                (1 - weight) * dst.at<uchar>(i, j);
-            }
-        }
-}
 
 RetroFilter::RetroFilter(const Parameters& params) : rng_(time(0))
 {
@@ -120,4 +101,53 @@ void RetroFilter::applyToVideo(const Mat& frame, Mat& retroFrame)
     
     // Convert back to 3-channel image
     cvtColor(retroFrame, retroFrame, CV_GRAY2BGR);
+}
+
+void RetroFilter::applyToVideo_optimized(const Mat& frame,
+                                         Mat& retroFrame)
+{
+    // Convert to gray with random shift
+    TS(ConvertingToGray);
+    cv::Size shift;
+    shift.width  = 2 + (rng_.uniform(0,10) ? 0 : rng_.uniform(-1,2));
+    shift.height = 2 + (rng_.uniform(0,10) ? 0 : rng_.uniform(-1,2));
+    cv::Rect roiSrc(cv::Point(0, 0), frame.size() - shift);
+    cv::Rect roiDst(shift, frame.size() - shift);
+    retroFrame.create(frame.size(), CV_8UC1);
+    cvtColor(frame(roiSrc), retroFrame(roiDst), CV_BGRA2GRAY);
+    TE(ConvertingToGray);
+    
+    // Add intensity variation
+    TS(IntensityVariation);
+    float sign = pow(-1.f, rng_.uniform(0, 2));
+    float value = 1.f + sign * rng_.gaussian(0.2);
+    multiplier_ = 0.7 * multiplier_ + 0.3 * value;
+    multiply_NEON(retroFrame, multiplier_);
+    TE(IntensityVariation);
+    
+    Scalar meanColor = mean(retroFrame.row(retroFrame.rows / 2));
+    
+    // Add scratches
+    TS(AddingScratches);
+    int x = rng_.uniform(0,params_.scratches.cols - retroFrame.cols);
+    int y = rng_.uniform(0,params_.scratches.rows - retroFrame.rows);
+    cv::Rect roi(cv::Point(x, y), retroFrame.size());
+    if (rng_.uniform(0, 2))
+        scratchColor_.setTo(meanColor * 2.0);
+    else
+        scratchColor_.setTo(meanColor / 2.0);
+    //TODO: use NEON here as well, but it is not continuous
+    alphaBlendC1(scratchColor_, retroFrame, params_.scratches(roi));
+    TE(AddingScratches);
+    
+    // Add fuzzy border
+    TS(FuzzyBorder);
+    borderColor_.setTo(meanColor * 1.5);
+    alphaBlendC1_NEON(borderColor_, retroFrame, params_.fuzzyBorder);
+    TE(FuzzyBorder);
+    
+    // Convert back to 3-channel image
+    TS(ConvertingToBGR);
+    cvtColor(retroFrame, retroFrame, CV_GRAY2BGRA);
+    TE(ConvertingToBGR);
 }
