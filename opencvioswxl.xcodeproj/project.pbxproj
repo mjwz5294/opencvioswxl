@@ -21,6 +21,7 @@
 		3412AF521F54FD3B00AD918B /* haarcascade_mcs_eyepair_big.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3412AF4F1F54FD3B00AD918B /* haarcascade_mcs_eyepair_big.xml */; };
 		3412AF531F54FD3B00AD918B /* haarcascade_mcs_mouth.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3412AF501F54FD3B00AD918B /* haarcascade_mcs_mouth.xml */; };
 		3412AF541F54FD3B00AD918B /* lbpcascade_frontalface.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3412AF511F54FD3B00AD918B /* lbpcascade_frontalface.xml */; };
+		3412AF561F54FEDE00AD918B /* 6、教程实例跑完，总结 in Resources */ = {isa = PBXBuildFile; fileRef = 3412AF551F54FEDE00AD918B /* 6、教程实例跑完，总结 */; };
 		34C48C6C1F5269EB00000373 /* 5、从头开始，死磕一天 in Resources */ = {isa = PBXBuildFile; fileRef = 34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */; };
 		56398327C09504B68053075F /* libPods-opencvioswxl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */; };
 		AF30FC641F512655001F2425 /* videoFromCamVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF30FC631F512655001F2425 /* videoFromCamVC.mm */; };
@@ -102,6 +103,7 @@
 		3412AF4F1F54FD3B00AD918B /* haarcascade_mcs_eyepair_big.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_mcs_eyepair_big.xml; sourceTree = "<group>"; };
 		3412AF501F54FD3B00AD918B /* haarcascade_mcs_mouth.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_mcs_mouth.xml; sourceTree = "<group>"; };
 		3412AF511F54FD3B00AD918B /* lbpcascade_frontalface.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = lbpcascade_frontalface.xml; sourceTree = "<group>"; };
+		3412AF551F54FEDE00AD918B /* 6、教程实例跑完，总结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "6、教程实例跑完，总结"; sourceTree = "<group>"; };
 		34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "5、从头开始，死磕一天"; sourceTree = "<group>"; };
 		6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-opencvioswxl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF30FC621F512655001F2425 /* videoFromCamVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = videoFromCamVC.h; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				AFC54D891F4C1B3700F9A407 /* 3、脸部识别 */,
 				AF4B41A51F5070350064287B /* 4、使用opencv相机 */,
 				34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */,
+				3412AF551F54FEDE00AD918B /* 6、教程实例跑完，总结 */,
 			);
 			path = note;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3412AF561F54FEDE00AD918B /* 6、教程实例跑完，总结 in Resources */,
 				AFC54D881F4C189D00F9A407 /* meinv.jpg in Resources */,
 				AF7C16F71F4EBF7500484C3D /* haarcascade_frontalface_alt2.xml in Resources */,
 				AF4C59711F47DF93007F97F9 /* LaunchScreen.storyboard in Resources */,
