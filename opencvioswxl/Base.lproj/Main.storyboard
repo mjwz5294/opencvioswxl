@@ -505,5 +505,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vl1-nQ-MVd" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Detect Facial FeatureVC-->
+        <scene sceneID="Kk9-W7-bNs">
+            <objects>
+                <viewController storyboardIdentifier="detectFacialFeatureVC" id="oVT-wF-L8X" customClass="detectFacialFeatureVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2rA-VE-jod"/>
+                        <viewControllerLayoutGuide type="bottom" id="FvP-Q1-RMt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JAe-Pv-tji">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76G-9F-lH6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="krJ-RB-3kJ">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Start capture" id="frX-as-aVU">
+                                        <connections>
+                                            <action selector="startCaptureButtonPressed:" destination="oVT-wF-L8X" id="tiT-IF-2dc"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Stop capture" id="hO8-qx-OaL">
+                                        <connections>
+                                            <action selector="stopCaptureButtonPressed:" destination="oVT-wF-L8X" id="Lmm-F2-X5c"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="krJ-RB-3kJ" firstAttribute="trailing" secondItem="JAe-Pv-tji" secondAttribute="trailing" id="Fy1-dI-5hL"/>
+                            <constraint firstItem="krJ-RB-3kJ" firstAttribute="top" secondItem="76G-9F-lH6" secondAttribute="bottom" id="HOI-D7-fxW"/>
+                            <constraint firstItem="76G-9F-lH6" firstAttribute="leading" secondItem="JAe-Pv-tji" secondAttribute="leading" id="NfD-yN-kjs"/>
+                            <constraint firstItem="krJ-RB-3kJ" firstAttribute="leading" secondItem="JAe-Pv-tji" secondAttribute="leading" id="QyP-Cz-38h"/>
+                            <constraint firstItem="krJ-RB-3kJ" firstAttribute="bottom" secondItem="JAe-Pv-tji" secondAttribute="bottom" id="UUB-8O-8zd"/>
+                            <constraint firstItem="76G-9F-lH6" firstAttribute="trailing" secondItem="JAe-Pv-tji" secondAttribute="trailing" id="prK-yV-tYJ"/>
+                            <constraint firstItem="76G-9F-lH6" firstAttribute="top" secondItem="JAe-Pv-tji" secondAttribute="top" id="u8X-iW-lva"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="76G-9F-lH6" id="8dg-If-muF"/>
+                        <outlet property="startCaptureButton" destination="frX-as-aVU" id="occ-p9-hMO"/>
+                        <outlet property="stopCaptureButton" destination="hO8-qx-OaL" id="edB-Qj-br6"/>
+                        <outlet property="toolbar" destination="krJ-RB-3kJ" id="Tvl-pB-B97"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wPb-oY-hXA" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
 </document>

@@ -35,7 +35,8 @@
 //    NSString* vcId = @"advanceCamControlVC";
 //    NSString* vcId = @"processionVideoVC";
 //    NSString* vcId = @"savevideoVC";
-    NSString* vcId = @"neonVC";
+//    NSString* vcId = @"neonVC";
+    NSString* vcId = @"detectFacialFeatureVC";
     
     UIViewController* tmpVC = [self.storyboard instantiateViewControllerWithIdentifier:vcId];
     [self.navigationController pushViewController:tmpVC animated:YES];

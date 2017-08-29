@@ -15,6 +15,12 @@
 		3412AF421F54634500AD918B /* Processing_NEON.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3412AF3D1F54634500AD918B /* Processing_NEON.cpp */; };
 		3412AF431F54634500AD918B /* Processing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3412AF3E1F54634500AD918B /* Processing.cpp */; };
 		3412AF461F54637900AD918B /* neonVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3412AF451F54637900AD918B /* neonVC.mm */; };
+		3412AF4A1F54FC6E00AD918B /* detectFacialFeatureVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3412AF491F54FC6E00AD918B /* detectFacialFeatureVC.mm */; };
+		3412AF4D1F54FD1D00AD918B /* glasses.png in Resources */ = {isa = PBXBuildFile; fileRef = 3412AF4B1F54FD1D00AD918B /* glasses.png */; };
+		3412AF4E1F54FD1D00AD918B /* mustache.png in Resources */ = {isa = PBXBuildFile; fileRef = 3412AF4C1F54FD1D00AD918B /* mustache.png */; };
+		3412AF521F54FD3B00AD918B /* haarcascade_mcs_eyepair_big.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3412AF4F1F54FD3B00AD918B /* haarcascade_mcs_eyepair_big.xml */; };
+		3412AF531F54FD3B00AD918B /* haarcascade_mcs_mouth.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3412AF501F54FD3B00AD918B /* haarcascade_mcs_mouth.xml */; };
+		3412AF541F54FD3B00AD918B /* lbpcascade_frontalface.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3412AF511F54FD3B00AD918B /* lbpcascade_frontalface.xml */; };
 		34C48C6C1F5269EB00000373 /* 5、从头开始，死磕一天 in Resources */ = {isa = PBXBuildFile; fileRef = 34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */; };
 		56398327C09504B68053075F /* libPods-opencvioswxl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */; };
 		AF30FC641F512655001F2425 /* videoFromCamVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF30FC631F512655001F2425 /* videoFromCamVC.mm */; };
@@ -89,6 +95,13 @@
 		3412AF3F1F54634500AD918B /* Processing.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Processing.hpp; sourceTree = "<group>"; };
 		3412AF441F54637900AD918B /* neonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = neonVC.h; sourceTree = "<group>"; };
 		3412AF451F54637900AD918B /* neonVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = neonVC.mm; sourceTree = "<group>"; };
+		3412AF481F54FC6E00AD918B /* detectFacialFeatureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detectFacialFeatureVC.h; sourceTree = "<group>"; };
+		3412AF491F54FC6E00AD918B /* detectFacialFeatureVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = detectFacialFeatureVC.mm; sourceTree = "<group>"; };
+		3412AF4B1F54FD1D00AD918B /* glasses.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glasses.png; sourceTree = "<group>"; };
+		3412AF4C1F54FD1D00AD918B /* mustache.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mustache.png; sourceTree = "<group>"; };
+		3412AF4F1F54FD3B00AD918B /* haarcascade_mcs_eyepair_big.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_mcs_eyepair_big.xml; sourceTree = "<group>"; };
+		3412AF501F54FD3B00AD918B /* haarcascade_mcs_mouth.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_mcs_mouth.xml; sourceTree = "<group>"; };
+		3412AF511F54FD3B00AD918B /* lbpcascade_frontalface.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = lbpcascade_frontalface.xml; sourceTree = "<group>"; };
 		34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "5、从头开始，死磕一天"; sourceTree = "<group>"; };
 		6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-opencvioswxl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF30FC621F512655001F2425 /* videoFromCamVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = videoFromCamVC.h; sourceTree = "<group>"; };
@@ -245,8 +258,13 @@
 				AFC54D7D1F4C020A00F9A407 /* cat.jpeg */,
 				AFC54D851F4C148000F9A407 /* lena.png */,
 				AFC54D871F4C189D00F9A407 /* meinv.jpg */,
+				3412AF4B1F54FD1D00AD918B /* glasses.png */,
+				3412AF4C1F54FD1D00AD918B /* mustache.png */,
 				AF7C16F61F4EBF7500484C3D /* haarcascade_frontalface_alt2.xml */,
 				AFC54D831F4C145100F9A407 /* haarcascade_frontalface_alt.xml */,
+				3412AF4F1F54FD3B00AD918B /* haarcascade_mcs_eyepair_big.xml */,
+				3412AF501F54FD3B00AD918B /* haarcascade_mcs_mouth.xml */,
+				3412AF511F54FD3B00AD918B /* lbpcascade_frontalface.xml */,
 				AF4C59941F47E0B1007F97F9 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
@@ -328,6 +346,8 @@
 				3411B4DC1F541CFD00D32A3F /* savevideoVC.mm */,
 				3412AF441F54637900AD918B /* neonVC.h */,
 				3412AF451F54637900AD918B /* neonVC.mm */,
+				3412AF481F54FC6E00AD918B /* detectFacialFeatureVC.h */,
+				3412AF491F54FC6E00AD918B /* detectFacialFeatureVC.mm */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -473,16 +493,21 @@
 				AF4C59711F47DF93007F97F9 /* LaunchScreen.storyboard in Resources */,
 				AF937E5F1F4FE6F4002B573A /* scratches.png in Resources */,
 				AF4C596E1F47DF93007F97F9 /* Assets.xcassets in Resources */,
+				3412AF4D1F54FD1D00AD918B /* glasses.png in Resources */,
+				3412AF531F54FD3B00AD918B /* haarcascade_mcs_mouth.xml in Resources */,
 				AF4B41A61F5070350064287B /* 4、使用opencv相机 in Resources */,
 				AF7C16F51F4E687200484C3D /* texture.jpg in Resources */,
 				AFC54D7E1F4C020A00F9A407 /* cat.jpeg in Resources */,
+				3412AF4E1F54FD1D00AD918B /* mustache.png in Resources */,
 				AF937E641F4FE737002B573A /* Default.png in Resources */,
 				AFC54D861F4C148000F9A407 /* lena.png in Resources */,
 				AFC54D8A1F4C1B3700F9A407 /* 3、脸部识别 in Resources */,
+				3412AF521F54FD3B00AD918B /* haarcascade_mcs_eyepair_big.xml in Resources */,
 				AF937E5E1F4FE6F4002B573A /* fuzzyBorder.png in Resources */,
 				AF4C59971F47E39A007F97F9 /* 1、初始化项目 in Resources */,
 				AF937E651F4FE737002B573A /* Default@2x.png in Resources */,
 				AF7C16F41F4E687200484C3D /* text.png in Resources */,
+				3412AF541F54FD3B00AD918B /* lbpcascade_frontalface.xml in Resources */,
 				34C48C6C1F5269EB00000373 /* 5、从头开始，死磕一天 in Resources */,
 				AF4C59991F47E3E1007F97F9 /* 2、编译C++库 in Resources */,
 				AF937E631F4FE737002B573A /* Default-568h@2x.png in Resources */,
@@ -565,6 +590,7 @@
 			files = (
 				3412AF421F54634500AD918B /* Processing_NEON.cpp in Sources */,
 				AF30FC641F512655001F2425 /* videoFromCamVC.mm in Sources */,
+				3412AF4A1F54FC6E00AD918B /* detectFacialFeatureVC.mm in Sources */,
 				AF4C59691F47DF93007F97F9 /* ViewController.mm in Sources */,
 				AF937E691F4FE7CA002B573A /* retroVC.mm in Sources */,
 				AFF487C61F4BDDC000AC4A63 /* UIImage+fixOrientation.m in Sources */,
