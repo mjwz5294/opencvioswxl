@@ -11,7 +11,9 @@
 
 四、添加pch文件：http://www.jianshu.com/p/87fe75fc98a2
 
-sublime输入中文不能跟随的问题，顺便解决了：http://blog.csdn.net/cloud952788/article/details/39925759
+windows10下sublime输入中文不能跟随的问题，顺便解决了：http://blog.csdn.net/cloud952788/article/details/39925759
+ubuntu：https://github.com/lyfeyaj/sublime-text-imfix
+
 
 
 
