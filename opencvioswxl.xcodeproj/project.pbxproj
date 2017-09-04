@@ -23,6 +23,9 @@
 		3412AF541F54FD3B00AD918B /* lbpcascade_frontalface.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3412AF511F54FD3B00AD918B /* lbpcascade_frontalface.xml */; };
 		3412AF561F54FEDE00AD918B /* 6、教程实例跑完，总结 in Resources */ = {isa = PBXBuildFile; fileRef = 3412AF551F54FEDE00AD918B /* 6、教程实例跑完，总结 */; };
 		34C48C6C1F5269EB00000373 /* 5、从头开始，死磕一天 in Resources */ = {isa = PBXBuildFile; fileRef = 34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */; };
+		34C72F981F5D9375009AD3E1 /* 4、小结 in Resources */ = {isa = PBXBuildFile; fileRef = 34C72F961F5D9375009AD3E1 /* 4、小结 */; };
+		34C72F991F5D9375009AD3E1 /* 7、opencv的python教程总结 in Resources */ = {isa = PBXBuildFile; fileRef = 34C72F971F5D9375009AD3E1 /* 7、opencv的python教程总结 */; };
+		34C72F9C1F5D93E4009AD3E1 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C72F9B1F5D93E4009AD3E1 /* BaseViewController.m */; };
 		56398327C09504B68053075F /* libPods-opencvioswxl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */; };
 		AF30FC641F512655001F2425 /* videoFromCamVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF30FC631F512655001F2425 /* videoFromCamVC.mm */; };
 		AF4B41A61F5070350064287B /* 4、使用opencv相机 in Resources */ = {isa = PBXBuildFile; fileRef = AF4B41A51F5070350064287B /* 4、使用opencv相机 */; };
@@ -105,6 +108,10 @@
 		3412AF511F54FD3B00AD918B /* lbpcascade_frontalface.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = lbpcascade_frontalface.xml; sourceTree = "<group>"; };
 		3412AF551F54FEDE00AD918B /* 6、教程实例跑完，总结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "6、教程实例跑完，总结"; sourceTree = "<group>"; };
 		34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "5、从头开始，死磕一天"; sourceTree = "<group>"; };
+		34C72F961F5D9375009AD3E1 /* 4、小结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "4、小结"; sourceTree = "<group>"; };
+		34C72F971F5D9375009AD3E1 /* 7、opencv的python教程总结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "7、opencv的python教程总结"; sourceTree = "<group>"; };
+		34C72F9A1F5D93E4009AD3E1 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		34C72F9B1F5D93E4009AD3E1 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-opencvioswxl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF30FC621F512655001F2425 /* videoFromCamVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = videoFromCamVC.h; sourceTree = "<group>"; };
 		AF30FC631F512655001F2425 /* videoFromCamVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = videoFromCamVC.mm; sourceTree = "<group>"; };
@@ -233,6 +240,10 @@
 			children = (
 				AF4C59641F47DF93007F97F9 /* AppDelegate.h */,
 				AF4C59651F47DF93007F97F9 /* AppDelegate.m */,
+				AF4C59671F47DF93007F97F9 /* ViewController.h */,
+				AF4C59681F47DF93007F97F9 /* ViewController.mm */,
+				34C72F9A1F5D93E4009AD3E1 /* BaseViewController.h */,
+				34C72F9B1F5D93E4009AD3E1 /* BaseViewController.m */,
 				AF937E661F4FE797002B573A /* VC */,
 				AFF487BE1F4BDDC000AC4A63 /* UIImage Cat */,
 				AF6435121F493403006A8725 /* opencviosinterface */,
@@ -299,6 +310,8 @@
 				AF4B41A51F5070350064287B /* 4、使用opencv相机 */,
 				34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */,
 				3412AF551F54FEDE00AD918B /* 6、教程实例跑完，总结 */,
+				34C72F961F5D9375009AD3E1 /* 4、小结 */,
+				34C72F971F5D9375009AD3E1 /* 7、opencv的python教程总结 */,
 			);
 			path = note;
 			sourceTree = "<group>";
@@ -331,8 +344,6 @@
 		AF937E661F4FE797002B573A /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				AF4C59671F47DF93007F97F9 /* ViewController.h */,
-				AF4C59681F47DF93007F97F9 /* ViewController.mm */,
 				AF7C16EF1F4E637300484C3D /* GalleryVC.h */,
 				AF7C16F01F4E637300484C3D /* GalleryVC.mm */,
 				AF937E671F4FE7CA002B573A /* retroVC.h */,
@@ -495,6 +506,7 @@
 				AFC54D881F4C189D00F9A407 /* meinv.jpg in Resources */,
 				AF7C16F71F4EBF7500484C3D /* haarcascade_frontalface_alt2.xml in Resources */,
 				AF4C59711F47DF93007F97F9 /* LaunchScreen.storyboard in Resources */,
+				34C72F981F5D9375009AD3E1 /* 4、小结 in Resources */,
 				AF937E5F1F4FE6F4002B573A /* scratches.png in Resources */,
 				AF4C596E1F47DF93007F97F9 /* Assets.xcassets in Resources */,
 				3412AF4D1F54FD1D00AD918B /* glasses.png in Resources */,
@@ -516,6 +528,7 @@
 				AF4C59991F47E3E1007F97F9 /* 2、编译C++库 in Resources */,
 				AF937E631F4FE737002B573A /* Default-568h@2x.png in Resources */,
 				AFC54D841F4C145100F9A407 /* haarcascade_frontalface_alt.xml in Resources */,
+				34C72F991F5D9375009AD3E1 /* 7、opencv的python教程总结 in Resources */,
 				AF4C596C1F47DF93007F97F9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,6 +614,7 @@
 				AFF487C71F4BDDC000AC4A63 /* UIImageView+ContentFrame.m in Sources */,
 				AF4C59661F47DF93007F97F9 /* AppDelegate.m in Sources */,
 				AF937E6C1F5007CE002B573A /* photoFromCamVC.mm in Sources */,
+				34C72F9C1F5D93E4009AD3E1 /* BaseViewController.m in Sources */,
 				AFF487CD1F4BDE6000AC4A63 /* MTGeometry.c in Sources */,
 				3411B4DD1F541CFD00D32A3F /* savevideoVC.mm in Sources */,
 				AFF487C51F4BDDC000AC4A63 /* UIColor+HexRepresentation.m in Sources */,

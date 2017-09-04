@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 //注意顶上有几个按钮，将ubder topbar设置为no，才能看到
-@interface advanceCamControlVC : UIViewController
+@interface advanceCamControlVC : BaseViewController
 
 @end

@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 //将ubder topbar设置为no，才能看到fps
-@interface processionVideoVC : UIViewController
+@interface processionVideoVC : BaseViewController
 
 @end

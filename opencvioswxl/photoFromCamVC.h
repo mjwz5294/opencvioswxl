@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "RetroFilter.hpp"
 
-@interface photoFromCamVC : UIViewController
+@interface photoFromCamVC : BaseViewController
 
 @end

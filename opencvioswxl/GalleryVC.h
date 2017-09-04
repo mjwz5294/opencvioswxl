@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GalleryVC : UIViewController<UIImagePickerControllerDelegate,
+@interface GalleryVC : BaseViewController<UIImagePickerControllerDelegate,
 UINavigationControllerDelegate,
 UIPopoverControllerDelegate>
 {

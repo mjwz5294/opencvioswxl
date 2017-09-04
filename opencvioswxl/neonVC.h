@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface neonVC : UIViewController
+@interface neonVC : BaseViewController
 
 @end

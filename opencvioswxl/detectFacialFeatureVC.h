@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface detectFacialFeatureVC : UIViewController
+@interface detectFacialFeatureVC : BaseViewController
 
 @end

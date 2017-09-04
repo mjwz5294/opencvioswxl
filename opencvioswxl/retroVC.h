@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RetroFilter.hpp"
 
-@interface retroVC : UIViewController<UIImagePickerControllerDelegate,
+@interface retroVC : BaseViewController<UIImagePickerControllerDelegate,
 UINavigationControllerDelegate,
 UIPopoverControllerDelegate>
 {

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface videoFromCamVC : UIViewController
+@interface videoFromCamVC : BaseViewController
 
 @end
