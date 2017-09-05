@@ -7,7 +7,7 @@
 //
 
 #import "ShowImgVC.h"
-#import "OpencvImgHelper.h"
+#import <opencv2/imgcodecs/ios.h>
 
 @interface ShowImgVC ()<UITableViewDelegate,UITableViewDataSource>{
     NSArray* editArr_;
@@ -48,8 +48,10 @@
 }
 
 -(void)showGrayImg{
-    cv::Mat matImg = [OpencvImgHelper cvMatFromUIImage:[UIImage imageNamed:sourceImgName_] readType:0];
-    [_resultImg setImage:[OpencvImgHelper UIImageFromCVMat:matImg]];
+    cv::Mat matImg;
+    UIImageToMat([UIImage imageNamed:sourceImgName_],matImg);
+    cv::cvtColor(matImg,matImg,CV_BGR2GRAY);
+    [_resultImg setImage:MatToUIImage(matImg)];
     
 }
 

@@ -53,7 +53,6 @@
 		AF4C59871F47DF93007F97F9 /* opencvioswxlUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C59861F47DF93007F97F9 /* opencvioswxlUITests.m */; };
 		AF4C59971F47E39A007F97F9 /* 1、初始化项目 in Resources */ = {isa = PBXBuildFile; fileRef = AF4C59961F47E39A007F97F9 /* 1、初始化项目 */; };
 		AF4C59991F47E3E1007F97F9 /* 2、编译C++库 in Resources */ = {isa = PBXBuildFile; fileRef = AF4C59981F47E3E1007F97F9 /* 2、编译C++库 */; };
-		AF6435151F493459006A8725 /* opencviosinterface.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF6435141F493459006A8725 /* opencviosinterface.mm */; };
 		AF7C16EE1F4E629A00484C3D /* PostcardPrinter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF7C16EC1F4E629A00484C3D /* PostcardPrinter.cpp */; };
 		AF7C16F11F4E637300484C3D /* GalleryVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF7C16F01F4E637300484C3D /* GalleryVC.mm */; };
 		AF937E5B1F4FE6AD002B573A /* RetroFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF937E591F4FE6AD002B573A /* RetroFilter.cpp */; };
@@ -156,8 +155,6 @@
 		AF4C59941F47E0B1007F97F9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		AF4C59961F47E39A007F97F9 /* 1、初始化项目 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "1、初始化项目"; sourceTree = "<group>"; };
 		AF4C59981F47E3E1007F97F9 /* 2、编译C++库 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2、编译C++库"; sourceTree = "<group>"; };
-		AF6435131F493459006A8725 /* opencviosinterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opencviosinterface.h; sourceTree = "<group>"; };
-		AF6435141F493459006A8725 /* opencviosinterface.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = opencviosinterface.mm; sourceTree = "<group>"; };
 		AF7C16EC1F4E629A00484C3D /* PostcardPrinter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PostcardPrinter.cpp; sourceTree = "<group>"; };
 		AF7C16ED1F4E629A00484C3D /* PostcardPrinter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PostcardPrinter.hpp; sourceTree = "<group>"; };
 		AF7C16EF1F4E637300484C3D /* GalleryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleryVC.h; sourceTree = "<group>"; };
@@ -361,8 +358,6 @@
 		AF6435121F493403006A8725 /* opencviosinterface */ = {
 			isa = PBXGroup;
 			children = (
-				AF6435131F493459006A8725 /* opencviosinterface.h */,
-				AF6435141F493459006A8725 /* opencviosinterface.mm */,
 				AF7C16EC1F4E629A00484C3D /* PostcardPrinter.cpp */,
 				AF7C16ED1F4E629A00484C3D /* PostcardPrinter.hpp */,
 				AF937E591F4FE6AD002B573A /* RetroFilter.cpp */,
@@ -672,7 +667,6 @@
 				3412AF411F54634500AD918B /* Processing_Accelerate.cpp in Sources */,
 				3412AF461F54637900AD918B /* neonVC.mm in Sources */,
 				341ADB271F5E3CB70055B1C5 /* OpencvImgHelper.mm in Sources */,
-				AF6435151F493459006A8725 /* opencviosinterface.mm in Sources */,
 				AF4C59631F47DF93007F97F9 /* main.m in Sources */,
 				AF7C16F11F4E637300484C3D /* GalleryVC.mm in Sources */,
 			);

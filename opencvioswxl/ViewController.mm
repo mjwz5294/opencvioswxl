@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "opencviosinterface.h"
 #import <opencv2/imgcodecs/ios.h>
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>{

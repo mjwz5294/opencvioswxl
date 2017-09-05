@@ -10,10 +10,4 @@
 
 @interface OpencvImgHelper : NSObject
 
-+ (cv::Mat)cvMatFromUIImage:(UIImage *)image;
-
-+ (cv::Mat)cvMatFromUIImage:(UIImage *)image readType:(NSInteger)type;
-
-+ (UIImage *)UIImageFromCVMat:(cv::Mat)cvMat;
-
 @end

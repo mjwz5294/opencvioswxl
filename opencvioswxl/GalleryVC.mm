@@ -9,7 +9,6 @@
 #import "GalleryVC.h"
 #import "PostcardPrinter.hpp"
 #import <opencv2/imgcodecs/ios.h>
-#import "opencviosinterface.h"
 
 @interface GalleryVC ()
 
@@ -57,7 +56,8 @@
 - (UIImage*)printPostcard:(UIImage*)image;
 {
     // Convert input image to cv::Mat
-    cv::Mat cvImage = [[[opencviosinterface alloc] init] cvMatFromUIImage:image];
+    cv::Mat cvImage;
+    UIImageToMat(image, cvImage);
     
     //FIXME: workaround for stretch error
     if (cvImage.rows > cvImage.cols)
@@ -103,17 +103,16 @@
     else
     {
         resImage = [UIImage imageNamed:@"lena.png"];
-        parameters.face = [[[opencviosinterface alloc] init] cvMatFromUIImage:resImage];
+        UIImageToMat(image, parameters.face);
     }
     
     // Load other images from resources
     resImage = [UIImage imageNamed:@"texture.jpg"];
-    parameters.texture = [[[opencviosinterface alloc] init] cvMatFromUIImage:resImage];
+    UIImageToMat(image, parameters.texture);
     cvtColor(parameters.texture, parameters.texture, CV_RGBA2RGB);
     
     resImage = [UIImage imageNamed:@"text.png"];
-//    UIImageToMat(resImage, parameters.text, true);
-    parameters.text = [[[opencviosinterface alloc] init] cvMatFromUIImage:resImage];
+    UIImageToMat(resImage, parameters.text, true);
     
     // Create PostcardPrinter class
     PostcardPrinter postcardPrinter(parameters);
@@ -129,9 +128,7 @@
     postcardPrinter.print(postcard);
     TE(PostcardPrinting);
     
-    return [[[opencviosinterface alloc] init] UIImageFromCVMat:postcard];
-    
-//    return MatToUIImage(postcard);
+    return MatToUIImage(postcard);
 }
 
 - (void)imagePickerController: (UIImagePickerController*)picker
