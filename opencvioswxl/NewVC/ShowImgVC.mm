@@ -30,6 +30,7 @@
                 @{@"editName":@"showSourceImg",@"editBrief":@"显示原图片"},
                 @{@"editName":@"showGrayImg",@"editBrief":@"显示灰色图片"},
                 @{@"editName":@"roiTest",@"editBrief":@"设置感兴趣区域"},
+                @{@"editName":@"weightTest",@"editBrief":@"图像混合加权"},
                 nil];
     
     sourceImgName_ = @"lena.png";
@@ -86,6 +87,34 @@
     srcImg.copyTo(desImg);
     [_resultImg setImage:MatToUIImage(matImg)];
     
+}
+
+-(void)weightTest{
+    //【0】定义一些局部变量
+    float alphaValue = 1;
+    float betaValue = 1;
+    cv::Rect rect = cv::Rect(0, 0, 250, 150);
+    
+    //【1】读取图像 ( 两幅图片需为同样的类型和尺寸 )
+    cv::Mat srcImage2,srcImage3,dstImage;
+    UIImageToMat([UIImage imageNamed:sourceImgName_],srcImage2);
+    UIImageToMat([UIImage imageNamed:@"cat.jpeg"],srcImage3);
+    srcImage2 = srcImage2(rect);
+    srcImage3 = srcImage3(rect);
+    
+    //【2】做图像混合加权操作
+    addWeighted(srcImage2, alphaValue, srcImage3, betaValue, 0.9, dstImage);
+    [_resultImg setImage:MatToUIImage(dstImage)];
+    /*
+     void addWeighted(InputArray src1, double alpha, InputArray src2, double beta, double gamma, OutputArray dst, int dtype=-1);
+     第一个参数，InputArray类型的src1，表示需要加权的第一个数组，常常填一个Mat。
+     第二个参数，alpha，表示第一个数组的权重
+     第三个参数，src2，表示第二个数组，它需要和第一个数组拥有相同的尺寸和通道数。
+     第四个参数，beta，表示第二个数组的权重值。
+     第五个参数，dst，输出的数组，它和输入的两个数组拥有相同的尺寸和通道数。
+     第六个参数，gamma，一个加到权重总和上的标量值。看下面的式子自然会理解。
+     第七个参数，dtype，输出阵列的可选深度，有默认值-1。;当两个输入数组具有相同的深度时，这个参数设置为-1（默认值），即等同于src1.depth（）
+     */
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
