@@ -20,34 +20,13 @@
 
 @implementation ViewController
 
-- (IBAction)centerBtnTapped:(id)sender {
-    [self pushToGallery];
-    
-}
-
--(void)pushToGallery{
-    
-//    NSString* vcId = @"GalleryVC";
-//    NSString* vcId = @"retroVC";
-//    NSString* vcId = @"photoFromCamVC";
-//    NSString* vcId = @"videoFromCamVC";
-//    NSString* vcId = @"advanceCamControlVC";
-//    NSString* vcId = @"processionVideoVC";
-//    NSString* vcId = @"savevideoVC";
-//    NSString* vcId = @"neonVC";
-    NSString* vcId = @"detectFacialFeatureVC";
-    
-    UIViewController* tmpVC = [self.storyboard instantiateViewControllerWithIdentifier:vcId];
-    [self.navigationController pushViewController:tmpVC animated:YES];
-}
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.title = @"OPENCV STUDY";
     
     vcArr_ = [NSArray arrayWithObjects:
+              @{@"vcName":@"ShowImgVC",@"vcBrief":@"对图片进行基本处理，并展示"},
               @{@"vcName":@"GalleryVC",@"vcBrief":@""},
               @{@"vcName":@"retroVC",@"vcBrief":@""},
               @{@"vcName":@"photoFromCamVC",@"vcBrief":@""},

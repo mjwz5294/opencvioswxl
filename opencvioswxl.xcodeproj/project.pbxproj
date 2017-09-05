@@ -16,12 +16,26 @@
 		3412AF431F54634500AD918B /* Processing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3412AF3E1F54634500AD918B /* Processing.cpp */; };
 		3412AF461F54637900AD918B /* neonVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3412AF451F54637900AD918B /* neonVC.mm */; };
 		3412AF4A1F54FC6E00AD918B /* detectFacialFeatureVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3412AF491F54FC6E00AD918B /* detectFacialFeatureVC.mm */; };
-		3412AF4D1F54FD1D00AD918B /* glasses.png in Resources */ = {isa = PBXBuildFile; fileRef = 3412AF4B1F54FD1D00AD918B /* glasses.png */; };
-		3412AF4E1F54FD1D00AD918B /* mustache.png in Resources */ = {isa = PBXBuildFile; fileRef = 3412AF4C1F54FD1D00AD918B /* mustache.png */; };
-		3412AF521F54FD3B00AD918B /* haarcascade_mcs_eyepair_big.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3412AF4F1F54FD3B00AD918B /* haarcascade_mcs_eyepair_big.xml */; };
-		3412AF531F54FD3B00AD918B /* haarcascade_mcs_mouth.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3412AF501F54FD3B00AD918B /* haarcascade_mcs_mouth.xml */; };
-		3412AF541F54FD3B00AD918B /* lbpcascade_frontalface.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3412AF511F54FD3B00AD918B /* lbpcascade_frontalface.xml */; };
 		3412AF561F54FEDE00AD918B /* 6、教程实例跑完，总结 in Resources */ = {isa = PBXBuildFile; fileRef = 3412AF551F54FEDE00AD918B /* 6、教程实例跑完，总结 */; };
+		341ADB231F5E3C620055B1C5 /* ShowImgVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 341ADB221F5E3C620055B1C5 /* ShowImgVC.mm */; };
+		341ADB271F5E3CB70055B1C5 /* OpencvImgHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 341ADB261F5E3CB70055B1C5 /* OpencvImgHelper.mm */; };
+		341ADB351F5E40250055B1C5 /* cat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB291F5E40250055B1C5 /* cat.jpeg */; };
+		341ADB361F5E40250055B1C5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB2A1F5E40250055B1C5 /* Default-568h@2x.png */; };
+		341ADB371F5E40250055B1C5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB2B1F5E40250055B1C5 /* Default.png */; };
+		341ADB381F5E40250055B1C5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB2C1F5E40250055B1C5 /* Default@2x.png */; };
+		341ADB391F5E40250055B1C5 /* fuzzyBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB2D1F5E40250055B1C5 /* fuzzyBorder.png */; };
+		341ADB3A1F5E40250055B1C5 /* glasses.png in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB2E1F5E40250055B1C5 /* glasses.png */; };
+		341ADB3B1F5E40250055B1C5 /* lena.png in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB2F1F5E40250055B1C5 /* lena.png */; };
+		341ADB3C1F5E40250055B1C5 /* meinv.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB301F5E40250055B1C5 /* meinv.jpg */; };
+		341ADB3D1F5E40250055B1C5 /* mustache.png in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB311F5E40250055B1C5 /* mustache.png */; };
+		341ADB3E1F5E40250055B1C5 /* scratches.png in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB321F5E40250055B1C5 /* scratches.png */; };
+		341ADB3F1F5E40250055B1C5 /* text.png in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB331F5E40250055B1C5 /* text.png */; };
+		341ADB401F5E40250055B1C5 /* texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB341F5E40250055B1C5 /* texture.jpg */; };
+		341ADB461F5E40710055B1C5 /* haarcascade_frontalface_alt.xml in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB421F5E40710055B1C5 /* haarcascade_frontalface_alt.xml */; };
+		341ADB471F5E40710055B1C5 /* haarcascade_frontalface_alt2.xml in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB431F5E40710055B1C5 /* haarcascade_frontalface_alt2.xml */; };
+		341ADB481F5E40710055B1C5 /* haarcascade_mcs_eyepair_big.xml in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB441F5E40710055B1C5 /* haarcascade_mcs_eyepair_big.xml */; };
+		341ADB491F5E40710055B1C5 /* haarcascade_mcs_mouth.xml in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB451F5E40710055B1C5 /* haarcascade_mcs_mouth.xml */; };
+		341ADB4B1F5E40A00055B1C5 /* lbpcascade_frontalface.xml in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB4A1F5E40A00055B1C5 /* lbpcascade_frontalface.xml */; };
 		34C48C6C1F5269EB00000373 /* 5、从头开始，死磕一天 in Resources */ = {isa = PBXBuildFile; fileRef = 34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */; };
 		34C72F981F5D9375009AD3E1 /* 4、小结 in Resources */ = {isa = PBXBuildFile; fileRef = 34C72F961F5D9375009AD3E1 /* 4、小结 */; };
 		34C72F991F5D9375009AD3E1 /* 7、opencv的python教程总结 in Resources */ = {isa = PBXBuildFile; fileRef = 34C72F971F5D9375009AD3E1 /* 7、opencv的python教程总结 */; };
@@ -42,21 +56,9 @@
 		AF6435151F493459006A8725 /* opencviosinterface.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF6435141F493459006A8725 /* opencviosinterface.mm */; };
 		AF7C16EE1F4E629A00484C3D /* PostcardPrinter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF7C16EC1F4E629A00484C3D /* PostcardPrinter.cpp */; };
 		AF7C16F11F4E637300484C3D /* GalleryVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF7C16F01F4E637300484C3D /* GalleryVC.mm */; };
-		AF7C16F41F4E687200484C3D /* text.png in Resources */ = {isa = PBXBuildFile; fileRef = AF7C16F21F4E687200484C3D /* text.png */; };
-		AF7C16F51F4E687200484C3D /* texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF7C16F31F4E687200484C3D /* texture.jpg */; };
-		AF7C16F71F4EBF7500484C3D /* haarcascade_frontalface_alt2.xml in Resources */ = {isa = PBXBuildFile; fileRef = AF7C16F61F4EBF7500484C3D /* haarcascade_frontalface_alt2.xml */; };
 		AF937E5B1F4FE6AD002B573A /* RetroFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF937E591F4FE6AD002B573A /* RetroFilter.cpp */; };
-		AF937E5E1F4FE6F4002B573A /* fuzzyBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = AF937E5C1F4FE6F4002B573A /* fuzzyBorder.png */; };
-		AF937E5F1F4FE6F4002B573A /* scratches.png in Resources */ = {isa = PBXBuildFile; fileRef = AF937E5D1F4FE6F4002B573A /* scratches.png */; };
-		AF937E631F4FE737002B573A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF937E601F4FE737002B573A /* Default-568h@2x.png */; };
-		AF937E641F4FE737002B573A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AF937E611F4FE737002B573A /* Default.png */; };
-		AF937E651F4FE737002B573A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF937E621F4FE737002B573A /* Default@2x.png */; };
 		AF937E691F4FE7CA002B573A /* retroVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF937E681F4FE7CA002B573A /* retroVC.mm */; };
 		AF937E6C1F5007CE002B573A /* photoFromCamVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF937E6B1F5007CE002B573A /* photoFromCamVC.mm */; };
-		AFC54D7E1F4C020A00F9A407 /* cat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AFC54D7D1F4C020A00F9A407 /* cat.jpeg */; };
-		AFC54D841F4C145100F9A407 /* haarcascade_frontalface_alt.xml in Resources */ = {isa = PBXBuildFile; fileRef = AFC54D831F4C145100F9A407 /* haarcascade_frontalface_alt.xml */; };
-		AFC54D861F4C148000F9A407 /* lena.png in Resources */ = {isa = PBXBuildFile; fileRef = AFC54D851F4C148000F9A407 /* lena.png */; };
-		AFC54D881F4C189D00F9A407 /* meinv.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFC54D871F4C189D00F9A407 /* meinv.jpg */; };
 		AFC54D8A1F4C1B3700F9A407 /* 3、脸部识别 in Resources */ = {isa = PBXBuildFile; fileRef = AFC54D891F4C1B3700F9A407 /* 3、脸部识别 */; };
 		AFF487701F4BDB0600AC4A63 /* MMOpenCVHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = AFF4876F1F4BDB0600AC4A63 /* MMOpenCVHelper.mm */; };
 		AFF487C51F4BDDC000AC4A63 /* UIColor+HexRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF487C01F4BDDC000AC4A63 /* UIColor+HexRepresentation.m */; };
@@ -101,12 +103,28 @@
 		3412AF451F54637900AD918B /* neonVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = neonVC.mm; sourceTree = "<group>"; };
 		3412AF481F54FC6E00AD918B /* detectFacialFeatureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detectFacialFeatureVC.h; sourceTree = "<group>"; };
 		3412AF491F54FC6E00AD918B /* detectFacialFeatureVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = detectFacialFeatureVC.mm; sourceTree = "<group>"; };
-		3412AF4B1F54FD1D00AD918B /* glasses.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glasses.png; sourceTree = "<group>"; };
-		3412AF4C1F54FD1D00AD918B /* mustache.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mustache.png; sourceTree = "<group>"; };
-		3412AF4F1F54FD3B00AD918B /* haarcascade_mcs_eyepair_big.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_mcs_eyepair_big.xml; sourceTree = "<group>"; };
-		3412AF501F54FD3B00AD918B /* haarcascade_mcs_mouth.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_mcs_mouth.xml; sourceTree = "<group>"; };
-		3412AF511F54FD3B00AD918B /* lbpcascade_frontalface.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = lbpcascade_frontalface.xml; sourceTree = "<group>"; };
 		3412AF551F54FEDE00AD918B /* 6、教程实例跑完，总结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "6、教程实例跑完，总结"; sourceTree = "<group>"; };
+		341ADB211F5E3C620055B1C5 /* ShowImgVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowImgVC.h; sourceTree = "<group>"; };
+		341ADB221F5E3C620055B1C5 /* ShowImgVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ShowImgVC.mm; sourceTree = "<group>"; };
+		341ADB251F5E3CB70055B1C5 /* OpencvImgHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpencvImgHelper.h; sourceTree = "<group>"; };
+		341ADB261F5E3CB70055B1C5 /* OpencvImgHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpencvImgHelper.mm; sourceTree = "<group>"; };
+		341ADB291F5E40250055B1C5 /* cat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpeg; sourceTree = "<group>"; };
+		341ADB2A1F5E40250055B1C5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		341ADB2B1F5E40250055B1C5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		341ADB2C1F5E40250055B1C5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		341ADB2D1F5E40250055B1C5 /* fuzzyBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fuzzyBorder.png; sourceTree = "<group>"; };
+		341ADB2E1F5E40250055B1C5 /* glasses.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glasses.png; sourceTree = "<group>"; };
+		341ADB2F1F5E40250055B1C5 /* lena.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lena.png; sourceTree = "<group>"; };
+		341ADB301F5E40250055B1C5 /* meinv.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = meinv.jpg; sourceTree = "<group>"; };
+		341ADB311F5E40250055B1C5 /* mustache.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mustache.png; sourceTree = "<group>"; };
+		341ADB321F5E40250055B1C5 /* scratches.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scratches.png; sourceTree = "<group>"; };
+		341ADB331F5E40250055B1C5 /* text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text.png; sourceTree = "<group>"; };
+		341ADB341F5E40250055B1C5 /* texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = texture.jpg; sourceTree = "<group>"; };
+		341ADB421F5E40710055B1C5 /* haarcascade_frontalface_alt.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt.xml; sourceTree = "<group>"; };
+		341ADB431F5E40710055B1C5 /* haarcascade_frontalface_alt2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt2.xml; sourceTree = "<group>"; };
+		341ADB441F5E40710055B1C5 /* haarcascade_mcs_eyepair_big.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_mcs_eyepair_big.xml; sourceTree = "<group>"; };
+		341ADB451F5E40710055B1C5 /* haarcascade_mcs_mouth.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_mcs_mouth.xml; sourceTree = "<group>"; };
+		341ADB4A1F5E40A00055B1C5 /* lbpcascade_frontalface.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = lbpcascade_frontalface.xml; sourceTree = "<group>"; };
 		34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "5、从头开始，死磕一天"; sourceTree = "<group>"; };
 		34C72F961F5D9375009AD3E1 /* 4、小结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "4、小结"; sourceTree = "<group>"; };
 		34C72F971F5D9375009AD3E1 /* 7、opencv的python教程总结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "7、opencv的python教程总结"; sourceTree = "<group>"; };
@@ -144,24 +162,12 @@
 		AF7C16ED1F4E629A00484C3D /* PostcardPrinter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PostcardPrinter.hpp; sourceTree = "<group>"; };
 		AF7C16EF1F4E637300484C3D /* GalleryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleryVC.h; sourceTree = "<group>"; };
 		AF7C16F01F4E637300484C3D /* GalleryVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GalleryVC.mm; sourceTree = "<group>"; };
-		AF7C16F21F4E687200484C3D /* text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text.png; sourceTree = "<group>"; };
-		AF7C16F31F4E687200484C3D /* texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = texture.jpg; sourceTree = "<group>"; };
-		AF7C16F61F4EBF7500484C3D /* haarcascade_frontalface_alt2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt2.xml; sourceTree = "<group>"; };
 		AF937E591F4FE6AD002B573A /* RetroFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RetroFilter.cpp; sourceTree = "<group>"; };
 		AF937E5A1F4FE6AD002B573A /* RetroFilter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RetroFilter.hpp; sourceTree = "<group>"; };
-		AF937E5C1F4FE6F4002B573A /* fuzzyBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fuzzyBorder.png; sourceTree = "<group>"; };
-		AF937E5D1F4FE6F4002B573A /* scratches.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scratches.png; sourceTree = "<group>"; };
-		AF937E601F4FE737002B573A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		AF937E611F4FE737002B573A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		AF937E621F4FE737002B573A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		AF937E671F4FE7CA002B573A /* retroVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = retroVC.h; sourceTree = "<group>"; };
 		AF937E681F4FE7CA002B573A /* retroVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = retroVC.mm; sourceTree = "<group>"; };
 		AF937E6A1F5007CE002B573A /* photoFromCamVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = photoFromCamVC.h; sourceTree = "<group>"; };
 		AF937E6B1F5007CE002B573A /* photoFromCamVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = photoFromCamVC.mm; sourceTree = "<group>"; };
-		AFC54D7D1F4C020A00F9A407 /* cat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpeg; sourceTree = "<group>"; };
-		AFC54D831F4C145100F9A407 /* haarcascade_frontalface_alt.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt.xml; sourceTree = "<group>"; };
-		AFC54D851F4C148000F9A407 /* lena.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lena.png; sourceTree = "<group>"; };
-		AFC54D871F4C189D00F9A407 /* meinv.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = meinv.jpg; sourceTree = "<group>"; };
 		AFC54D891F4C1B3700F9A407 /* 3、脸部识别 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "3、脸部识别"; sourceTree = "<group>"; };
 		AFF4876E1F4BDB0600AC4A63 /* MMOpenCVHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMOpenCVHelper.h; sourceTree = "<group>"; };
 		AFF4876F1F4BDB0600AC4A63 /* MMOpenCVHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMOpenCVHelper.mm; sourceTree = "<group>"; };
@@ -213,6 +219,55 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		341ADB201F5E3C620055B1C5 /* NewVC */ = {
+			isa = PBXGroup;
+			children = (
+				341ADB211F5E3C620055B1C5 /* ShowImgVC.h */,
+				341ADB221F5E3C620055B1C5 /* ShowImgVC.mm */,
+			);
+			path = NewVC;
+			sourceTree = "<group>";
+		};
+		341ADB241F5E3C810055B1C5 /* OpencvHelper */ = {
+			isa = PBXGroup;
+			children = (
+				341ADB251F5E3CB70055B1C5 /* OpencvImgHelper.h */,
+				341ADB261F5E3CB70055B1C5 /* OpencvImgHelper.mm */,
+			);
+			path = OpencvHelper;
+			sourceTree = "<group>";
+		};
+		341ADB281F5E40250055B1C5 /* Imgs */ = {
+			isa = PBXGroup;
+			children = (
+				341ADB291F5E40250055B1C5 /* cat.jpeg */,
+				341ADB2A1F5E40250055B1C5 /* Default-568h@2x.png */,
+				341ADB2B1F5E40250055B1C5 /* Default.png */,
+				341ADB2C1F5E40250055B1C5 /* Default@2x.png */,
+				341ADB2D1F5E40250055B1C5 /* fuzzyBorder.png */,
+				341ADB2E1F5E40250055B1C5 /* glasses.png */,
+				341ADB2F1F5E40250055B1C5 /* lena.png */,
+				341ADB301F5E40250055B1C5 /* meinv.jpg */,
+				341ADB311F5E40250055B1C5 /* mustache.png */,
+				341ADB321F5E40250055B1C5 /* scratches.png */,
+				341ADB331F5E40250055B1C5 /* text.png */,
+				341ADB341F5E40250055B1C5 /* texture.jpg */,
+			);
+			path = Imgs;
+			sourceTree = "<group>";
+		};
+		341ADB411F5E40710055B1C5 /* haa */ = {
+			isa = PBXGroup;
+			children = (
+				341ADB421F5E40710055B1C5 /* haarcascade_frontalface_alt.xml */,
+				341ADB431F5E40710055B1C5 /* haarcascade_frontalface_alt2.xml */,
+				341ADB441F5E40710055B1C5 /* haarcascade_mcs_eyepair_big.xml */,
+				341ADB451F5E40710055B1C5 /* haarcascade_mcs_mouth.xml */,
+				341ADB4A1F5E40A00055B1C5 /* lbpcascade_frontalface.xml */,
+			);
+			path = haa;
+			sourceTree = "<group>";
+		};
 		AF4C59551F47DF93007F97F9 = {
 			isa = PBXGroup;
 			children = (
@@ -240,18 +295,20 @@
 			children = (
 				AF4C59641F47DF93007F97F9 /* AppDelegate.h */,
 				AF4C59651F47DF93007F97F9 /* AppDelegate.m */,
-				AF4C59671F47DF93007F97F9 /* ViewController.h */,
-				AF4C59681F47DF93007F97F9 /* ViewController.mm */,
 				34C72F9A1F5D93E4009AD3E1 /* BaseViewController.h */,
 				34C72F9B1F5D93E4009AD3E1 /* BaseViewController.m */,
+				AF4C59671F47DF93007F97F9 /* ViewController.h */,
+				AF4C59681F47DF93007F97F9 /* ViewController.mm */,
+				AF4C596A1F47DF93007F97F9 /* Main.storyboard */,
+				341ADB241F5E3C810055B1C5 /* OpencvHelper */,
+				341ADB201F5E3C620055B1C5 /* NewVC */,
 				AF937E661F4FE797002B573A /* VC */,
 				AFF487BE1F4BDDC000AC4A63 /* UIImage Cat */,
 				AF6435121F493403006A8725 /* opencviosinterface */,
-				AF4C596A1F47DF93007F97F9 /* Main.storyboard */,
+				AF4C59611F47DF93007F97F9 /* Supporting Files */,
 				AF4C596D1F47DF93007F97F9 /* Assets.xcassets */,
 				AF4C596F1F47DF93007F97F9 /* LaunchScreen.storyboard */,
 				AF4C59721F47DF93007F97F9 /* Info.plist */,
-				AF4C59611F47DF93007F97F9 /* Supporting Files */,
 			);
 			path = opencvioswxl;
 			sourceTree = "<group>";
@@ -259,25 +316,10 @@
 		AF4C59611F47DF93007F97F9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				341ADB411F5E40710055B1C5 /* haa */,
+				341ADB281F5E40250055B1C5 /* Imgs */,
 				AF4C59951F47E39A007F97F9 /* note */,
 				AF4C59621F47DF93007F97F9 /* main.m */,
-				AF937E601F4FE737002B573A /* Default-568h@2x.png */,
-				AF937E611F4FE737002B573A /* Default.png */,
-				AF937E621F4FE737002B573A /* Default@2x.png */,
-				AF937E5C1F4FE6F4002B573A /* fuzzyBorder.png */,
-				AF937E5D1F4FE6F4002B573A /* scratches.png */,
-				AF7C16F21F4E687200484C3D /* text.png */,
-				AF7C16F31F4E687200484C3D /* texture.jpg */,
-				AFC54D7D1F4C020A00F9A407 /* cat.jpeg */,
-				AFC54D851F4C148000F9A407 /* lena.png */,
-				AFC54D871F4C189D00F9A407 /* meinv.jpg */,
-				3412AF4B1F54FD1D00AD918B /* glasses.png */,
-				3412AF4C1F54FD1D00AD918B /* mustache.png */,
-				AF7C16F61F4EBF7500484C3D /* haarcascade_frontalface_alt2.xml */,
-				AFC54D831F4C145100F9A407 /* haarcascade_frontalface_alt.xml */,
-				3412AF4F1F54FD3B00AD918B /* haarcascade_mcs_eyepair_big.xml */,
-				3412AF501F54FD3B00AD918B /* haarcascade_mcs_mouth.xml */,
-				3412AF511F54FD3B00AD918B /* lbpcascade_frontalface.xml */,
 				AF4C59941F47E0B1007F97F9 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
@@ -503,33 +545,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				3412AF561F54FEDE00AD918B /* 6、教程实例跑完，总结 in Resources */,
-				AFC54D881F4C189D00F9A407 /* meinv.jpg in Resources */,
-				AF7C16F71F4EBF7500484C3D /* haarcascade_frontalface_alt2.xml in Resources */,
+				341ADB3F1F5E40250055B1C5 /* text.png in Resources */,
 				AF4C59711F47DF93007F97F9 /* LaunchScreen.storyboard in Resources */,
 				34C72F981F5D9375009AD3E1 /* 4、小结 in Resources */,
-				AF937E5F1F4FE6F4002B573A /* scratches.png in Resources */,
 				AF4C596E1F47DF93007F97F9 /* Assets.xcassets in Resources */,
-				3412AF4D1F54FD1D00AD918B /* glasses.png in Resources */,
-				3412AF531F54FD3B00AD918B /* haarcascade_mcs_mouth.xml in Resources */,
 				AF4B41A61F5070350064287B /* 4、使用opencv相机 in Resources */,
-				AF7C16F51F4E687200484C3D /* texture.jpg in Resources */,
-				AFC54D7E1F4C020A00F9A407 /* cat.jpeg in Resources */,
-				3412AF4E1F54FD1D00AD918B /* mustache.png in Resources */,
-				AF937E641F4FE737002B573A /* Default.png in Resources */,
-				AFC54D861F4C148000F9A407 /* lena.png in Resources */,
 				AFC54D8A1F4C1B3700F9A407 /* 3、脸部识别 in Resources */,
-				3412AF521F54FD3B00AD918B /* haarcascade_mcs_eyepair_big.xml in Resources */,
-				AF937E5E1F4FE6F4002B573A /* fuzzyBorder.png in Resources */,
+				341ADB391F5E40250055B1C5 /* fuzzyBorder.png in Resources */,
 				AF4C59971F47E39A007F97F9 /* 1、初始化项目 in Resources */,
-				AF937E651F4FE737002B573A /* Default@2x.png in Resources */,
-				AF7C16F41F4E687200484C3D /* text.png in Resources */,
-				3412AF541F54FD3B00AD918B /* lbpcascade_frontalface.xml in Resources */,
+				341ADB481F5E40710055B1C5 /* haarcascade_mcs_eyepair_big.xml in Resources */,
+				341ADB371F5E40250055B1C5 /* Default.png in Resources */,
+				341ADB3B1F5E40250055B1C5 /* lena.png in Resources */,
+				341ADB401F5E40250055B1C5 /* texture.jpg in Resources */,
+				341ADB491F5E40710055B1C5 /* haarcascade_mcs_mouth.xml in Resources */,
+				341ADB381F5E40250055B1C5 /* Default@2x.png in Resources */,
+				341ADB4B1F5E40A00055B1C5 /* lbpcascade_frontalface.xml in Resources */,
+				341ADB471F5E40710055B1C5 /* haarcascade_frontalface_alt2.xml in Resources */,
+				341ADB3C1F5E40250055B1C5 /* meinv.jpg in Resources */,
+				341ADB361F5E40250055B1C5 /* Default-568h@2x.png in Resources */,
 				34C48C6C1F5269EB00000373 /* 5、从头开始，死磕一天 in Resources */,
+				341ADB3E1F5E40250055B1C5 /* scratches.png in Resources */,
+				341ADB3D1F5E40250055B1C5 /* mustache.png in Resources */,
 				AF4C59991F47E3E1007F97F9 /* 2、编译C++库 in Resources */,
-				AF937E631F4FE737002B573A /* Default-568h@2x.png in Resources */,
-				AFC54D841F4C145100F9A407 /* haarcascade_frontalface_alt.xml in Resources */,
+				341ADB461F5E40710055B1C5 /* haarcascade_frontalface_alt.xml in Resources */,
 				34C72F991F5D9375009AD3E1 /* 7、opencv的python教程总结 in Resources */,
 				AF4C596C1F47DF93007F97F9 /* Main.storyboard in Resources */,
+				341ADB3A1F5E40250055B1C5 /* glasses.png in Resources */,
+				341ADB351F5E40250055B1C5 /* cat.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,8 +668,10 @@
 				AF937E5B1F4FE6AD002B573A /* RetroFilter.cpp in Sources */,
 				AFF487CC1F4BDE6000AC4A63 /* MMCropView.m in Sources */,
 				AFF487701F4BDB0600AC4A63 /* MMOpenCVHelper.mm in Sources */,
+				341ADB231F5E3C620055B1C5 /* ShowImgVC.mm in Sources */,
 				3412AF411F54634500AD918B /* Processing_Accelerate.cpp in Sources */,
 				3412AF461F54637900AD918B /* neonVC.mm in Sources */,
+				341ADB271F5E3CB70055B1C5 /* OpencvImgHelper.mm in Sources */,
 				AF6435151F493459006A8725 /* opencviosinterface.mm in Sources */,
 				AF4C59631F47DF93007F97F9 /* main.m in Sources */,
 				AF7C16F11F4E637300484C3D /* GalleryVC.mm in Sources */,
