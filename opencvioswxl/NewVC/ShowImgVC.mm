@@ -26,14 +26,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = @"OPENCV STUDY";
-    
     editArr_ = [NSArray arrayWithObjects:
                 @{@"editName":@"showSourceImg",@"editBrief":@"显示原图片"},
                 @{@"editName":@"showGrayImg",@"editBrief":@"显示灰色图片"},
+                @{@"editName":@"roiTest",@"editBrief":@"设置感兴趣区域"},
                 nil];
     
-    sourceImgName_ = @"cat.jpeg";
+    sourceImgName_ = @"lena.png";
     [_sourceImg setImage:[UIImage imageNamed:sourceImgName_]];
     [self showSourceImg];
 }
@@ -51,6 +50,40 @@
     cv::Mat matImg;
     UIImageToMat([UIImage imageNamed:sourceImgName_],matImg);
     cv::cvtColor(matImg,matImg,CV_BGR2GRAY);
+    [_resultImg setImage:MatToUIImage(matImg)];
+    
+    //TODO: 尝试写入图片，不成功
+    cv::imwrite("resultimg.png", matImg);
+    
+    //TODO: 尝试这种写法，不成功
+//    cv::Mat matImg = cv::imread([sourceImgName_ UTF8String],0);
+//    [_resultImg setImage:MatToUIImage(matImg)];
+    
+    
+}
+
+-(void)roiTest{
+    
+    cv::Mat matImg;
+    UIImageToMat([UIImage imageNamed:sourceImgName_],matImg);
+    
+    cv::Mat catImg;
+    UIImageToMat([UIImage imageNamed:@"cat.jpeg"],catImg);
+    
+    cv::Rect rect = cv::Rect(0, 0, 150, 150);
+    cv::Rect rect1 = cv::Rect(150, 150, 150, 150);
+    
+    cv::Mat srcImg = catImg(rect);
+    cv::Mat desImg = matImg(rect1);
+    /*
+     copyTo方法要成功，必须两图片的通道数一致。之前犯过一个错误就是:
+     1、先执行CV_BGR2GRAY，通道数由4变为1，即由bgra变味gray
+     2、然后执行CV_GRAY2BGR，通道数由1变成了3，即由gray变为bgr
+     3、结果copyTo就一只没效果
+     */
+    cv::cvtColor(srcImg,srcImg,CV_BGR2GRAY);
+    cv::cvtColor(srcImg,srcImg,CV_GRAY2BGRA);
+    srcImg.copyTo(desImg);
     [_resultImg setImage:MatToUIImage(matImg)];
     
 }
