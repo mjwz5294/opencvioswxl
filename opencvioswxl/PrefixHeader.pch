@@ -25,3 +25,29 @@
 #import <Foundation/Foundation.h>
 #import "BaseViewController.h"
 #endif
+
+
+
+
+#define WeakSelf __weak typeof(self) weakSelf = self;
+#define StrongSelf __strong typeof(self) strongSelf = self;
+
+
+#define WXLDEBUG
+#ifdef WXLDEBUG
+#define DebugLog NSLog
+#else
+#define DebugLog
+#endif
+
+
+
+
+
+
+
+
+
+
+
+

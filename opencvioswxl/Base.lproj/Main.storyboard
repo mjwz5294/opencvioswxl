@@ -162,10 +162,18 @@
                                                 <constraint firstAttribute="width" constant="100" id="BNj-ud-60Q"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTH-TO-Wqo">
+                                            <rect key="frame" x="166" y="90" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="DXh-n4-lNH" secondAttribute="trailing" constant="20" id="1ji-G6-vs0"/>
+                                        <constraint firstItem="qTH-TO-Wqo" firstAttribute="centerX" secondItem="GVZ-x4-QTI" secondAttribute="centerX" id="C0M-mc-ohv"/>
+                                        <constraint firstItem="qTH-TO-Wqo" firstAttribute="centerY" secondItem="GVZ-x4-QTI" secondAttribute="centerY" id="GVd-UH-hRb"/>
                                         <constraint firstAttribute="bottom" secondItem="YcA-Wv-ha4" secondAttribute="bottom" constant="20" id="I2G-nu-YKe"/>
                                         <constraint firstItem="YcA-Wv-ha4" firstAttribute="top" secondItem="GVZ-x4-QTI" secondAttribute="top" constant="20" id="Kj0-TQ-BSW"/>
                                         <constraint firstItem="DXh-n4-lNH" firstAttribute="top" secondItem="GVZ-x4-QTI" secondAttribute="top" constant="20" id="WZq-yk-QMw"/>
@@ -210,6 +218,7 @@
                         <outlet property="resultImg" destination="DXh-n4-lNH" id="CuT-He-zlz"/>
                         <outlet property="sourceImg" destination="YcA-Wv-ha4" id="g2m-H9-qZb"/>
                         <outlet property="tableView" destination="WGt-jt-SxO" id="d2e-jy-uYv"/>
+                        <outlet property="testLab" destination="qTH-TO-Wqo" id="Q8N-Oc-XOp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tcP-qo-MtC" userLabel="First Responder" sceneMemberID="firstResponder"/>

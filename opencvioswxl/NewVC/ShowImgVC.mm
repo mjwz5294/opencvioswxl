@@ -8,6 +8,7 @@
 
 #import "ShowImgVC.h"
 #import <opencv2/imgcodecs/ios.h>
+#import "SlidersView.h"
 
 @interface ShowImgVC ()<UITableViewDelegate,UITableViewDataSource>{
     NSArray* editArr_;
@@ -17,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIImageView *sourceImg;
 @property (weak, nonatomic) IBOutlet UIImageView *resultImg;
+@property (weak, nonatomic) IBOutlet UILabel *testLab;
 
 @end
 
@@ -32,6 +34,7 @@
                 @{@"editName":@"roiTest",@"editBrief":@"设置感兴趣区域"},
                 @{@"editName":@"weightTest",@"editBrief":@"图像混合加权"},
                 @{@"editName":@"splitAndMerge",@"editBrief":@"分离颜色通道与多通道图像混合"},
+                @{@"editName":@"contrastAndBright",@"editBrief":@"图像对比度、亮度调整"},
                 nil];
     
     sourceImgName_ = @"lena.png";
@@ -42,6 +45,21 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)contrastAndBright{
+    WeakSelf;
+    void (^contrastBlock)(CGFloat) = ^(CGFloat progress){
+        DebugLog(@"%.2f",progress);
+        [weakSelf.testLab setText:[NSString stringWithFormat:@"%.2f",progress]];
+    };
+    void (^brightBlock)(CGFloat) = ^(CGFloat progress){
+        DebugLog(@"%.2f",progress);
+    };
+    
+    [SlidersView showSlidersViewWithBlocks:@[@{@"callback":contrastBlock,@"brief":@"对比度"},
+                                             @{@"callback":brightBlock,@"brief":@"亮度"}] OtherParms:nil];
+    
 }
 
 //为了更好的观察一些图像材料的特征，有时需要对RGB三个颜色通道的分量进行分别显示和调整。通过opencv的split和merge方法可以很方便的达到目的
