@@ -36,6 +36,7 @@
                 @{@"editName":@"splitAndMerge",@"editBrief":@"分离颜色通道与多通道图像混合"},
                 @{@"editName":@"contrastAndBright",@"editBrief":@"图像对比度、亮度调整"},
                 @{@"editName":@"linearBlurTest",@"editBrief":@"线性滤波"},
+                @{@"editName":@"nolinearBlurTest",@"editBrief":@"非线性滤波"},
                 nil];
     
     sourceImgName_ = @"lena.png";
@@ -51,6 +52,48 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+/*
+    下面几个都是非线性滤波，代码很简单，重点理解原理：http://blog.csdn.net/poem_qianmo/article/details/23184547
+ */
+-(void)nolinearBlurTest{
+    WeakSelf;
+    
+    void (^medianBlurBlock)(CGFloat) = ^(CGFloat progress){
+        [weakSelf medianBlur:3+floor(progress*5)*2];//size必须大于1的奇数
+    };
+    void (^bilateralFilterBlock)(CGFloat) = ^(CGFloat progress){
+        [weakSelf bilateralFilter:1+progress*50];//size必须大于1
+    };
+    
+    [SlidersView showSlidersViewWithBlocks:@[
+                                             @{@"callback":medianBlurBlock,@"title":@"中值滤波"},
+                                             @{@"callback":bilateralFilterBlock,@"title":@"双边滤波"}
+                                             ] OtherParms:@{@"parentView":self.view}];
+}
+
+-(void)medianBlur:(CGFloat)size{
+    cv::Mat sourceImg,dstImg;
+    UIImageToMat([UIImage imageNamed:sourceImgName_],sourceImg);
+    cv::medianBlur(sourceImg, dstImg, size);
+    [_resultImg setImage:MatToUIImage(dstImg)];
+    /*
+     第三个参数，int类型的ksize，孔径的线性尺寸（aperture linear size），注意这个参数必须是大于1的奇数，比如：3，5，7，9 ...
+     */
+}
+
+-(void)bilateralFilter:(CGFloat)size{
+    cv::Mat sourceImg,dstImg;
+    UIImageToMat([UIImage imageNamed:sourceImgName_],sourceImg);
+    cv::cvtColor(sourceImg,sourceImg,CV_BGR2RGB);//之前使用原图做‘双边滤波’，报错说只能处理1通道或三通道的图像，所以我就处理成三通道
+    cv::bilateralFilter(sourceImg, dstImg, size, size*2, size/2);//处理之后图像偏蓝色，需要研究函数原理
+    [_resultImg setImage:MatToUIImage(dstImg)];
+    /*
+     第三个参数，int类型的d，表示在过滤过程中每个像素邻域的直径。如果这个值我们设其为非正数，那么OpenCV会从第五个参数sigmaSpace来计算出它来。
+     第四个参数，double类型的sigmaColor，颜色空间滤波器的sigma值。这个参数的值越大，就表明该像素邻域内有更宽广的颜色会被混合到一起，产生较大的半相等颜色区域。
+     第五个参数，double类型的sigmaSpace坐标空间中滤波器的sigma值，坐标空间的标注方差。他的数值越大，意味着越远的像素会相互影响，从而使更大的区域足够相似的颜色获取相同的颜色。当d>0，d指定了邻域大小且与sigmaSpace无关。否则，d正比于sigmaSpace。
+     */
 }
 
 /*
