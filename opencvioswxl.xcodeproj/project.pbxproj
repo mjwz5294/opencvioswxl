@@ -44,6 +44,7 @@
 		341ADB5E1F5FB0920055B1C5 /* SlidersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB5D1F5FB0920055B1C5 /* SlidersView.xib */; };
 		341ADB601F5FB7960055B1C5 /* SlidersViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB5F1F5FB7960055B1C5 /* SlidersViewCell.xib */; };
 		341ADB641F5FBB290055B1C5 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 341ADB631F5FBB290055B1C5 /* Common.m */; };
+		341ADB671F5FD9B10055B1C5 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 341ADB661F5FD9B10055B1C5 /* BaseView.m */; };
 		34C48C6C1F5269EB00000373 /* 5、从头开始，死磕一天 in Resources */ = {isa = PBXBuildFile; fileRef = 34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */; };
 		34C72F981F5D9375009AD3E1 /* 4、小结 in Resources */ = {isa = PBXBuildFile; fileRef = 34C72F961F5D9375009AD3E1 /* 4、小结 */; };
 		34C72F991F5D9375009AD3E1 /* 7、opencv的python教程总结 in Resources */ = {isa = PBXBuildFile; fileRef = 34C72F971F5D9375009AD3E1 /* 7、opencv的python教程总结 */; };
@@ -144,6 +145,8 @@
 		341ADB5F1F5FB7960055B1C5 /* SlidersViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlidersViewCell.xib; sourceTree = "<group>"; };
 		341ADB621F5FBB290055B1C5 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		341ADB631F5FBB290055B1C5 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		341ADB651F5FD9B10055B1C5 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
+		341ADB661F5FD9B10055B1C5 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
 		34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "5、从头开始，死磕一天"; sourceTree = "<group>"; };
 		34C72F961F5D9375009AD3E1 /* 4、小结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "4、小结"; sourceTree = "<group>"; };
 		34C72F971F5D9375009AD3E1 /* 7、opencv的python教程总结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "7、opencv的python教程总结"; sourceTree = "<group>"; };
@@ -301,6 +304,8 @@
 				341ADB551F5F9B7D0055B1C5 /* ViewController.mm */,
 				341ADB511F5F9B580055B1C5 /* BaseViewController.h */,
 				341ADB521F5F9B580055B1C5 /* BaseViewController.m */,
+				341ADB651F5FD9B10055B1C5 /* BaseView.h */,
+				341ADB661F5FD9B10055B1C5 /* BaseView.m */,
 				341ADB571F5F9BAF0055B1C5 /* BaseTableViewCell.h */,
 				341ADB581F5F9BAF0055B1C5 /* BaseTableViewCell.m */,
 			);
@@ -721,6 +726,7 @@
 				341ADB641F5FBB290055B1C5 /* Common.m in Sources */,
 				3412AF411F54634500AD918B /* Processing_Accelerate.cpp in Sources */,
 				3412AF461F54637900AD918B /* neonVC.mm in Sources */,
+				341ADB671F5FD9B10055B1C5 /* BaseView.m in Sources */,
 				341ADB271F5E3CB70055B1C5 /* OpencvImgHelper.mm in Sources */,
 				341ADB4F1F5F87870055B1C5 /* SlidersView.m in Sources */,
 				AF4C59631F47DF93007F97F9 /* main.m in Sources */,

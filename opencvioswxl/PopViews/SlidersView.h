@@ -6,9 +6,9 @@
 //  Copyright © 2017年 mjwz5294. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseView.h"
 
-@interface SlidersView : UIView
+@interface SlidersView : BaseView
 
 +(void)showSlidersViewWithBlocks:(NSArray*)blockArr OtherParms:(NSDictionary*)parms;
 

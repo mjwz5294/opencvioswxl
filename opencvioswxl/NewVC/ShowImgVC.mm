@@ -54,18 +54,45 @@
 
 -(void)contrastAndBright{
     WeakSelf;
+    
+    __block CGFloat tmpcon = 0;
+    __block CGFloat tmpbri = 0;
     void (^contrastBlock)(CGFloat) = ^(CGFloat progress){
-        DebugLog(@"%.2f",progress);
-        [weakSelf.testLab setText:[NSString stringWithFormat:@"%.2f",progress]];
+        tmpcon = progress;
+        [weakSelf contrastAndBrightWithContrast:tmpcon withBright:tmpbri];
     };
     void (^brightBlock)(CGFloat) = ^(CGFloat progress){
-        DebugLog(@"%.2f",progress);
-        [weakSelf.testLab setText:[NSString stringWithFormat:@"%.2f",progress]];
+        tmpbri = progress;
+        [weakSelf contrastAndBrightWithContrast:tmpcon withBright:tmpbri];
     };
     
-    [SlidersView showSlidersViewWithBlocks:@[@{@"callback":contrastBlock,@"title":@"对比度"},
-                                             @{@"callback":brightBlock,@"title":@"亮度"}]
-                                OtherParms:@{@"parentView":self.view}];
+    [SlidersView showSlidersViewWithBlocks:@[
+  @{@"callback":contrastBlock,@"title":@"对比度"},
+  @{@"callback":brightBlock,@"title":@"亮度"}
+  ] OtherParms:@{@"parentView":self.view}];
+    
+}
+
+-(void)contrastAndBrightWithContrast:(CGFloat)contrast withBright:(CGFloat)bright{
+    DebugLog(@"contrast:%f",contrast);
+    DebugLog(@"bright:%f",bright);
+    
+    cv::Mat sourceImg,dstImg;
+    UIImageToMat([UIImage imageNamed:sourceImgName_],sourceImg);
+    dstImg= cv::Mat::zeros( sourceImg.size(), sourceImg.type());
+    //三个for循环，执行运算 dstImg(i,j) =a*sourceImg(i,j) + b
+    for(int y = 0; y < sourceImg.rows; y++ )
+    {
+        for(int x = 0; x < sourceImg.cols; x++ )
+        {
+            for(int c = 0; c < 3; c++ )
+            {
+                dstImg.at<cv::Vec3b>(y,x)[c]= cv::saturate_cast<uchar>( (contrast)*(sourceImg.at<cv::Vec3b>(y,x)[c] ) + bright);
+            }
+        }
+    }
+    
+    [_resultImg setImage:MatToUIImage(dstImg)];
     
 }
 
