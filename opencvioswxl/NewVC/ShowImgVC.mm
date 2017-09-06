@@ -42,6 +42,11 @@
     [self showSourceImg];
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -55,10 +60,12 @@
     };
     void (^brightBlock)(CGFloat) = ^(CGFloat progress){
         DebugLog(@"%.2f",progress);
+        [weakSelf.testLab setText:[NSString stringWithFormat:@"%.2f",progress]];
     };
     
-    [SlidersView showSlidersViewWithBlocks:@[@{@"callback":contrastBlock,@"brief":@"对比度"},
-                                             @{@"callback":brightBlock,@"brief":@"亮度"}] OtherParms:nil];
+    [SlidersView showSlidersViewWithBlocks:@[@{@"callback":contrastBlock,@"title":@"对比度"},
+                                             @{@"callback":brightBlock,@"title":@"亮度"}]
+                                OtherParms:@{@"parentView":self.view}];
     
 }
 

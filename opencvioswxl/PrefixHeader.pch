@@ -24,21 +24,27 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "BaseViewController.h"
+#import "Common.h"
 #endif
 
 
 
 
-#define WeakSelf __weak typeof(self) weakSelf = self;
-#define StrongSelf __strong typeof(self) strongSelf = self;
+#define WeakSelf        __weak typeof(self) weakSelf = self;
+#define StrongSelf      __strong typeof(self) strongSelf = self;
 
 
 #define WXLDEBUG
 #ifdef WXLDEBUG
-#define DebugLog NSLog
+#define DebugLog        NSLog
 #else
 #define DebugLog
 #endif
+
+
+//UI
+#define screenWidth     [[UIScreen mainScreen] bounds].size.width
+#define screenHeight    [[UIScreen mainScreen] bounds].size.height
 
 
 

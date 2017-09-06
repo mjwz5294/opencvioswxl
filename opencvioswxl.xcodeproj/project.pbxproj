@@ -37,16 +37,21 @@
 		341ADB491F5E40710055B1C5 /* haarcascade_mcs_mouth.xml in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB451F5E40710055B1C5 /* haarcascade_mcs_mouth.xml */; };
 		341ADB4B1F5E40A00055B1C5 /* lbpcascade_frontalface.xml in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB4A1F5E40A00055B1C5 /* lbpcascade_frontalface.xml */; };
 		341ADB4F1F5F87870055B1C5 /* SlidersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 341ADB4E1F5F87870055B1C5 /* SlidersView.m */; };
+		341ADB531F5F9B580055B1C5 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 341ADB521F5F9B580055B1C5 /* BaseViewController.m */; };
+		341ADB561F5F9B7D0055B1C5 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 341ADB551F5F9B7D0055B1C5 /* ViewController.mm */; };
+		341ADB591F5F9BAF0055B1C5 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 341ADB581F5F9BAF0055B1C5 /* BaseTableViewCell.m */; };
+		341ADB5C1F5F9BDD0055B1C5 /* SlidersViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 341ADB5B1F5F9BDD0055B1C5 /* SlidersViewCell.m */; };
+		341ADB5E1F5FB0920055B1C5 /* SlidersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB5D1F5FB0920055B1C5 /* SlidersView.xib */; };
+		341ADB601F5FB7960055B1C5 /* SlidersViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB5F1F5FB7960055B1C5 /* SlidersViewCell.xib */; };
+		341ADB641F5FBB290055B1C5 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 341ADB631F5FBB290055B1C5 /* Common.m */; };
 		34C48C6C1F5269EB00000373 /* 5、从头开始，死磕一天 in Resources */ = {isa = PBXBuildFile; fileRef = 34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */; };
 		34C72F981F5D9375009AD3E1 /* 4、小结 in Resources */ = {isa = PBXBuildFile; fileRef = 34C72F961F5D9375009AD3E1 /* 4、小结 */; };
 		34C72F991F5D9375009AD3E1 /* 7、opencv的python教程总结 in Resources */ = {isa = PBXBuildFile; fileRef = 34C72F971F5D9375009AD3E1 /* 7、opencv的python教程总结 */; };
-		34C72F9C1F5D93E4009AD3E1 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C72F9B1F5D93E4009AD3E1 /* BaseViewController.m */; };
 		56398327C09504B68053075F /* libPods-opencvioswxl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */; };
 		AF30FC641F512655001F2425 /* videoFromCamVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF30FC631F512655001F2425 /* videoFromCamVC.mm */; };
 		AF4B41A61F5070350064287B /* 4、使用opencv相机 in Resources */ = {isa = PBXBuildFile; fileRef = AF4B41A51F5070350064287B /* 4、使用opencv相机 */; };
 		AF4C59631F47DF93007F97F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C59621F47DF93007F97F9 /* main.m */; };
 		AF4C59661F47DF93007F97F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C59651F47DF93007F97F9 /* AppDelegate.m */; };
-		AF4C59691F47DF93007F97F9 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF4C59681F47DF93007F97F9 /* ViewController.mm */; };
 		AF4C596C1F47DF93007F97F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF4C596A1F47DF93007F97F9 /* Main.storyboard */; };
 		AF4C596E1F47DF93007F97F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF4C596D1F47DF93007F97F9 /* Assets.xcassets */; };
 		AF4C59711F47DF93007F97F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF4C596F1F47DF93007F97F9 /* LaunchScreen.storyboard */; };
@@ -127,11 +132,21 @@
 		341ADB4A1F5E40A00055B1C5 /* lbpcascade_frontalface.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = lbpcascade_frontalface.xml; sourceTree = "<group>"; };
 		341ADB4D1F5F87870055B1C5 /* SlidersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlidersView.h; sourceTree = "<group>"; };
 		341ADB4E1F5F87870055B1C5 /* SlidersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlidersView.m; sourceTree = "<group>"; };
+		341ADB511F5F9B580055B1C5 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		341ADB521F5F9B580055B1C5 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		341ADB541F5F9B7D0055B1C5 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		341ADB551F5F9B7D0055B1C5 /* ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
+		341ADB571F5F9BAF0055B1C5 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
+		341ADB581F5F9BAF0055B1C5 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
+		341ADB5A1F5F9BDD0055B1C5 /* SlidersViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlidersViewCell.h; sourceTree = "<group>"; };
+		341ADB5B1F5F9BDD0055B1C5 /* SlidersViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlidersViewCell.m; sourceTree = "<group>"; };
+		341ADB5D1F5FB0920055B1C5 /* SlidersView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlidersView.xib; sourceTree = "<group>"; };
+		341ADB5F1F5FB7960055B1C5 /* SlidersViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlidersViewCell.xib; sourceTree = "<group>"; };
+		341ADB621F5FBB290055B1C5 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		341ADB631F5FBB290055B1C5 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 		34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "5、从头开始，死磕一天"; sourceTree = "<group>"; };
 		34C72F961F5D9375009AD3E1 /* 4、小结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "4、小结"; sourceTree = "<group>"; };
 		34C72F971F5D9375009AD3E1 /* 7、opencv的python教程总结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "7、opencv的python教程总结"; sourceTree = "<group>"; };
-		34C72F9A1F5D93E4009AD3E1 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
-		34C72F9B1F5D93E4009AD3E1 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-opencvioswxl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF30FC621F512655001F2425 /* videoFromCamVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = videoFromCamVC.h; sourceTree = "<group>"; };
 		AF30FC631F512655001F2425 /* videoFromCamVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = videoFromCamVC.mm; sourceTree = "<group>"; };
@@ -143,8 +158,6 @@
 		AF4C59621F47DF93007F97F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AF4C59641F47DF93007F97F9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AF4C59651F47DF93007F97F9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AF4C59671F47DF93007F97F9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AF4C59681F47DF93007F97F9 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		AF4C596B1F47DF93007F97F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF4C596D1F47DF93007F97F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF4C59701F47DF93007F97F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -273,8 +286,34 @@
 			children = (
 				341ADB4D1F5F87870055B1C5 /* SlidersView.h */,
 				341ADB4E1F5F87870055B1C5 /* SlidersView.m */,
+				341ADB5D1F5FB0920055B1C5 /* SlidersView.xib */,
+				341ADB5A1F5F9BDD0055B1C5 /* SlidersViewCell.h */,
+				341ADB5B1F5F9BDD0055B1C5 /* SlidersViewCell.m */,
+				341ADB5F1F5FB7960055B1C5 /* SlidersViewCell.xib */,
 			);
 			path = PopViews;
+			sourceTree = "<group>";
+		};
+		341ADB501F5F9B580055B1C5 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				341ADB541F5F9B7D0055B1C5 /* ViewController.h */,
+				341ADB551F5F9B7D0055B1C5 /* ViewController.mm */,
+				341ADB511F5F9B580055B1C5 /* BaseViewController.h */,
+				341ADB521F5F9B580055B1C5 /* BaseViewController.m */,
+				341ADB571F5F9BAF0055B1C5 /* BaseTableViewCell.h */,
+				341ADB581F5F9BAF0055B1C5 /* BaseTableViewCell.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		341ADB611F5FBB290055B1C5 /* categorys */ = {
+			isa = PBXGroup;
+			children = (
+				341ADB621F5FBB290055B1C5 /* Common.h */,
+				341ADB631F5FBB290055B1C5 /* Common.m */,
+			);
+			path = categorys;
 			sourceTree = "<group>";
 		};
 		AF4C59551F47DF93007F97F9 = {
@@ -304,14 +343,12 @@
 			children = (
 				AF4C59641F47DF93007F97F9 /* AppDelegate.h */,
 				AF4C59651F47DF93007F97F9 /* AppDelegate.m */,
-				34C72F9A1F5D93E4009AD3E1 /* BaseViewController.h */,
-				34C72F9B1F5D93E4009AD3E1 /* BaseViewController.m */,
-				AF4C59671F47DF93007F97F9 /* ViewController.h */,
-				AF4C59681F47DF93007F97F9 /* ViewController.mm */,
 				AF4C596A1F47DF93007F97F9 /* Main.storyboard */,
-				341ADB4C1F5F86D00055B1C5 /* PopViews */,
-				341ADB241F5E3C810055B1C5 /* OpencvHelper */,
+				341ADB501F5F9B580055B1C5 /* Base */,
 				341ADB201F5E3C620055B1C5 /* NewVC */,
+				341ADB4C1F5F86D00055B1C5 /* PopViews */,
+				341ADB611F5FBB290055B1C5 /* categorys */,
+				341ADB241F5E3C810055B1C5 /* OpencvHelper */,
 				AF937E661F4FE797002B573A /* VC */,
 				AFF487BE1F4BDDC000AC4A63 /* UIImage Cat */,
 				AF6435121F493403006A8725 /* opencviosinterface */,
@@ -568,6 +605,7 @@
 				341ADB491F5E40710055B1C5 /* haarcascade_mcs_mouth.xml in Resources */,
 				341ADB381F5E40250055B1C5 /* Default@2x.png in Resources */,
 				341ADB4B1F5E40A00055B1C5 /* lbpcascade_frontalface.xml in Resources */,
+				341ADB5E1F5FB0920055B1C5 /* SlidersView.xib in Resources */,
 				341ADB471F5E40710055B1C5 /* haarcascade_frontalface_alt2.xml in Resources */,
 				341ADB3C1F5E40250055B1C5 /* meinv.jpg in Resources */,
 				341ADB361F5E40250055B1C5 /* Default-568h@2x.png in Resources */,
@@ -580,6 +618,7 @@
 				AF4C596C1F47DF93007F97F9 /* Main.storyboard in Resources */,
 				341ADB3A1F5E40250055B1C5 /* glasses.png in Resources */,
 				341ADB351F5E40250055B1C5 /* cat.jpeg in Resources */,
+				341ADB601F5FB7960055B1C5 /* SlidersViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,13 +697,13 @@
 				3412AF421F54634500AD918B /* Processing_NEON.cpp in Sources */,
 				AF30FC641F512655001F2425 /* videoFromCamVC.mm in Sources */,
 				3412AF4A1F54FC6E00AD918B /* detectFacialFeatureVC.mm in Sources */,
-				AF4C59691F47DF93007F97F9 /* ViewController.mm in Sources */,
 				AF937E691F4FE7CA002B573A /* retroVC.mm in Sources */,
+				341ADB561F5F9B7D0055B1C5 /* ViewController.mm in Sources */,
+				341ADB531F5F9B580055B1C5 /* BaseViewController.m in Sources */,
 				AFF487C61F4BDDC000AC4A63 /* UIImage+fixOrientation.m in Sources */,
 				AFF487C71F4BDDC000AC4A63 /* UIImageView+ContentFrame.m in Sources */,
 				AF4C59661F47DF93007F97F9 /* AppDelegate.m in Sources */,
 				AF937E6C1F5007CE002B573A /* photoFromCamVC.mm in Sources */,
-				34C72F9C1F5D93E4009AD3E1 /* BaseViewController.m in Sources */,
 				AFF487CD1F4BDE6000AC4A63 /* MTGeometry.c in Sources */,
 				3411B4DD1F541CFD00D32A3F /* savevideoVC.mm in Sources */,
 				AFF487C51F4BDDC000AC4A63 /* UIColor+HexRepresentation.m in Sources */,
@@ -674,9 +713,12 @@
 				AF7C16EE1F4E629A00484C3D /* PostcardPrinter.cpp in Sources */,
 				3411B4CF1F5407A500D32A3F /* advanceCamControlVC.mm in Sources */,
 				AF937E5B1F4FE6AD002B573A /* RetroFilter.cpp in Sources */,
+				341ADB5C1F5F9BDD0055B1C5 /* SlidersViewCell.m in Sources */,
+				341ADB591F5F9BAF0055B1C5 /* BaseTableViewCell.m in Sources */,
 				AFF487CC1F4BDE6000AC4A63 /* MMCropView.m in Sources */,
 				AFF487701F4BDB0600AC4A63 /* MMOpenCVHelper.mm in Sources */,
 				341ADB231F5E3C620055B1C5 /* ShowImgVC.mm in Sources */,
+				341ADB641F5FBB290055B1C5 /* Common.m in Sources */,
 				3412AF411F54634500AD918B /* Processing_Accelerate.cpp in Sources */,
 				3412AF461F54637900AD918B /* neonVC.mm in Sources */,
 				341ADB271F5E3CB70055B1C5 /* OpencvImgHelper.mm in Sources */,
