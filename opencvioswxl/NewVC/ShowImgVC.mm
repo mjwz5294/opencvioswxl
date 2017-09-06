@@ -29,14 +29,14 @@
     // Do any additional setup after loading the view.
     
     editArr_ = [NSArray arrayWithObjects:
+                @{@"editName":@"nolinearBlurTest",@"editBrief":@"非线性滤波"},
+                @{@"editName":@"linearBlurTest",@"editBrief":@"线性滤波"},
+                @{@"editName":@"contrastAndBright",@"editBrief":@"图像对比度、亮度调整"},
+                @{@"editName":@"splitAndMerge",@"editBrief":@"分离颜色通道与多通道图像混合"},
+                @{@"editName":@"weightTest",@"editBrief":@"图像混合加权"},
+                @{@"editName":@"roiTest",@"editBrief":@"设置感兴趣区域"},
                 @{@"editName":@"showSourceImg",@"editBrief":@"显示原图片"},
                 @{@"editName":@"showGrayImg",@"editBrief":@"显示灰色图片"},
-                @{@"editName":@"roiTest",@"editBrief":@"设置感兴趣区域"},
-                @{@"editName":@"weightTest",@"editBrief":@"图像混合加权"},
-                @{@"editName":@"splitAndMerge",@"editBrief":@"分离颜色通道与多通道图像混合"},
-                @{@"editName":@"contrastAndBright",@"editBrief":@"图像对比度、亮度调整"},
-                @{@"editName":@"linearBlurTest",@"editBrief":@"线性滤波"},
-                @{@"editName":@"nolinearBlurTest",@"editBrief":@"非线性滤波"},
                 nil];
     
     sourceImgName_ = @"lena.png";

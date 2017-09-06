@@ -45,9 +45,10 @@
 		341ADB601F5FB7960055B1C5 /* SlidersViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB5F1F5FB7960055B1C5 /* SlidersViewCell.xib */; };
 		341ADB641F5FBB290055B1C5 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 341ADB631F5FBB290055B1C5 /* Common.m */; };
 		341ADB671F5FD9B10055B1C5 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 341ADB661F5FD9B10055B1C5 /* BaseView.m */; };
+		341ADB691F604B820055B1C5 /* 9、opencv的C++教程 in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB681F604B820055B1C5 /* 9、opencv的C++教程 */; };
 		34C48C6C1F5269EB00000373 /* 5、从头开始，死磕一天 in Resources */ = {isa = PBXBuildFile; fileRef = 34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */; };
-		34C72F981F5D9375009AD3E1 /* 4、小结 in Resources */ = {isa = PBXBuildFile; fileRef = 34C72F961F5D9375009AD3E1 /* 4、小结 */; };
-		34C72F991F5D9375009AD3E1 /* 7、opencv的python教程总结 in Resources */ = {isa = PBXBuildFile; fileRef = 34C72F971F5D9375009AD3E1 /* 7、opencv的python教程总结 */; };
+		34C72F981F5D9375009AD3E1 /* 7、小结 in Resources */ = {isa = PBXBuildFile; fileRef = 34C72F961F5D9375009AD3E1 /* 7、小结 */; };
+		34C72F991F5D9375009AD3E1 /* 8、opencv的python教程总结 in Resources */ = {isa = PBXBuildFile; fileRef = 34C72F971F5D9375009AD3E1 /* 8、opencv的python教程总结 */; };
 		56398327C09504B68053075F /* libPods-opencvioswxl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */; };
 		AF30FC641F512655001F2425 /* videoFromCamVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF30FC631F512655001F2425 /* videoFromCamVC.mm */; };
 		AF4B41A61F5070350064287B /* 4、使用opencv相机 in Resources */ = {isa = PBXBuildFile; fileRef = AF4B41A51F5070350064287B /* 4、使用opencv相机 */; };
@@ -147,9 +148,10 @@
 		341ADB631F5FBB290055B1C5 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 		341ADB651F5FD9B10055B1C5 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
 		341ADB661F5FD9B10055B1C5 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
+		341ADB681F604B820055B1C5 /* 9、opencv的C++教程 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "9、opencv的C++教程"; sourceTree = "<group>"; };
 		34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "5、从头开始，死磕一天"; sourceTree = "<group>"; };
-		34C72F961F5D9375009AD3E1 /* 4、小结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "4、小结"; sourceTree = "<group>"; };
-		34C72F971F5D9375009AD3E1 /* 7、opencv的python教程总结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "7、opencv的python教程总结"; sourceTree = "<group>"; };
+		34C72F961F5D9375009AD3E1 /* 7、小结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "7、小结"; sourceTree = "<group>"; };
+		34C72F971F5D9375009AD3E1 /* 8、opencv的python教程总结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "8、opencv的python教程总结"; sourceTree = "<group>"; };
 		6EF0E0E419CE713DC99358F8 /* libPods-opencvioswxl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-opencvioswxl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF30FC621F512655001F2425 /* videoFromCamVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = videoFromCamVC.h; sourceTree = "<group>"; };
 		AF30FC631F512655001F2425 /* videoFromCamVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = videoFromCamVC.mm; sourceTree = "<group>"; };
@@ -404,8 +406,9 @@
 				AF4B41A51F5070350064287B /* 4、使用opencv相机 */,
 				34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */,
 				3412AF551F54FEDE00AD918B /* 6、教程实例跑完，总结 */,
-				34C72F961F5D9375009AD3E1 /* 4、小结 */,
-				34C72F971F5D9375009AD3E1 /* 7、opencv的python教程总结 */,
+				34C72F961F5D9375009AD3E1 /* 7、小结 */,
+				34C72F971F5D9375009AD3E1 /* 8、opencv的python教程总结 */,
+				341ADB681F604B820055B1C5 /* 9、opencv的C++教程 */,
 			);
 			path = note;
 			sourceTree = "<group>";
@@ -597,7 +600,7 @@
 				3412AF561F54FEDE00AD918B /* 6、教程实例跑完，总结 in Resources */,
 				341ADB3F1F5E40250055B1C5 /* text.png in Resources */,
 				AF4C59711F47DF93007F97F9 /* LaunchScreen.storyboard in Resources */,
-				34C72F981F5D9375009AD3E1 /* 4、小结 in Resources */,
+				34C72F981F5D9375009AD3E1 /* 7、小结 in Resources */,
 				AF4C596E1F47DF93007F97F9 /* Assets.xcassets in Resources */,
 				AF4B41A61F5070350064287B /* 4、使用opencv相机 in Resources */,
 				AFC54D8A1F4C1B3700F9A407 /* 3、脸部识别 in Resources */,
@@ -619,8 +622,9 @@
 				341ADB3D1F5E40250055B1C5 /* mustache.png in Resources */,
 				AF4C59991F47E3E1007F97F9 /* 2、编译C++库 in Resources */,
 				341ADB461F5E40710055B1C5 /* haarcascade_frontalface_alt.xml in Resources */,
-				34C72F991F5D9375009AD3E1 /* 7、opencv的python教程总结 in Resources */,
+				34C72F991F5D9375009AD3E1 /* 8、opencv的python教程总结 in Resources */,
 				AF4C596C1F47DF93007F97F9 /* Main.storyboard in Resources */,
+				341ADB691F604B820055B1C5 /* 9、opencv的C++教程 in Resources */,
 				341ADB3A1F5E40250055B1C5 /* glasses.png in Resources */,
 				341ADB351F5E40250055B1C5 /* cat.jpeg in Resources */,
 				341ADB601F5FB7960055B1C5 /* SlidersViewCell.xib in Resources */,
