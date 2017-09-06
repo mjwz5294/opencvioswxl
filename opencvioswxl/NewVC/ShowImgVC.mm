@@ -35,6 +35,7 @@
                 @{@"editName":@"weightTest",@"editBrief":@"图像混合加权"},
                 @{@"editName":@"splitAndMerge",@"editBrief":@"分离颜色通道与多通道图像混合"},
                 @{@"editName":@"contrastAndBright",@"editBrief":@"图像对比度、亮度调整"},
+                @{@"editName":@"linearBlurTest",@"editBrief":@"线性滤波"},
                 nil];
     
     sourceImgName_ = @"lena.png";
@@ -50,6 +51,57 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+/*
+    下面几个都是线性滤波，代码很简单，重点理解原理：http://blog.csdn.net/poem_qianmo/article/details/22745559
+ */
+-(void)linearBlurTest{
+    
+    WeakSelf;
+    
+    void (^boxFilterBlock)(CGFloat) = ^(CGFloat progress){
+        [weakSelf boxFilter:(progress+0.1)*10];//size必须大于1
+    };
+    void (^blurBlock)(CGFloat) = ^(CGFloat progress){
+        [weakSelf blur:(progress+0.1)*10];//size必须大于1
+    };
+    void (^gaussianBlock)(CGFloat) = ^(CGFloat progress){
+        [weakSelf gaussianBlur:1+floor(progress*5)*2];//size必须大于1，且为奇数
+        /*
+         ceil(x)返回不小于x的最小整数值（然后转换为double型）。
+         floor(x)返回不大于x的最大整数值。
+         round(x)返回x的四舍五入整数值。
+         */
+    };
+    
+    [SlidersView showSlidersViewWithBlocks:@[
+                                             @{@"callback":boxFilterBlock,@"title":@"方框滤波"},
+                                             @{@"callback":blurBlock,@"title":@"均值滤波"},
+                                             @{@"callback":gaussianBlock,@"title":@"高斯模糊"}
+                                             ] OtherParms:@{@"parentView":self.view}];
+    
+}
+//高斯模糊
+-(void)gaussianBlur:(CGFloat)size{
+    cv::Mat sourceImg,dstImg;
+    UIImageToMat([UIImage imageNamed:sourceImgName_],sourceImg);
+    cv::GaussianBlur(sourceImg, dstImg, cv::Size(size,size), 0,0);
+    [_resultImg setImage:MatToUIImage(dstImg)];
+}
+//均值滤波
+-(void)blur:(CGFloat)size{
+    cv::Mat sourceImg,dstImg;
+    UIImageToMat([UIImage imageNamed:sourceImgName_],sourceImg);
+    cv::blur(sourceImg, dstImg, cv::Size(size,size));
+    [_resultImg setImage:MatToUIImage(dstImg)];
+}
+//方框滤波
+-(void)boxFilter:(CGFloat)size{
+    cv::Mat sourceImg,dstImg;
+    UIImageToMat([UIImage imageNamed:sourceImgName_],sourceImg);
+    cv::boxFilter(sourceImg, dstImg, -1, cv::Size(size,size));
+    [_resultImg setImage:MatToUIImage(dstImg)];
 }
 
 -(void)contrastAndBright{
