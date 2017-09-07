@@ -31,6 +31,7 @@
     editArr_ = [NSArray arrayWithObjects:
                 @{@"editName":@"nolinearBlurTest",@"editBrief":@"非线性滤波"},
                 @{@"editName":@"linearBlurTest",@"editBrief":@"线性滤波"},
+                @{@"editName":@"findEdge",@"editBrief":@"边缘检测"},
                 @{@"editName":@"dilateAndErode",@"editBrief":@"膨胀腐蚀等基本形态学处理"},
                 @{@"editName":@"morphologyExTest",@"editBrief":@"形态学高级处理"},
                 @{@"editName":@"contrastAndBright",@"editBrief":@"图像对比度、亮度调整"},
@@ -54,6 +55,173 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//边缘检测:Canny算子,Sobel算子,Laplace算子,Scharr滤波器
+/*
+ 边缘检测的一般步骤:
+ 1）滤波：边缘检测的算法主要是基于图像强度的一阶和二阶导数，但导数通常对噪声很敏感，因此必须采用滤波器来改善与噪声有关的边缘检测器的性能。常见的滤波方法主要有高斯滤波，即采用离散化的高斯函数产生一组归一化的高斯核（具体见“高斯滤波原理及其编程离散化实现方法”一文），然后基于高斯核函数对图像灰度矩阵的每一点进行加权求和（具体程序实现见下文）。
+ 2）增强：增强边缘的基础是确定图像各点邻域强度的变化值。增强算法可以将图像灰度点邻域强度值有显著变化的点凸显出来。在具体编程实现时，可通过计算梯度幅值来确定。
+ 3）检测：经过增强的图像，往往邻域中有很多点的梯度值比较大，而在特定的应用中，这些点并不是我们要找的边缘点，所以应该采用某种方法来对这些点进行取舍。实际工程中，常用的方法是通过阈值化方法来检测。
+ */
+-(void)findEdge{
+    WeakSelf;
+    
+    void (^candy1Block)(CGFloat) = ^(CGFloat progress){
+        [weakSelf candy1:3+floor(progress*100)];//size必须大于1
+    };
+    void (^candy2Block)(CGFloat) = ^(CGFloat progress){
+        [weakSelf candy2:3+floor(progress*100)];//size必须大于1
+    };
+    void (^candy3Block)(CGFloat) = ^(CGFloat progress){
+        [weakSelf candy3:3+floor(progress*100)];//size必须大于1
+    };
+    void (^sobelBlock)(CGFloat,NSString*) = ^(CGFloat progress,NSString* titleStr){
+        [weakSelf sobel:1+floor(progress*2) withTitle:titleStr];//size必须大于1
+    };
+    void (^laplaceBlock)(CGFloat) = ^(CGFloat progress){
+        [weakSelf laplace:1+floor(progress*5)];//size必须大于1
+    };
+    void (^scharrBlock)(CGFloat,NSString*) = ^(CGFloat progress,NSString* titleStr){
+        [weakSelf scharr:3+floor(progress*10) withTitle:titleStr];//size必须大于1
+    };
+    [SlidersView showSlidersViewWithBlocks:@[
+                                             @{@"callback":candy1Block,@"title":@"Canny普通"},
+                                             @{@"callback":candy2Block,@"title":@"Canny中级"},
+                                             @{@"callback":candy3Block,@"title":@"Canny高级"},
+                                             @{@"callback":sobelBlock,@"title":@"Sobel1"},
+                                             @{@"callback":sobelBlock,@"title":@"Sobel2"},
+                                             @{@"callback":sobelBlock,@"title":@"Sobel3"},
+                                             @{@"callback":laplaceBlock,@"title":@"Laplace"},
+                                             @{@"callback":scharrBlock,@"title":@"Scharr1"},
+                                             @{@"callback":scharrBlock,@"title":@"Scharr2"},
+                                             @{@"callback":scharrBlock,@"title":@"Scharr3"}
+                                             ] OtherParms:@{@"parentView":self.view}];
+}
+
+-(void)candy1:(CGFloat)size{
+    cv::Mat sourceImg,dstImg;
+    UIImageToMat([UIImage imageNamed:sourceImgName_],sourceImg);
+    cv::Canny(sourceImg, dstImg, 2*size,size,3);
+    [_resultImg setImage:MatToUIImage(dstImg)];
+}
+
+-(void)candy2:(CGFloat)size{
+    cv::Mat sourceImg,dstImg;
+    UIImageToMat([UIImage imageNamed:sourceImgName_],sourceImg);
+    cv::cvtColor(sourceImg, sourceImg, CV_BGR2GRAY);
+    cv::blur(sourceImg, sourceImg, cv::Size(3,3));
+    cv::Canny(sourceImg, dstImg, 2*size,size,3);
+    [_resultImg setImage:MatToUIImage(dstImg)];
+}
+
+-(void)candy3:(CGFloat)size{
+    cv::Mat sourceImg,dstImg,gray,edge;
+    UIImageToMat([UIImage imageNamed:sourceImgName_],sourceImg);
+    // 【1】创建与src同类型和大小的矩阵(dst)
+    dstImg.cv::Mat::zeros( sourceImg.size(), sourceImg.type());
+    // 【2】将原图像转换为灰度图像
+    cv::cvtColor(sourceImg, gray, CV_BGR2GRAY);
+    // 【3】先用使用 3x3内核来降噪
+    cv::blur(gray, edge, cv::Size(3,3));
+    // 【4】运行Canny算子
+    cv::Canny(edge, edge, 2*size,size,3);
+    //【5】将g_dstImage内的所有元素设置为0
+    dstImg = cv::Scalar::all(0);
+    //【6】使用Canny算子输出的边缘图edge作为掩码，来将原图g_srcImage拷到目标图g_dstImage中
+    sourceImg.copyTo(dstImg,edge);
+    [_resultImg setImage:MatToUIImage(dstImg)];
+}
+
+-(void)sobel:(CGFloat)size withTitle:(NSString*)titleStr{
+    cv::Mat sourceImg,grad_x, grad_y,abs_grad_x, abs_grad_y,dst;
+    
+    //【1】载入原始图
+    UIImageToMat([UIImage imageNamed:sourceImgName_],sourceImg);
+    
+    //【2】求 X方向梯度
+    cv::Sobel( sourceImg, grad_x, CV_16S, size, 0, size*2+1, 1, 1, cv::BORDER_DEFAULT );
+    cv::convertScaleAbs( grad_x, abs_grad_x );
+    if ([titleStr isEqualToString:@"Sobel1"]) {
+        [_resultImg setImage:MatToUIImage(grad_x)];//执行cv::convertScaleAbs后，全白，不知原因
+        return;
+    }
+    
+    //【3】求Y方向梯度
+    cv::Sobel( sourceImg, grad_y, CV_16S, 0, size, size*2+1, 1, 1, cv::BORDER_DEFAULT );
+    cv::convertScaleAbs( grad_y, abs_grad_y );
+    if ([titleStr isEqualToString:@"Sobel2"]) {
+        [_resultImg setImage:MatToUIImage(grad_y)];
+        return;
+    }
+    
+    //【4】合并梯度(近似)
+    cv::addWeighted( grad_x, 0.5, grad_y, 0.5, 0, dst );
+    [_resultImg setImage:MatToUIImage(dst)];
+    
+    /*Sobel函数：
+     第四个参数，int类型dx，x 方向上的差分阶数。
+     第五个参数，int类型dy，y方向上的差分阶数。
+     第六个参数，int类型ksize，有默认值3，表示Sobel核的大小;必须取1，3，5或7。
+     */
+    
+}
+
+-(void)laplace:(CGFloat)size{
+    /*
+     第三个参数，int类型的ddept，目标图像的深度。
+     第四个参数，int类型的ksize，用于计算二阶导数的滤波器的孔径尺寸，大小必须为正奇数，且有默认值1。
+     第五个参数，double类型的scale，计算拉普拉斯值的时候可选的比例因子，有默认值1。
+     第六个参数，double类型的delta，表示在结果存入目标图（第二个参数dst）之前可选的delta值，有默认值0。
+     */
+    
+    //【0】变量的定义
+    cv::Mat sourceImg,dstImg,gray,abs_dst;
+    
+    //【1】载入原始图
+    UIImageToMat([UIImage imageNamed:sourceImgName_],sourceImg);
+    
+    //【3】使用高斯滤波消除噪声
+    GaussianBlur( sourceImg, sourceImg, cv::Size(3,3), 0, 0, cv::BORDER_DEFAULT );
+    
+    //【4】转换为灰度图
+    cvtColor( sourceImg, gray, CV_RGB2GRAY );
+    
+    //【5】使用Laplace函数,输入图像必须为灰度图
+    Laplacian( gray, dstImg, CV_16S, 1+size*2, 1, 0, cv::BORDER_DEFAULT );
+    
+    //【6】计算绝对值，并将结果转换成8位
+    convertScaleAbs( dstImg, abs_dst );
+    
+    [_resultImg setImage:MatToUIImage(abs_dst)];//这次必须执行convertScaleAbs，否则是一张白图，没搞明白
+    
+}
+
+//主要是配合Sobel算子的运算而存在的,一个万年备胎
+-(void)scharr:(CGFloat)size withTitle:(NSString*)titleStr{
+    cv::Mat sourceImg,grad_x, grad_y,abs_grad_x, abs_grad_y,dst;
+    
+    //【1】载入原始图
+    UIImageToMat([UIImage imageNamed:sourceImgName_],sourceImg);
+    
+    Scharr( sourceImg, grad_x, CV_16S, 1, 0, 1, 0, cv::BORDER_DEFAULT );
+    convertScaleAbs( grad_x, abs_grad_x );
+    if ([titleStr isEqualToString:@"scharr1"]) {
+        [_resultImg setImage:MatToUIImage(grad_x)];//执行cv::convertScaleAbs后，全白，不知原因
+        return;
+    }
+    
+    //【4】求Y方向梯度
+    Scharr( sourceImg, grad_y, CV_16S, 0, 1, 1, 0, cv::BORDER_DEFAULT );
+    convertScaleAbs( grad_y, abs_grad_y );
+    if ([titleStr isEqualToString:@"scharr2"]) {
+        [_resultImg setImage:MatToUIImage(grad_y)];//执行cv::convertScaleAbs后，全白，不知原因
+        return;
+    }
+    
+    //【5】合并梯度(近似)
+    addWeighted( grad_x, 0.5, grad_y, 0.5, 0, dst );
+    [_resultImg setImage:MatToUIImage(dst)];
 }
 
 /*形态学高级处理
