@@ -31,6 +31,7 @@
     editArr_ = [NSArray arrayWithObjects:
                 @{@"editName":@"nolinearBlurTest",@"editBrief":@"非线性滤波"},
                 @{@"editName":@"linearBlurTest",@"editBrief":@"线性滤波"},
+                @{@"editName":@"dilateAndErode",@"editBrief":@"膨胀腐蚀"},
                 @{@"editName":@"contrastAndBright",@"editBrief":@"图像对比度、亮度调整"},
                 @{@"editName":@"splitAndMerge",@"editBrief":@"分离颜色通道与多通道图像混合"},
                 @{@"editName":@"weightTest",@"editBrief":@"图像混合加权"},
@@ -52,6 +53,38 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)dilateAndErode{
+    WeakSelf;
+    
+    void (^dilateBlock)(CGFloat) = ^(CGFloat progress){
+        [weakSelf dilate:1+floor(progress*10)*2];//size必须大于1
+    };
+    void (^erodeBlock)(CGFloat) = ^(CGFloat progress){
+        [weakSelf erode:1+floor(progress*10)*2];//size必须大于1
+    };
+    
+    [SlidersView showSlidersViewWithBlocks:@[
+                                             @{@"callback":dilateBlock,@"title":@"膨胀"},
+                                             @{@"callback":erodeBlock,@"title":@"腐蚀"}
+                                             ] OtherParms:@{@"parentView":self.view}];
+}
+
+-(void)dilate:(CGFloat)size{
+    cv::Mat sourceImg,dstImg;
+    UIImageToMat([UIImage imageNamed:sourceImgName_],sourceImg);
+    cv::Mat element = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(size,size));//自定义核，关于核的设置，需要了解原理
+    cv::dilate(sourceImg, dstImg, element);
+    [_resultImg setImage:MatToUIImage(dstImg)];
+}
+
+-(void)erode:(CGFloat)size{
+    cv::Mat sourceImg,dstImg;
+    UIImageToMat([UIImage imageNamed:sourceImgName_],sourceImg);
+    cv::Mat element = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(size,size));//自定义核，关于核的设置，需要了解原理
+    cv::erode(sourceImg, dstImg, element);
+    [_resultImg setImage:MatToUIImage(dstImg)];
 }
 
 /*
