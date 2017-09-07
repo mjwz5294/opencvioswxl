@@ -10,6 +10,11 @@
 
 @implementation BaseView
 
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    
+}
+
 -(void)dealloc{
     DebugLog(@"dealloc:%@",[self class]);
 }

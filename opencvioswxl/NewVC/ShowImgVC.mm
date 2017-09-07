@@ -31,7 +31,8 @@
     editArr_ = [NSArray arrayWithObjects:
                 @{@"editName":@"nolinearBlurTest",@"editBrief":@"非线性滤波"},
                 @{@"editName":@"linearBlurTest",@"editBrief":@"线性滤波"},
-                @{@"editName":@"dilateAndErode",@"editBrief":@"膨胀腐蚀"},
+                @{@"editName":@"dilateAndErode",@"editBrief":@"膨胀腐蚀等基本形态学处理"},
+                @{@"editName":@"morphologyExTest",@"editBrief":@"形态学高级处理"},
                 @{@"editName":@"contrastAndBright",@"editBrief":@"图像对比度、亮度调整"},
                 @{@"editName":@"splitAndMerge",@"editBrief":@"分离颜色通道与多通道图像混合"},
                 @{@"editName":@"weightTest",@"editBrief":@"图像混合加权"},
@@ -55,6 +56,65 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*形态学高级处理
+ 1、开运算（Opening Operation），其实就是先腐蚀后膨胀的过程。开运算可以用来消除小物体、在纤细点处分离物体、平滑较大物体的边界的同时并不明显改变其面积
+ 2、先膨胀后腐蚀的过程称为闭运算(Closing Operation)，闭运算能够排除小型黑洞(黑色区域)
+ 3、形态学梯度（Morphological Gradient）为膨胀图与腐蚀图之差，对二值图像进行这一操作可以将团块（blob）的边缘突出出来。我们可以用形态学梯度来保留物体的边缘轮廓
+ 4、顶帽运算（Top Hat）又常常被译为”礼帽“运算。为原图像与上文刚刚介绍的“开运算“的结果图之差，顶帽运算往往用来分离比邻近点亮一些的斑块。当一幅图像具有大幅的背景的时候，而微小物品比较有规律的情况下，可以使用顶帽运算进行背景提取。
+ 5、黑帽（Black Hat）运算为”闭运算“的结果图与原图像之差，黑帽运算用来分离比邻近点暗一些的斑块
+ */
+
+-(void)morphologyExTest{
+    //这里是用了block的多参数适配方案，精简了代码，查看SlidersViewCell中的代码，即可理解
+    
+    void (^morphologyExBlock)(CGFloat,NSString*) = ^(CGFloat progress,NSString* titleStr){
+//        DebugLog(@"progress%f---testStr:%@",progress, titleStr);
+        
+        cv::Mat sourceImg,dstImg;
+        UIImageToMat([UIImage imageNamed:sourceImgName_],sourceImg);
+        
+        int dealType = cv::MORPH_ERODE;
+        if ([titleStr isEqualToString:@"腐蚀"]) {
+            dealType = cv::MORPH_ERODE;
+        }else if ([titleStr isEqualToString:@"膨胀"]) {
+            dealType = cv::MORPH_DILATE;
+        }else if ([titleStr isEqualToString:@"开运算"]) {
+            dealType = cv::MORPH_OPEN;
+        }else if ([titleStr isEqualToString:@"闭运算"]) {
+            dealType = cv::MORPH_CLOSE;
+        }else if ([titleStr isEqualToString:@"形态学梯度"]) {
+            dealType = cv::MORPH_GRADIENT;
+        }else if ([titleStr isEqualToString:@"顶帽运算"]) {
+            dealType = cv::MORPH_TOPHAT;
+        }else if ([titleStr isEqualToString:@"黑帽运算"]) {
+            dealType = cv::MORPH_BLACKHAT;
+        }else if ([titleStr isEqualToString:@"击中击不中运算"]) {//只支持CV_8UC1类型的二值图像，即灰度图
+            cv::cvtColor(sourceImg, sourceImg, CV_BGR2GRAY);
+            dealType = cv::MORPH_HITMISS;
+        }else{
+            dealType = cv::MORPH_ERODE;
+        }
+        
+        cv::Mat element = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(1+floor(progress*10)*2,1+floor(progress*10)*2));//自定义核，关于核的设置，需要了解原理
+        cv::morphologyEx(sourceImg,dstImg, dealType, element);
+        [_resultImg setImage:MatToUIImage(dstImg)];
+    };
+    
+    [SlidersView showSlidersViewWithBlocks:@[
+                                             @{@"callback":morphologyExBlock,@"title":@"腐蚀"},
+                                             @{@"callback":morphologyExBlock,@"title":@"膨胀"},
+                                             @{@"callback":morphologyExBlock,@"title":@"开运算"},
+                                             @{@"callback":morphologyExBlock,@"title":@"闭运算"},
+                                             @{@"callback":morphologyExBlock,@"title":@"击中击不中运算"},
+                                             @{@"callback":morphologyExBlock,@"title":@"形态学梯度"},//后面三个显示不出来图片，不知为啥
+                                             @{@"callback":morphologyExBlock,@"title":@"顶帽运算"},
+                                             @{@"callback":morphologyExBlock,@"title":@"黑帽运算"}
+                                             ] OtherParms:@{@"parentView":self.view}];
+}
+
+
+
+//膨胀腐蚀是基本形态学处理，形态学的高级形态，往往都是建立在腐蚀和膨胀这两个基本操作之上的
 -(void)dilateAndErode{
     WeakSelf;
     
@@ -64,7 +124,6 @@
     void (^erodeBlock)(CGFloat) = ^(CGFloat progress){
         [weakSelf erode:1+floor(progress*10)*2];//size必须大于1
     };
-    
     [SlidersView showSlidersViewWithBlocks:@[
                                              @{@"callback":dilateBlock,@"title":@"膨胀"},
                                              @{@"callback":erodeBlock,@"title":@"腐蚀"}

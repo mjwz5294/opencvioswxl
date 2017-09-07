@@ -29,7 +29,7 @@
     [_titleLab setText:@"操作对比度和亮度"];
     editArr_ = blockArr;
     
-    [self setFrame:CGRectMake(0, 0,screenWidth, screenHeight)];
+    [self setFrame:CGRectMake(0, 0,screenWidth, screenHeight-64)];
     UIView* parentview = parms[@"parentView"];
     if (parentview) {
         [parentview addSubview:self];

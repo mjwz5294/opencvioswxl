@@ -9,7 +9,18 @@
 #import "SlidersViewCell.h"
 
 @interface SlidersViewCell(){
-    void (^callback_)(CGFloat);
+    void (^callback_)(CGFloat,NSString*);
+    //
+    /*
+     1、之前一直想通过判断block结构来实现对不同结构的block调用，没成功，只能通过‘对其它参数定义协议’来实现了。
+     2、后来根据http://www.jianshu.com/p/7b7bb050c643提供的方法来实现block可变参数适配，即将callback_定义为void (^callback_)()，发现传回去的参数乱了，没办法用；
+     3、偶然尝试了一个暴力的做法，就是直接定义void (^callback_)(CGFloat,NSString*)，为之前的callback_添加一个NSString类型的回调参数，发现参数居然都能识别，只要顺序能对上就没问题。
+     4、总结：对于一个void (^callback_)(CGFloat,NSString*,NSInteger)的block
+     （1）我可以给它赋值为参数为（CGFloat），（CGFloat，,NSString*）或(CGFloat,NSString*,NSInteger)的block
+     （2）但不能赋值为参数为(CGFloat,NSInteger)或(CGFloat，NSString*,NSInteger,NSString*)的block
+     （3）说明参数可以少，不能多，不能顺序对不上
+     5、这里的方案：没必要再定义什么callbackType_了，只需要在callback_添加参数，然后全部传回去，外面要用哪些参数，按顺序取就行了。以后要扩展也一样，只管添加返回的参数
+     */
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLab;
@@ -34,8 +45,9 @@
 }
 
 -(void)sliderValueChanged:(UISlider *)slider{
+    
     if ([slider isEqual:_slider]) {
-        callback_(slider.value);
+        callback_(slider.value,_titleLab.text);
     }
 }
 
