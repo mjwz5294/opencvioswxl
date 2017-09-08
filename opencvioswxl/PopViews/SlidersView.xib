@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oo4-Md-4d5">
-                    <rect key="frame" x="0.0" y="317" width="375" height="350"/>
+                    <rect key="frame" x="0.0" y="367" width="375" height="300"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P69-XM-ZtA">
                             <rect key="frame" x="185" y="5" width="5" height="50"/>
@@ -28,7 +28,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MVu-fq-hoV">
-                            <rect key="frame" x="0.0" y="60" width="375" height="290"/>
+                            <rect key="frame" x="0.0" y="60" width="375" height="240"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <outlet property="dataSource" destination="EGe-13-GHs" id="zH6-IG-WO2"/>
@@ -63,7 +63,7 @@
                         <constraint firstItem="7nc-xc-93N" firstAttribute="top" secondItem="P69-XM-ZtA" secondAttribute="bottom" constant="5" id="cGp-JA-Ocv"/>
                         <constraint firstItem="7nc-xc-93N" firstAttribute="leading" secondItem="Oo4-Md-4d5" secondAttribute="leading" id="cfJ-jQ-aYf"/>
                         <constraint firstAttribute="trailing" secondItem="wvn-zS-xAP" secondAttribute="trailing" id="eeA-Nk-jBS"/>
-                        <constraint firstAttribute="height" constant="350" id="vCH-b9-omG"/>
+                        <constraint firstAttribute="height" constant="300" id="vCH-b9-omG"/>
                         <constraint firstItem="P69-XM-ZtA" firstAttribute="top" secondItem="Oo4-Md-4d5" secondAttribute="top" constant="5" id="xOa-Jd-QGj"/>
                     </constraints>
                 </view>

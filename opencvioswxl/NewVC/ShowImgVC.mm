@@ -31,6 +31,7 @@
     editArr_ = [NSArray arrayWithObjects:
                 @{@"editName":@"nolinearBlurTest",@"editBrief":@"非线性滤波"},
                 @{@"editName":@"linearBlurTest",@"editBrief":@"线性滤波"},
+                @{@"editName":@"HoughLinesTest",@"editBrief":@"霍夫变换"},
                 @{@"editName":@"pyramidTest",@"editBrief":@"图像金字塔"},
                 @{@"editName":@"findEdge",@"editBrief":@"边缘检测"},
                 @{@"editName":@"dilateAndErode",@"editBrief":@"膨胀腐蚀等基本形态学处理"},
@@ -47,6 +48,93 @@
     [_sourceImg setImage:[UIImage imageNamed:sourceImgName_]];
     [self showSourceImg];
 }
+
+//霍夫变换(Hough Transform)是图像处理中的一种特征提取技术。最初的Hough变换是设计用来检测直线和曲线，后来霍夫变换扩展到任意形状物体的识别，多为圆和椭圆
+/*
+ OpenCV中的霍夫线变换有如下三种：
+ 
+ <1>标准霍夫变换（StandardHough Transform，SHT），由HoughLines函数调用。
+ <2>多尺度霍夫变换（Multi-ScaleHough Transform，MSHT），由HoughLines函数调用。
+ <3>累计概率霍夫变换（ProgressiveProbabilistic Hough Transform，PPHT），由HoughLinesP函数调用。
+ */
+-(void)HoughLinesTest{
+    WeakSelf;
+    
+    void (^houghLinesBlock)(CGFloat,NSString*) = ^(CGFloat progress,NSString* titleStr){
+        [weakSelf houghLines:1+floor(progress*10) withTitle:titleStr];//size必须大于1
+    };
+    
+    [SlidersView showSlidersViewWithBlocks:@[
+                                             @{@"callback":houghLinesBlock,@"title":@"HoughLines"},
+                                             @{@"callback":houghLinesBlock,@"title":@"HoughLinesP"},
+                                             @{@"callback":houghLinesBlock,@"title":@"HoughCircles"}
+                                             ] OtherParms:@{@"parentView":self.view}];
+}
+
+-(void)houghLines:(CGFloat)size withTitle:(NSString*)titleStr{
+    
+    //可能是平台差异吧，效果不是很好，另外，这里的size就没用了
+    cv::Mat sourceImg,midImage,dstImg;
+    UIImageToMat([UIImage imageNamed:@"circle.jpeg"],sourceImg);
+    cv::Canny(sourceImg, midImage, 50, 200,3);
+    cv::cvtColor(midImage, dstImg, CV_GRAY2RGB);
+    
+    if ([titleStr isEqualToString:@"HoughLines"]) {
+        std::vector<cv::Vec2f> lines;
+        cv::HoughLines(midImage, lines, 1, CV_PI/180, 150,0,0);
+        for (size_t i=0; i<lines.size(); i++) {
+            float rho = lines[i][0], theta = lines[i][1];
+            cv::Point pt1, pt2;
+            double a = cos(theta), b = sin(theta);
+            double x0 = a*rho, y0 = b*rho;
+            pt1.x = cvRound(x0 + 1000*(-b));
+            pt1.y = cvRound(y0 + 1000*(a));
+            pt2.x = cvRound(x0 - 1000*(-b));
+            pt2.y = cvRound(y0 - 1000*(a));
+            cv::line(dstImg, pt1, pt2, cv::Scalar(55,100,195), 1, CV_AA);
+        }
+        [_resultImg setImage:MatToUIImage(dstImg)];
+        return;
+    }else if ([titleStr isEqualToString:@"HoughLinesP"]){
+        std::vector<cv::Vec4i> lines;//定义一个矢量结构lines用于存放得到的线段矢量集合
+        HoughLinesP(midImage, lines, 1, CV_PI/180, 80, 50, 10 );
+        
+        //【4】依次在图中绘制出每条线段
+        for( size_t i = 0; i < lines.size(); i++ )
+        {
+            cv::Vec4i l = lines[i];
+            line( dstImg, cv::Point(l[0], l[1]), cv::Point(l[2], l[3]), cv::Scalar(186,88,255), 1, CV_AA);
+        }
+        [_resultImg setImage:MatToUIImage(dstImg)];
+        return;
+    }else if ([titleStr isEqualToString:@"HoughCircles"]){
+        cv::cvtColor(sourceImg, midImage, CV_BGR2GRAY);
+        cv::GaussianBlur( midImage, midImage, cv::Size(9, 9), 2, 2 );
+        
+        //【4】进行霍夫圆变换
+        std::vector<cv::Vec3f> circles;
+        HoughCircles( midImage, circles, CV_HOUGH_GRADIENT,1.5, 10, 200, 100, 0, 0 );
+        
+        //【5】依次在图中绘制出圆
+        for( size_t i = 0; i < circles.size(); i++ )
+        {
+            cv::Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
+            int radius = cvRound(circles[i][2]);
+            //绘制圆心
+            cv::circle( sourceImg, center, 3, cv::Scalar(0,255,0), -1, 8, 0 );
+            //绘制圆轮廓
+            circle( sourceImg, center, radius, cv::Scalar(155,50,255), 3, 8, 0 );
+        }
+        [_resultImg setImage:MatToUIImage(dstImg)];
+//        DebugLog(@"HoughCircles over");
+        return;
+    }
+    
+    
+    
+    
+}
+
 
 //图像金字塔：高斯金字塔、拉普拉斯金字塔与图片尺寸缩放
 /*
@@ -74,6 +162,7 @@
 -(void)resize:(CGFloat)size withTitle:(NSString*)titleStr{
     DebugLog(@"size---%.2f",size);
     
+    //pyrDown()函数和pyrUp()函数中，要求输出图像需要和源图像有一样的尺寸和类型。但在resize()函数中可以不一样。
     cv::Mat sourceImg,dstImg;
     UIImageToMat([UIImage imageNamed:sourceImgName_],sourceImg);
     if ([titleStr isEqualToString:@"resize"]) {

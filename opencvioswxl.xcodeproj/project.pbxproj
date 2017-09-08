@@ -46,6 +46,9 @@
 		341ADB641F5FBB290055B1C5 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 341ADB631F5FBB290055B1C5 /* Common.m */; };
 		341ADB671F5FD9B10055B1C5 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 341ADB661F5FD9B10055B1C5 /* BaseView.m */; };
 		341ADB691F604B820055B1C5 /* 9、opencv的C++教程 in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB681F604B820055B1C5 /* 9、opencv的C++教程 */; };
+		341ADB6D1F62DE180055B1C5 /* building.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB6C1F62DE180055B1C5 /* building.jpg */; };
+		341ADB6F1F62E6B70055B1C5 /* slam.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB6E1F62E6B70055B1C5 /* slam.jpeg */; };
+		341ADB711F62E8190055B1C5 /* circle.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB701F62E8190055B1C5 /* circle.jpeg */; };
 		34C48C6C1F5269EB00000373 /* 5、从头开始，死磕一天 in Resources */ = {isa = PBXBuildFile; fileRef = 34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */; };
 		34C72F981F5D9375009AD3E1 /* 7、小结 in Resources */ = {isa = PBXBuildFile; fileRef = 34C72F961F5D9375009AD3E1 /* 7、小结 */; };
 		34C72F991F5D9375009AD3E1 /* 8、opencv的python教程总结 in Resources */ = {isa = PBXBuildFile; fileRef = 34C72F971F5D9375009AD3E1 /* 8、opencv的python教程总结 */; };
@@ -149,6 +152,9 @@
 		341ADB651F5FD9B10055B1C5 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
 		341ADB661F5FD9B10055B1C5 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
 		341ADB681F604B820055B1C5 /* 9、opencv的C++教程 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "9、opencv的C++教程"; sourceTree = "<group>"; };
+		341ADB6C1F62DE180055B1C5 /* building.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = building.jpg; sourceTree = "<group>"; };
+		341ADB6E1F62E6B70055B1C5 /* slam.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = slam.jpeg; sourceTree = "<group>"; };
+		341ADB701F62E8190055B1C5 /* circle.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = circle.jpeg; sourceTree = "<group>"; };
 		34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "5、从头开始，死磕一天"; sourceTree = "<group>"; };
 		34C72F961F5D9375009AD3E1 /* 7、小结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "7、小结"; sourceTree = "<group>"; };
 		34C72F971F5D9375009AD3E1 /* 8、opencv的python教程总结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "8、opencv的python教程总结"; sourceTree = "<group>"; };
@@ -258,6 +264,9 @@
 		341ADB281F5E40250055B1C5 /* Imgs */ = {
 			isa = PBXGroup;
 			children = (
+				341ADB6E1F62E6B70055B1C5 /* slam.jpeg */,
+				341ADB6C1F62DE180055B1C5 /* building.jpg */,
+				341ADB701F62E8190055B1C5 /* circle.jpeg */,
 				341ADB291F5E40250055B1C5 /* cat.jpeg */,
 				341ADB2A1F5E40250055B1C5 /* Default-568h@2x.png */,
 				341ADB2B1F5E40250055B1C5 /* Default.png */,
@@ -602,10 +611,13 @@
 				AF4C59711F47DF93007F97F9 /* LaunchScreen.storyboard in Resources */,
 				34C72F981F5D9375009AD3E1 /* 7、小结 in Resources */,
 				AF4C596E1F47DF93007F97F9 /* Assets.xcassets in Resources */,
+				341ADB711F62E8190055B1C5 /* circle.jpeg in Resources */,
 				AF4B41A61F5070350064287B /* 4、使用opencv相机 in Resources */,
 				AFC54D8A1F4C1B3700F9A407 /* 3、脸部识别 in Resources */,
 				341ADB391F5E40250055B1C5 /* fuzzyBorder.png in Resources */,
 				AF4C59971F47E39A007F97F9 /* 1、初始化项目 in Resources */,
+				341ADB6D1F62DE180055B1C5 /* building.jpg in Resources */,
+				341ADB6F1F62E6B70055B1C5 /* slam.jpeg in Resources */,
 				341ADB481F5E40710055B1C5 /* haarcascade_mcs_eyepair_big.xml in Resources */,
 				341ADB371F5E40250055B1C5 /* Default.png in Resources */,
 				341ADB3B1F5E40250055B1C5 /* lena.png in Resources */,
