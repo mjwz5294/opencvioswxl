@@ -31,6 +31,7 @@
     editArr_ = [NSArray arrayWithObjects:
                 @{@"editName":@"nolinearBlurTest",@"editBrief":@"非线性滤波"},
                 @{@"editName":@"linearBlurTest",@"editBrief":@"线性滤波"},
+                @{@"editName":@"pyramidTest",@"editBrief":@"图像金字塔"},
                 @{@"editName":@"findEdge",@"editBrief":@"边缘检测"},
                 @{@"editName":@"dilateAndErode",@"editBrief":@"膨胀腐蚀等基本形态学处理"},
                 @{@"editName":@"morphologyExTest",@"editBrief":@"形态学高级处理"},
@@ -47,15 +48,58 @@
     [self showSourceImg];
 }
 
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
+//图像金字塔：高斯金字塔、拉普拉斯金字塔与图片尺寸缩放
+/*
+ 1、基本概念：
+ （1）显示分辨率（屏幕分辨率）是屏幕图像的精密度，是指显示器所能显示的像素有多少
+ （2）图像分辨率则是单位英寸中所包含的像素点数，其定义更趋近于分辨率本身的定义
+ （3）高斯金字塔(Gaussianpyramid): 用来向下采样（逐渐丢失图像信息，图像变小），主要的图像金字塔
+ （4）拉普拉斯金字塔(Laplacianpyramid): 用来从金字塔低层图像重建上层未采样图像，在数字图像处理中也即是预测残差，可以对图像进行最大程度的还原，配合高斯金字塔一起使用
+ （5）resize函数：专门用于放大缩小的函数
+ */
+-(void)pyramidTest{
+    WeakSelf;
+    
+    void (^resizeBlock)(CGFloat,NSString*) = ^(CGFloat progress,NSString* titleStr){
+        [weakSelf resize:1+floor(progress*10) withTitle:titleStr];//size必须大于1
+    };
+    
+    [SlidersView showSlidersViewWithBlocks:@[
+                                             @{@"callback":resizeBlock,@"title":@"resize"},
+                                             @{@"callback":resizeBlock,@"title":@"pyrUp"},
+                                             @{@"callback":resizeBlock,@"title":@"pyrDown"}
+                                             ] OtherParms:@{@"parentView":self.view}];
+}
+
+-(void)resize:(CGFloat)size withTitle:(NSString*)titleStr{
+    DebugLog(@"size---%.2f",size);
+    
+    cv::Mat sourceImg,dstImg;
+    UIImageToMat([UIImage imageNamed:sourceImgName_],sourceImg);
+    if ([titleStr isEqualToString:@"resize"]) {
+        // 【1】创建与src同类型和大小的矩阵(dst)
+        dstImg.cv::Mat::zeros( sourceImg.rows/size ,sourceImg.cols/size, CV_8UC3);
+        cv::resize(sourceImg, dstImg, cv::Size(),1/size,1/size);
+        [_resultImg setImage:MatToUIImage(dstImg)];
+        return;
+    }else if ([titleStr isEqualToString:@"pyrUp"]){
+        for (int i=0; i<3; i++) {//这里循环次数不能超过2，不知与手机或图片本身有关系没
+            cv::pyrUp(sourceImg, sourceImg,cv::Size(sourceImg.cols*2,sourceImg.rows*2));//这两处对参数的设置有要求，除了2还没试出其它可用参数，也懒得看了
+        }
+        [_resultImg setImage:MatToUIImage(sourceImg)];
+        DebugLog(@"pyrUpover");
+        return;
+    }else if ([titleStr isEqualToString:@"pyrDown"]){
+        for (int i=0; i<size; i++) {
+            cv::pyrDown(sourceImg, sourceImg,cv::Size(sourceImg.cols/2,sourceImg.rows/2));//这两处对参数的设置有要求，除了2还没试出其它可用参数，也懒得看了
+        }
+        [_resultImg setImage:MatToUIImage(sourceImg)];
+        DebugLog(@"pyrDownover");
+        return;
+    }
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 //边缘检测:Canny算子,Sobel算子,Laplace算子,Scharr滤波器
 /*
@@ -568,6 +612,13 @@
 //    [_resultImg setImage:MatToUIImage(matImg)];
     
     
+}
+
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
