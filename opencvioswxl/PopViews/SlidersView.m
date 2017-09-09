@@ -26,7 +26,7 @@
 
 -(void)showSlidersViewWithBlocks:(NSArray*)blockArr OtherParms:(NSDictionary*)parms{
     
-    [_titleLab setText:@"操作对比度和亮度"];
+    [_titleLab setText:@"滑动这些slider"];
     editArr_ = blockArr;
     
     [self setFrame:CGRectMake(0, 0,screenWidth, screenHeight-64)];

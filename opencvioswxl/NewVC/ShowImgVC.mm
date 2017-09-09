@@ -20,7 +20,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIImageView *sourceImg;
 @property (weak, nonatomic) IBOutlet UIImageView *resultImg;
-@property (weak, nonatomic) IBOutlet UILabel *testLab;
 
 @end
 
@@ -33,8 +32,7 @@
     editArr_ = [NSArray arrayWithObjects:
                 @{@"editName":@"nolinearBlurTest",@"editBrief":@"非线性滤波"},
                 @{@"editName":@"linearBlurTest",@"editBrief":@"线性滤波"},
-                @{@"editName":@"galleryTest",@"editBrief":@"相册测试"},
-                @{@"editName":@"printPostcard",@"editBrief":@"制作邮票"},
+                @{@"editName":@"galleryTest",@"editBrief":@"打开相册"},
                 @{@"editName":@"detectFace",@"editBrief":@"面部识别"},
                 @{@"editName":@"HoughLinesTest",@"editBrief":@"霍夫变换"},
                 @{@"editName":@"pyramidTest",@"editBrief":@"图像金字塔"},
@@ -54,25 +52,25 @@
     [self showSourceImg];
 }
 
-//相册测试
+//打开相册
 -(void)galleryTest{
     WeakSelf;
     
-    void (^houghLinesBlock)(UIImage*,NSString*) = ^(UIImage* img,NSString* titleStr){
-        DebugLog(@"img:%@---titleStr:%@",img,titleStr);
-        [_resultImg setImage:[CPPTools printPostcardWithImg:img]];
-    };
-    
-    [ImagePickerTool showImagePickWithBlocks:@{@"callback":houghLinesBlock,@"title":@"HoughLines",@"vc":self}
-                                  OtherParms:nil];
+    [ImagePickerTool showImagePickWithBlocks:^(UIImage* img){
+        [weakSelf dealWithGalleryImg:img];
+    } OtherParms:@{@"vc":self}];
 }
 
-//制作邮票
--(void)printPostcard{
+-(void)dealWithGalleryImg:(UIImage*)img{
+    WeakSelf;
     
-    // Load image with face
-    UIImage* image = [UIImage imageNamed:sourceImgName_];
-    [_resultImg setImage:[CPPTools printPostcardWithImg:image]];
+    void (^printPostcardBlock)() = ^(){
+        [weakSelf.resultImg setImage:[CPPTools printPostcardWithImg:img]];
+    };
+    
+    [SlidersView showSlidersViewWithBlocks:@[
+                                             @{@"callback":printPostcardBlock,@"title":@"打印邮票"}
+                                             ] OtherParms:@{@"parentView":self.view}];
 }
 
 //面部识别

@@ -10,6 +10,6 @@
 
 @interface ImagePickerTool : NSObject
 
-+(void)showImagePickWithBlocks:(NSDictionary*)editDic OtherParms:(NSDictionary*)parms;
++(void)showImagePickWithBlocks:(void (^)(UIImage* img))callblock OtherParms:(NSDictionary*)parms;
 
 @end

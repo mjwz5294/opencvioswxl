@@ -10,8 +10,7 @@
 
 @interface ImagePickerTool()<UIImagePickerControllerDelegate,
 UINavigationControllerDelegate>{
-    NSDictionary* editDic_;
-    void (^callback_)(UIImage*,NSString*);
+    void (^callback_)(UIImage*);
 }
 
 @end
@@ -27,13 +26,12 @@ UINavigationControllerDelegate>{
     return instance;
 }
 
-+(void)showImagePickWithBlocks:(NSDictionary*)editDic OtherParms:(NSDictionary*)parms{
-    [[ImagePickerTool shareInstance] showImagePickWithBlocks:editDic OtherParms:parms];
++(void)showImagePickWithBlocks:(void (^)(UIImage* img))callblock OtherParms:(NSDictionary*)parms{
+    [[ImagePickerTool shareInstance] showImagePickWithBlocks:callblock OtherParms:parms];
 }
 
--(void)showImagePickWithBlocks:(NSDictionary*)editDic OtherParms:(NSDictionary*)parms{
-    editDic_ = editDic;
-    callback_ = editDic[@"callback"];
+-(void)showImagePickWithBlocks:(void (^)(UIImage* img))callblock OtherParms:(NSDictionary*)parms{
+    callback_ = callblock;
     
     if (![UIImagePickerController isSourceTypeAvailable:
           UIImagePickerControllerSourceTypePhotoLibrary]){
@@ -46,7 +44,7 @@ UINavigationControllerDelegate>{
     
     picker.sourceType =
     UIImagePickerControllerSourceTypePhotoLibrary;
-    BaseViewController* vc = editDic[@"vc"];
+    BaseViewController* vc = parms[@"vc"];
     [vc presentViewController:picker
                        animated:YES
                      completion:nil];
@@ -60,7 +58,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [picker dismissViewControllerAnimated:YES
                                completion:nil];
     UIImage* temp = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    callback_(temp,editDic_[@"title"]);
+    callback_(temp);
 }
 
 -(void)imagePickerControllerDidCancel:
