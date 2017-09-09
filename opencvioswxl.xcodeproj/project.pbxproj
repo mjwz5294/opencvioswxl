@@ -17,6 +17,7 @@
 		3412AF461F54637900AD918B /* neonVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3412AF451F54637900AD918B /* neonVC.mm */; };
 		3412AF4A1F54FC6E00AD918B /* detectFacialFeatureVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3412AF491F54FC6E00AD918B /* detectFacialFeatureVC.mm */; };
 		3412AF561F54FEDE00AD918B /* 6、教程实例跑完，总结 in Resources */ = {isa = PBXBuildFile; fileRef = 3412AF551F54FEDE00AD918B /* 6、教程实例跑完，总结 */; };
+		341AA2121F63D51600BC5F40 /* ImagePickerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 341AA2111F63D51600BC5F40 /* ImagePickerTool.m */; };
 		341ADB231F5E3C620055B1C5 /* ShowImgVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 341ADB221F5E3C620055B1C5 /* ShowImgVC.mm */; };
 		341ADB351F5E40250055B1C5 /* cat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB291F5E40250055B1C5 /* cat.jpeg */; };
 		341ADB361F5E40250055B1C5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB2A1F5E40250055B1C5 /* Default-568h@2x.png */; };
@@ -114,6 +115,8 @@
 		3412AF481F54FC6E00AD918B /* detectFacialFeatureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detectFacialFeatureVC.h; sourceTree = "<group>"; };
 		3412AF491F54FC6E00AD918B /* detectFacialFeatureVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = detectFacialFeatureVC.mm; sourceTree = "<group>"; };
 		3412AF551F54FEDE00AD918B /* 6、教程实例跑完，总结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "6、教程实例跑完，总结"; sourceTree = "<group>"; };
+		341AA2101F63D51600BC5F40 /* ImagePickerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePickerTool.h; sourceTree = "<group>"; };
+		341AA2111F63D51600BC5F40 /* ImagePickerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePickerTool.m; sourceTree = "<group>"; };
 		341ADB211F5E3C620055B1C5 /* ShowImgVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowImgVC.h; sourceTree = "<group>"; };
 		341ADB221F5E3C620055B1C5 /* ShowImgVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ShowImgVC.mm; sourceTree = "<group>"; };
 		341ADB291F5E40250055B1C5 /* cat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpeg; sourceTree = "<group>"; };
@@ -330,6 +333,8 @@
 				345A2EE01F639D47005E216D /* CPPTools.mm */,
 				345A2EDC1F639762005E216D /* PostcardPrinter.cpp */,
 				345A2EDD1F639762005E216D /* PostcardPrinter.hpp */,
+				341AA2101F63D51600BC5F40 /* ImagePickerTool.h */,
+				341AA2111F63D51600BC5F40 /* ImagePickerTool.m */,
 			);
 			path = CPPTools;
 			sourceTree = "<group>";
@@ -736,6 +741,7 @@
 				AF937E5B1F4FE6AD002B573A /* RetroFilter.cpp in Sources */,
 				341ADB5C1F5F9BDD0055B1C5 /* SlidersViewCell.m in Sources */,
 				341ADB591F5F9BAF0055B1C5 /* BaseTableViewCell.m in Sources */,
+				341AA2121F63D51600BC5F40 /* ImagePickerTool.m in Sources */,
 				AFF487CC1F4BDE6000AC4A63 /* MMCropView.m in Sources */,
 				AFF487701F4BDB0600AC4A63 /* MMOpenCVHelper.mm in Sources */,
 				341ADB231F5E3C620055B1C5 /* ShowImgVC.mm in Sources */,

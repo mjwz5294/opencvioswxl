@@ -9,9 +9,8 @@
 #import "ShowImgVC.h"
 #import <opencv2/imgcodecs/ios.h>
 #import "SlidersView.h"
-
-
-#import "CPPTools.h"//制作邮票
+#import "CPPTools.h"
+#import "ImagePickerTool.h"
 
 @interface ShowImgVC ()<UITableViewDelegate,UITableViewDataSource>{
     NSArray* editArr_;
@@ -34,6 +33,7 @@
     editArr_ = [NSArray arrayWithObjects:
                 @{@"editName":@"nolinearBlurTest",@"editBrief":@"非线性滤波"},
                 @{@"editName":@"linearBlurTest",@"editBrief":@"线性滤波"},
+                @{@"editName":@"galleryTest",@"editBrief":@"相册测试"},
                 @{@"editName":@"printPostcard",@"editBrief":@"制作邮票"},
                 @{@"editName":@"detectFace",@"editBrief":@"面部识别"},
                 @{@"editName":@"HoughLinesTest",@"editBrief":@"霍夫变换"},
@@ -52,6 +52,19 @@
     sourceImgName_ = @"lena.png";
     [_sourceImg setImage:[UIImage imageNamed:sourceImgName_]];
     [self showSourceImg];
+}
+
+//相册测试
+-(void)galleryTest{
+    WeakSelf;
+    
+    void (^houghLinesBlock)(UIImage*,NSString*) = ^(UIImage* img,NSString* titleStr){
+        DebugLog(@"img:%@---titleStr:%@",img,titleStr);
+        [_resultImg setImage:[CPPTools printPostcardWithImg:img]];
+    };
+    
+    [ImagePickerTool showImagePickWithBlocks:@{@"callback":houghLinesBlock,@"title":@"HoughLines",@"vc":self}
+                                  OtherParms:nil];
 }
 
 //制作邮票
