@@ -25,16 +25,16 @@
     self.title = @"OPENCV STUDY";
     
     vcArr_ = [NSArray arrayWithObjects:
-              @{@"vcName":@"GalleryVC",@"vcBrief":@""},
-              @{@"vcName":@"retroVC",@"vcBrief":@""},
-              @{@"vcName":@"photoFromCamVC",@"vcBrief":@""},
-              @{@"vcName":@"videoFromCamVC",@"vcBrief":@""},
               @{@"vcName":@"ShowImgVC",@"vcBrief":@"对图片进行基本处理，并展示"},
-              @{@"vcName":@"advanceCamControlVC",@"vcBrief":@""},
-              @{@"vcName":@"processionVideoVC",@"vcBrief":@""},
-              @{@"vcName":@"savevideoVC",@"vcBrief":@""},
-              @{@"vcName":@"neonVC",@"vcBrief":@""},
-              @{@"vcName":@"detectFacialFeatureVC",@"vcBrief":@""},
+//              @{@"vcName":@"GalleryVC",@"vcBrief":@""},
+//              @{@"vcName":@"retroVC",@"vcBrief":@""},
+//              @{@"vcName":@"photoFromCamVC",@"vcBrief":@""},
+//              @{@"vcName":@"videoFromCamVC",@"vcBrief":@""},
+//              @{@"vcName":@"advanceCamControlVC",@"vcBrief":@""},
+//              @{@"vcName":@"processionVideoVC",@"vcBrief":@""},
+//              @{@"vcName":@"savevideoVC",@"vcBrief":@""},
+//              @{@"vcName":@"neonVC",@"vcBrief":@""},
+//              @{@"vcName":@"detectFacialFeatureVC",@"vcBrief":@""},
               nil];
     
 }

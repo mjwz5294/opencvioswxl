@@ -26,8 +26,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    toolbar.autoresizingMask = UIViewAutoresizingNone;
-    
     // Load face detector
     NSString* filename = [[NSBundle mainBundle]
                           pathForResource:@"haarcascade_frontalface_alt2"

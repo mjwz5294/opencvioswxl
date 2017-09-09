@@ -10,6 +10,9 @@
 #import <opencv2/imgcodecs/ios.h>
 #import "SlidersView.h"
 
+
+#import "CPPTools.h"//制作邮票
+
 @interface ShowImgVC ()<UITableViewDelegate,UITableViewDataSource>{
     NSArray* editArr_;
     NSString* sourceImgName_;
@@ -31,6 +34,8 @@
     editArr_ = [NSArray arrayWithObjects:
                 @{@"editName":@"nolinearBlurTest",@"editBrief":@"非线性滤波"},
                 @{@"editName":@"linearBlurTest",@"editBrief":@"线性滤波"},
+                @{@"editName":@"printPostcard",@"editBrief":@"制作邮票"},
+                @{@"editName":@"detectFace",@"editBrief":@"面部识别"},
                 @{@"editName":@"HoughLinesTest",@"editBrief":@"霍夫变换"},
                 @{@"editName":@"pyramidTest",@"editBrief":@"图像金字塔"},
                 @{@"editName":@"findEdge",@"editBrief":@"边缘检测"},
@@ -47,6 +52,49 @@
     sourceImgName_ = @"lena.png";
     [_sourceImg setImage:[UIImage imageNamed:sourceImgName_]];
     [self showSourceImg];
+}
+
+//制作邮票
+-(void)printPostcard{
+    
+    // Load image with face
+    UIImage* image = [UIImage imageNamed:sourceImgName_];
+    [_resultImg setImage:[CPPTools printPostcardWithImg:image]];
+}
+
+//面部识别
+-(void)detectFace{
+    cv::CascadeClassifier faceDetector;
+    NSString* cascadePath = [[NSBundle mainBundle]
+                             pathForResource:@"haarcascade_frontalface_alt"
+                             ofType:@"xml"];
+    faceDetector.load([cascadePath UTF8String]);
+    
+    cv::Mat faceImage,gray;
+    UIImageToMat([UIImage imageNamed:sourceImgName_],faceImage);
+    cvtColor(faceImage, gray, CV_BGR2GRAY);
+    
+    std::vector<cv::Rect> faces;
+    faceDetector.detectMultiScale(gray, faces, 1.1,
+                                  2, 0|CV_HAAR_SCALE_IMAGE, cv::Size(30, 30));
+    
+    // Draw all detected faces
+    for(unsigned int i = 0; i < faces.size(); i++)
+    {
+        const cv::Rect& face = faces[i];
+        // Get top-left and bottom-right corner points
+        cv::Point tl(face.x, face.y);
+        cv::Point br = tl + cv::Point(face.width, face.height);
+        
+        // Draw rectangle around the face
+        cv::Scalar magenta = cv::Scalar(255, 0, 255);
+        cv::rectangle(faceImage, tl, br, magenta, 4, 8, 0);
+    }
+    
+    // Show resulting image
+    [_resultImg setImage:MatToUIImage(faceImage)];
+    
+    
 }
 
 //霍夫变换(Hough Transform)是图像处理中的一种特征提取技术。最初的Hough变换是设计用来检测直线和曲线，后来霍夫变换扩展到任意形状物体的识别，多为圆和椭圆

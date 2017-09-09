@@ -18,7 +18,6 @@
 		3412AF4A1F54FC6E00AD918B /* detectFacialFeatureVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3412AF491F54FC6E00AD918B /* detectFacialFeatureVC.mm */; };
 		3412AF561F54FEDE00AD918B /* 6、教程实例跑完，总结 in Resources */ = {isa = PBXBuildFile; fileRef = 3412AF551F54FEDE00AD918B /* 6、教程实例跑完，总结 */; };
 		341ADB231F5E3C620055B1C5 /* ShowImgVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 341ADB221F5E3C620055B1C5 /* ShowImgVC.mm */; };
-		341ADB271F5E3CB70055B1C5 /* OpencvImgHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 341ADB261F5E3CB70055B1C5 /* OpencvImgHelper.mm */; };
 		341ADB351F5E40250055B1C5 /* cat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB291F5E40250055B1C5 /* cat.jpeg */; };
 		341ADB361F5E40250055B1C5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB2A1F5E40250055B1C5 /* Default-568h@2x.png */; };
 		341ADB371F5E40250055B1C5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB2B1F5E40250055B1C5 /* Default.png */; };
@@ -49,6 +48,8 @@
 		341ADB6D1F62DE180055B1C5 /* building.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB6C1F62DE180055B1C5 /* building.jpg */; };
 		341ADB6F1F62E6B70055B1C5 /* slam.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB6E1F62E6B70055B1C5 /* slam.jpeg */; };
 		341ADB711F62E8190055B1C5 /* circle.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB701F62E8190055B1C5 /* circle.jpeg */; };
+		345A2EDE1F639762005E216D /* PostcardPrinter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 345A2EDC1F639762005E216D /* PostcardPrinter.cpp */; };
+		345A2EE11F639D47005E216D /* CPPTools.mm in Sources */ = {isa = PBXBuildFile; fileRef = 345A2EE01F639D47005E216D /* CPPTools.mm */; };
 		34C48C6C1F5269EB00000373 /* 5、从头开始，死磕一天 in Resources */ = {isa = PBXBuildFile; fileRef = 34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */; };
 		34C72F981F5D9375009AD3E1 /* 7、小结 in Resources */ = {isa = PBXBuildFile; fileRef = 34C72F961F5D9375009AD3E1 /* 7、小结 */; };
 		34C72F991F5D9375009AD3E1 /* 8、opencv的python教程总结 in Resources */ = {isa = PBXBuildFile; fileRef = 34C72F971F5D9375009AD3E1 /* 8、opencv的python教程总结 */; };
@@ -64,7 +65,6 @@
 		AF4C59871F47DF93007F97F9 /* opencvioswxlUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4C59861F47DF93007F97F9 /* opencvioswxlUITests.m */; };
 		AF4C59971F47E39A007F97F9 /* 1、初始化项目 in Resources */ = {isa = PBXBuildFile; fileRef = AF4C59961F47E39A007F97F9 /* 1、初始化项目 */; };
 		AF4C59991F47E3E1007F97F9 /* 2、编译C++库 in Resources */ = {isa = PBXBuildFile; fileRef = AF4C59981F47E3E1007F97F9 /* 2、编译C++库 */; };
-		AF7C16EE1F4E629A00484C3D /* PostcardPrinter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF7C16EC1F4E629A00484C3D /* PostcardPrinter.cpp */; };
 		AF7C16F11F4E637300484C3D /* GalleryVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF7C16F01F4E637300484C3D /* GalleryVC.mm */; };
 		AF937E5B1F4FE6AD002B573A /* RetroFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF937E591F4FE6AD002B573A /* RetroFilter.cpp */; };
 		AF937E691F4FE7CA002B573A /* retroVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF937E681F4FE7CA002B573A /* retroVC.mm */; };
@@ -116,8 +116,6 @@
 		3412AF551F54FEDE00AD918B /* 6、教程实例跑完，总结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "6、教程实例跑完，总结"; sourceTree = "<group>"; };
 		341ADB211F5E3C620055B1C5 /* ShowImgVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowImgVC.h; sourceTree = "<group>"; };
 		341ADB221F5E3C620055B1C5 /* ShowImgVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ShowImgVC.mm; sourceTree = "<group>"; };
-		341ADB251F5E3CB70055B1C5 /* OpencvImgHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpencvImgHelper.h; sourceTree = "<group>"; };
-		341ADB261F5E3CB70055B1C5 /* OpencvImgHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpencvImgHelper.mm; sourceTree = "<group>"; };
 		341ADB291F5E40250055B1C5 /* cat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpeg; sourceTree = "<group>"; };
 		341ADB2A1F5E40250055B1C5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		341ADB2B1F5E40250055B1C5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -155,6 +153,10 @@
 		341ADB6C1F62DE180055B1C5 /* building.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = building.jpg; sourceTree = "<group>"; };
 		341ADB6E1F62E6B70055B1C5 /* slam.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = slam.jpeg; sourceTree = "<group>"; };
 		341ADB701F62E8190055B1C5 /* circle.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = circle.jpeg; sourceTree = "<group>"; };
+		345A2EDC1F639762005E216D /* PostcardPrinter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PostcardPrinter.cpp; sourceTree = "<group>"; };
+		345A2EDD1F639762005E216D /* PostcardPrinter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PostcardPrinter.hpp; sourceTree = "<group>"; };
+		345A2EDF1F639D47005E216D /* CPPTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPPTools.h; sourceTree = "<group>"; };
+		345A2EE01F639D47005E216D /* CPPTools.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CPPTools.mm; sourceTree = "<group>"; };
 		34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "5、从头开始，死磕一天"; sourceTree = "<group>"; };
 		34C72F961F5D9375009AD3E1 /* 7、小结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "7、小结"; sourceTree = "<group>"; };
 		34C72F971F5D9375009AD3E1 /* 8、opencv的python教程总结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "8、opencv的python教程总结"; sourceTree = "<group>"; };
@@ -182,8 +184,6 @@
 		AF4C59941F47E0B1007F97F9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		AF4C59961F47E39A007F97F9 /* 1、初始化项目 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "1、初始化项目"; sourceTree = "<group>"; };
 		AF4C59981F47E3E1007F97F9 /* 2、编译C++库 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2、编译C++库"; sourceTree = "<group>"; };
-		AF7C16EC1F4E629A00484C3D /* PostcardPrinter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PostcardPrinter.cpp; sourceTree = "<group>"; };
-		AF7C16ED1F4E629A00484C3D /* PostcardPrinter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PostcardPrinter.hpp; sourceTree = "<group>"; };
 		AF7C16EF1F4E637300484C3D /* GalleryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleryVC.h; sourceTree = "<group>"; };
 		AF7C16F01F4E637300484C3D /* GalleryVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GalleryVC.mm; sourceTree = "<group>"; };
 		AF937E591F4FE6AD002B573A /* RetroFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RetroFilter.cpp; sourceTree = "<group>"; };
@@ -250,15 +250,6 @@
 				341ADB221F5E3C620055B1C5 /* ShowImgVC.mm */,
 			);
 			path = NewVC;
-			sourceTree = "<group>";
-		};
-		341ADB241F5E3C810055B1C5 /* OpencvHelper */ = {
-			isa = PBXGroup;
-			children = (
-				341ADB251F5E3CB70055B1C5 /* OpencvImgHelper.h */,
-				341ADB261F5E3CB70055B1C5 /* OpencvImgHelper.mm */,
-			);
-			path = OpencvHelper;
 			sourceTree = "<group>";
 		};
 		341ADB281F5E40250055B1C5 /* Imgs */ = {
@@ -332,6 +323,17 @@
 			path = categorys;
 			sourceTree = "<group>";
 		};
+		345A2EDB1F639762005E216D /* CPPTools */ = {
+			isa = PBXGroup;
+			children = (
+				345A2EDF1F639D47005E216D /* CPPTools.h */,
+				345A2EE01F639D47005E216D /* CPPTools.mm */,
+				345A2EDC1F639762005E216D /* PostcardPrinter.cpp */,
+				345A2EDD1F639762005E216D /* PostcardPrinter.hpp */,
+			);
+			path = CPPTools;
+			sourceTree = "<group>";
+		};
 		AF4C59551F47DF93007F97F9 = {
 			isa = PBXGroup;
 			children = (
@@ -360,11 +362,11 @@
 				AF4C59641F47DF93007F97F9 /* AppDelegate.h */,
 				AF4C59651F47DF93007F97F9 /* AppDelegate.m */,
 				AF4C596A1F47DF93007F97F9 /* Main.storyboard */,
+				345A2EDB1F639762005E216D /* CPPTools */,
 				341ADB501F5F9B580055B1C5 /* Base */,
 				341ADB201F5E3C620055B1C5 /* NewVC */,
 				341ADB4C1F5F86D00055B1C5 /* PopViews */,
 				341ADB611F5FBB290055B1C5 /* categorys */,
-				341ADB241F5E3C810055B1C5 /* OpencvHelper */,
 				AF937E661F4FE797002B573A /* VC */,
 				AFF487BE1F4BDDC000AC4A63 /* UIImage Cat */,
 				AF6435121F493403006A8725 /* opencviosinterface */,
@@ -425,8 +427,6 @@
 		AF6435121F493403006A8725 /* opencviosinterface */ = {
 			isa = PBXGroup;
 			children = (
-				AF7C16EC1F4E629A00484C3D /* PostcardPrinter.cpp */,
-				AF7C16ED1F4E629A00484C3D /* PostcardPrinter.hpp */,
 				AF937E591F4FE6AD002B573A /* RetroFilter.cpp */,
 				AF937E5A1F4FE6AD002B573A /* RetroFilter.hpp */,
 				AFF4876E1F4BDB0600AC4A63 /* MMOpenCVHelper.h */,
@@ -723,6 +723,7 @@
 				341ADB531F5F9B580055B1C5 /* BaseViewController.m in Sources */,
 				AFF487C61F4BDDC000AC4A63 /* UIImage+fixOrientation.m in Sources */,
 				AFF487C71F4BDDC000AC4A63 /* UIImageView+ContentFrame.m in Sources */,
+				345A2EDE1F639762005E216D /* PostcardPrinter.cpp in Sources */,
 				AF4C59661F47DF93007F97F9 /* AppDelegate.m in Sources */,
 				AF937E6C1F5007CE002B573A /* photoFromCamVC.mm in Sources */,
 				AFF487CD1F4BDE6000AC4A63 /* MTGeometry.c in Sources */,
@@ -731,7 +732,6 @@
 				3411B4D91F54115A00D32A3F /* processionVideoVC.mm in Sources */,
 				3412AF431F54634500AD918B /* Processing.cpp in Sources */,
 				3412AF401F54634500AD918B /* FaceAnimator.cpp in Sources */,
-				AF7C16EE1F4E629A00484C3D /* PostcardPrinter.cpp in Sources */,
 				3411B4CF1F5407A500D32A3F /* advanceCamControlVC.mm in Sources */,
 				AF937E5B1F4FE6AD002B573A /* RetroFilter.cpp in Sources */,
 				341ADB5C1F5F9BDD0055B1C5 /* SlidersViewCell.m in Sources */,
@@ -740,10 +740,10 @@
 				AFF487701F4BDB0600AC4A63 /* MMOpenCVHelper.mm in Sources */,
 				341ADB231F5E3C620055B1C5 /* ShowImgVC.mm in Sources */,
 				341ADB641F5FBB290055B1C5 /* Common.m in Sources */,
+				345A2EE11F639D47005E216D /* CPPTools.mm in Sources */,
 				3412AF411F54634500AD918B /* Processing_Accelerate.cpp in Sources */,
 				3412AF461F54637900AD918B /* neonVC.mm in Sources */,
 				341ADB671F5FD9B10055B1C5 /* BaseView.m in Sources */,
-				341ADB271F5E3CB70055B1C5 /* OpencvImgHelper.mm in Sources */,
 				341ADB4F1F5F87870055B1C5 /* SlidersView.m in Sources */,
 				AF4C59631F47DF93007F97F9 /* main.m in Sources */,
 				AF7C16F11F4E637300484C3D /* GalleryVC.mm in Sources */,
