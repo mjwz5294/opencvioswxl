@@ -8,7 +8,9 @@
 
 #import "CPPTools.h"
 #import <opencv2/imgcodecs/ios.h>
+
 #import "PostcardPrinter.hpp"//制作邮票
+#import "RetroFilter.hpp"
 
 @implementation CPPTools
 
@@ -47,6 +49,27 @@
         return MatToUIImage(tmpMat);
     }
     return MatToUIImage(postcard);
+}
+
++ (UIImage*)retroWithImg:(UIImage*)inputImage;
+{
+    RetroFilter::Parameters params;
+    UIImage* resImage = [UIImage imageNamed:@"scratches.png"];
+    UIImageToMat(resImage, params.scratches);
+    
+    resImage = [UIImage imageNamed:@"fuzzyBorder.png"];
+    UIImageToMat(resImage, params.fuzzyBorder);
+    
+    cv::Mat frame;
+    UIImageToMat(inputImage, frame);
+    
+    params.frameSize = frame.size();
+    RetroFilter retroFilter(params);
+    
+    cv::Mat finalFrame;
+    retroFilter.applyToPhoto(frame, finalFrame);
+    
+    return MatToUIImage(finalFrame);
 }
 
 @end

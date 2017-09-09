@@ -30,10 +30,10 @@
     // Do any additional setup after loading the view.
     
     editArr_ = [NSArray arrayWithObjects:
+                @{@"editName":@"saveImg",@"editBrief":@"保存图片"},
                 @{@"editName":@"nolinearBlurTest",@"editBrief":@"非线性滤波"},
                 @{@"editName":@"linearBlurTest",@"editBrief":@"线性滤波"},
                 @{@"editName":@"galleryTest",@"editBrief":@"打开相册"},
-                @{@"editName":@"detectFace",@"editBrief":@"面部识别"},
                 @{@"editName":@"HoughLinesTest",@"editBrief":@"霍夫变换"},
                 @{@"editName":@"pyramidTest",@"editBrief":@"图像金字塔"},
                 @{@"editName":@"findEdge",@"editBrief":@"边缘检测"},
@@ -61,20 +61,29 @@
     } OtherParms:@{@"vc":self}];
 }
 
+//相册传回的图片，从这里开始分支，进行各种处理
 -(void)dealWithGalleryImg:(UIImage*)img{
     WeakSelf;
     
     void (^printPostcardBlock)() = ^(){
         [weakSelf.resultImg setImage:[CPPTools printPostcardWithImg:img]];
     };
+    void (^detectFaceBlock)() = ^(){
+        [weakSelf detectFaceWithImg:img];
+    };
+    void (^retroBlock)() = ^(){
+        [weakSelf.resultImg setImage:[CPPTools retroWithImg:img]];
+    };
     
     [SlidersView showSlidersViewWithBlocks:@[
-                                             @{@"callback":printPostcardBlock,@"title":@"打印邮票"}
+                                             @{@"callback":retroBlock,@"title":@"复古处理"},
+                                             @{@"callback":printPostcardBlock,@"title":@"打印邮票"},
+                                             @{@"callback":detectFaceBlock,@"title":@"面部识别"}
                                              ] OtherParms:@{@"parentView":self.view}];
 }
 
 //面部识别
--(void)detectFace{
+-(void)detectFaceWithImg:(UIImage*)img{
     cv::CascadeClassifier faceDetector;
     NSString* cascadePath = [[NSBundle mainBundle]
                              pathForResource:@"haarcascade_frontalface_alt"
@@ -82,7 +91,7 @@
     faceDetector.load([cascadePath UTF8String]);
     
     cv::Mat faceImage,gray;
-    UIImageToMat([UIImage imageNamed:sourceImgName_],faceImage);
+    UIImageToMat(img,faceImage);
     cvtColor(faceImage, gray, CV_BGR2GRAY);
     
     std::vector<cv::Rect> faces;
@@ -751,15 +760,23 @@
     UIImageToMat([UIImage imageNamed:sourceImgName_],matImg);
     cv::cvtColor(matImg,matImg,CV_BGR2GRAY);
     [_resultImg setImage:MatToUIImage(matImg)];
-    
-    //TODO: 尝试写入图片，不成功
-    cv::imwrite("resultimg.png", matImg);
-    
-    //TODO: 尝试这种写法，不成功
-//    cv::Mat matImg = cv::imread([sourceImgName_ UTF8String],0);
-//    [_resultImg setImage:MatToUIImage(matImg)];
-    
-    
+}
+
+-(void)saveImg{
+    UIImage* image = _resultImg.image;
+    if (image != nil)
+    {
+        UIImageWriteToSavedPhotosAlbum(image, self, nil, NULL);
+        
+        //Alert window
+        UIAlertView *alert = [UIAlertView alloc];
+        alert = [alert initWithTitle:@"Status"
+                             message:@"Saved to the Gallery!"
+                            delegate:nil
+                   cancelButtonTitle:@"Continue"
+                   otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 

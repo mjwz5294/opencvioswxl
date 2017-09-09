@@ -13,4 +13,7 @@
 ///输入UIImage，输出一个转化为postcard的UIImage
 +(UIImage*)printPostcardWithImg:(UIImage*)image;
 
+///输入UIImage，输出一个经过复古化处理的UIImage
++ (UIImage*)retroWithImg:(UIImage*)inputImage;
+
 @end
