@@ -67,9 +67,10 @@
                     initWithParentView:_imageView];
     _videoCamera.delegate = self;
     _videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;
-    _videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset640x480;
+    _videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset352x288;
     _videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
     _videoCamera.defaultFPS = 30;
+    _videoCamera.recordVideo = YES;//没这句就没法保存
     
     _isFocusLocked = NO;
     _isExposureLocked = NO;
@@ -87,8 +88,7 @@
     
     [_videoCamera start];
     
-    _params.frameSize = cv::Size(_videoCamera.imageWidth,
-                                _videoCamera.imageHeight);
+    _params.frameSize = cv::Size(352, 288);
     
     if (!_filter)
         _filter = new RetroFilter(_params);
@@ -129,12 +129,11 @@
     void (^usingRetroFilterBlock)(CGFloat,NSString*,BOOL) = ^(CGFloat progress,NSString* titleStr,BOOL isSwitchOn){
         weakSelf.isUsingRetroFilter = isSwitchOn;
     };
+    void (^saveVideoBlock)(CGFloat,NSString*,BOOL) = ^(CGFloat progress,NSString* titleStr,BOOL isSwitchOn){
+        [weakSelf saveVideo];
+    };
     void (^stopBlock)() = ^(){
-        [weakSelf.videoCamera stop];
-        if(weakSelf.img){
-            callback_(weakSelf.img);
-        }
-        [weakSelf dismissViewControllerAnimated:YES completion:nil];
+        [weakSelf stopVideo];
     };
     
     [SlidersView showSlidersViewWithBlocks:@[
@@ -143,8 +142,39 @@
                                              @{@"callback":lockBalanceBlock,@"title":@"平衡开关",@"isSwitch":@(_isBalanceLocked)},
                                              @{@"callback":rotationBlock,@"title":@"旋转开关",@"isSwitch":@(_videoCamera.rotateVideo)},
                                              @{@"callback":usingRetroFilterBlock,@"title":@"复古效果",@"isSwitch":@(_isUsingRetroFilter)},
+                                             @{@"callback":saveVideoBlock,@"title":@"保存"},
                                              @{@"callback":stopBlock,@"title":@"关闭"}
                                              ] OtherParms:@{@"parentView":self.view}];
+}
+
+-(void)saveVideo{
+    [_videoCamera stop];
+    NSString* relativePath = [_videoCamera.videoFileURL relativePath];
+    if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(relativePath)) {
+        //保存视频到相簿
+        Delog(@"保存成功：%@",relativePath);
+        UISaveVideoAtPathToSavedPhotosAlbum(relativePath, self,nil, nil);
+        
+        //Alert window
+        UIAlertView *alert = [UIAlertView alloc];
+        alert = [alert initWithTitle:@"Status"
+                             message:@"Saved to the Gallery!"
+                            delegate:nil
+                   cancelButtonTitle:@"Continue"
+                   otherButtonTitles:nil];
+        [alert show];
+    }else{
+        Delog(@"保存失败：%@",relativePath);
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)stopVideo{
+    [_videoCamera stop];
+    if(_img){
+        callback_(_img);
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 // Macros for time measurements
