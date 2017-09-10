@@ -245,7 +245,7 @@ static double machTimeToSecs(uint64_t time)
 {
     // Do some OpenCV processing with the image
     
-    
+    //面部元素识别，应该放在复古处理前面，一来面部识别才能不受影响，二来不会产生错误数据导致崩溃
     if (_isUsingFaceDetect) {
         TS(DetectAndAnimateFaces);
         _faceAnimator->detectAndAnimateFaces(image);
