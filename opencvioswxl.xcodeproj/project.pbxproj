@@ -52,6 +52,8 @@
 		341DF0381F642BBE0000DFEB /* RetroFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 341DF0361F642BBE0000DFEB /* RetroFilter.cpp */; };
 		341DF0481F644CF70000DFEB /* OpencvCameraViewVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 341DF0461F644CF70000DFEB /* OpencvCameraViewVC.mm */; };
 		341DF0491F644CF70000DFEB /* OpencvCameraViewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341DF0471F644CF70000DFEB /* OpencvCameraViewVC.xib */; };
+		341DF04E1F64FBD30000DFEB /* OpencvVideoCameraVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 341DF04C1F64FBD30000DFEB /* OpencvVideoCameraVC.mm */; };
+		341DF04F1F64FBD30000DFEB /* OpencvVideoCameraVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341DF04D1F64FBD30000DFEB /* OpencvVideoCameraVC.xib */; };
 		345A2EDE1F639762005E216D /* PostcardPrinter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 345A2EDC1F639762005E216D /* PostcardPrinter.cpp */; };
 		345A2EE11F639D47005E216D /* CPPTools.mm in Sources */ = {isa = PBXBuildFile; fileRef = 345A2EE01F639D47005E216D /* CPPTools.mm */; };
 		34C48C6C1F5269EB00000373 /* 5、从头开始，死磕一天 in Resources */ = {isa = PBXBuildFile; fileRef = 34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */; };
@@ -163,6 +165,9 @@
 		341DF0451F644CF70000DFEB /* OpencvCameraViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpencvCameraViewVC.h; sourceTree = "<group>"; };
 		341DF0461F644CF70000DFEB /* OpencvCameraViewVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpencvCameraViewVC.mm; sourceTree = "<group>"; };
 		341DF0471F644CF70000DFEB /* OpencvCameraViewVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpencvCameraViewVC.xib; sourceTree = "<group>"; };
+		341DF04B1F64FBD30000DFEB /* OpencvVideoCameraVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpencvVideoCameraVC.h; sourceTree = "<group>"; };
+		341DF04C1F64FBD30000DFEB /* OpencvVideoCameraVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpencvVideoCameraVC.mm; sourceTree = "<group>"; };
+		341DF04D1F64FBD30000DFEB /* OpencvVideoCameraVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpencvVideoCameraVC.xib; sourceTree = "<group>"; };
 		345A2EDC1F639762005E216D /* PostcardPrinter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PostcardPrinter.cpp; sourceTree = "<group>"; };
 		345A2EDD1F639762005E216D /* PostcardPrinter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PostcardPrinter.hpp; sourceTree = "<group>"; };
 		345A2EDF1F639D47005E216D /* CPPTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPPTools.h; sourceTree = "<group>"; };
@@ -306,6 +311,9 @@
 				341DF0451F644CF70000DFEB /* OpencvCameraViewVC.h */,
 				341DF0461F644CF70000DFEB /* OpencvCameraViewVC.mm */,
 				341DF0471F644CF70000DFEB /* OpencvCameraViewVC.xib */,
+				341DF04B1F64FBD30000DFEB /* OpencvVideoCameraVC.h */,
+				341DF04C1F64FBD30000DFEB /* OpencvVideoCameraVC.mm */,
+				341DF04D1F64FBD30000DFEB /* OpencvVideoCameraVC.xib */,
 			);
 			path = PopViews;
 			sourceTree = "<group>";
@@ -643,6 +651,7 @@
 				341ADB3C1F5E40250055B1C5 /* meinv.jpg in Resources */,
 				341ADB361F5E40250055B1C5 /* Default-568h@2x.png in Resources */,
 				34C48C6C1F5269EB00000373 /* 5、从头开始，死磕一天 in Resources */,
+				341DF04F1F64FBD30000DFEB /* OpencvVideoCameraVC.xib in Resources */,
 				341ADB3E1F5E40250055B1C5 /* scratches.png in Resources */,
 				341ADB3D1F5E40250055B1C5 /* mustache.png in Resources */,
 				AF4C59991F47E3E1007F97F9 /* 2、编译C++库 in Resources */,
@@ -742,6 +751,7 @@
 				AF937E6C1F5007CE002B573A /* photoFromCamVC.mm in Sources */,
 				341DF0381F642BBE0000DFEB /* RetroFilter.cpp in Sources */,
 				AFF487CD1F4BDE6000AC4A63 /* MTGeometry.c in Sources */,
+				341DF04E1F64FBD30000DFEB /* OpencvVideoCameraVC.mm in Sources */,
 				3411B4DD1F541CFD00D32A3F /* savevideoVC.mm in Sources */,
 				AFF487C51F4BDDC000AC4A63 /* UIColor+HexRepresentation.m in Sources */,
 				3411B4D91F54115A00D32A3F /* processionVideoVC.mm in Sources */,

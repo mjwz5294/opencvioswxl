@@ -12,6 +12,7 @@
 #import "CPPTools.h"
 #import "ImagePickerTool.h"
 #import "OpencvCameraViewVC.h"
+#import "OpencvVideoCameraVC.h"
 
 @interface ShowImgVC ()<UITableViewDelegate,UITableViewDataSource>{
     NSArray* editArr_;
@@ -34,6 +35,7 @@
                 @{@"editName":@"saveImg",@"editBrief":@"保存图片"},
                 @{@"editName":@"nolinearBlurTest",@"editBrief":@"非线性滤波"},
                 @{@"editName":@"linearBlurTest",@"editBrief":@"线性滤波"},
+                @{@"editName":@"showOpencvVideoCamera",@"editBrief":@"opencv录影"},
                 @{@"editName":@"showOpencvCamera",@"editBrief":@"opencv相册"},
                 @{@"editName":@"galleryTest",@"editBrief":@"打开相册"},
                 @{@"editName":@"HoughLinesTest",@"editBrief":@"霍夫变换"},
@@ -52,6 +54,15 @@
     sourceImgName_ = @"lena.png";
     [_sourceImg setImage:[UIImage imageNamed:sourceImgName_]];
     [self showSourceImg];
+}
+
+-(void)showOpencvVideoCamera{
+    WeakSelf
+    void (^opencvVideoCameraBlock)(UIImage*) = ^(UIImage *img){
+        [weakSelf.resultImg setImage:img];
+    };
+    
+    [OpencvVideoCameraVC showOpencvVideoCameraWithParms:@{@"callback":opencvVideoCameraBlock,@"vc":self}];
 }
 
 -(void)showOpencvCamera{
