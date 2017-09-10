@@ -13,6 +13,7 @@
 #import <opencv2/videoio/cap_ios.h>
 
 #import "RetroFilter.hpp"
+#import "FaceAnimator.hpp"
 #import <mach/mach_time.h>
 
 @interface OpencvVideoCameraVC ()<CvVideoCameraDelegate>{
@@ -22,7 +23,7 @@
 
 @property (nonatomic, weak) IBOutlet UIImageView* imageView;
 @property (nonatomic, weak) IBOutlet UIButton* showToolBtn;
-@property (nonatomic, assign) BOOL isFocusLocked, isExposureLocked, isBalanceLocked, isUsingRetroFilter;
+@property (nonatomic, assign) BOOL isFocusLocked, isExposureLocked, isBalanceLocked, isUsingRetroFilter,isUsingFaceDetect;
 
 
 @property (nonatomic, strong) CvVideoCamera* videoCamera;
@@ -30,6 +31,9 @@
 @property (nonatomic, assign) RetroFilter::Parameters params;
 @property (nonatomic, assign) cv::Ptr<RetroFilter> filter;
 @property (nonatomic, assign) uint64_t prevTime;
+
+@property (nonatomic, assign) FaceAnimator::Parameters parameters;
+@property (nonatomic, assign) cv::Ptr<FaceAnimator> faceAnimator;
 
 @end
 
@@ -66,7 +70,7 @@
     _videoCamera = [[CvVideoCamera alloc]
                     initWithParentView:_imageView];
     _videoCamera.delegate = self;
-    _videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;
+    _videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionFront;
     _videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset352x288;
     _videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
     _videoCamera.defaultFPS = 30;
@@ -76,15 +80,51 @@
     _isExposureLocked = NO;
     _isBalanceLocked = NO;
     _isUsingRetroFilter = NO;
+    _isUsingFaceDetect = NO;
     
-    // Load textures
-    UIImage* resImage = [UIImage imageNamed:@"scratches.png"];
-    UIImageToMat(resImage, _params.scratches);
+    {
+        // Load textures
+        UIImage* resImage = [UIImage imageNamed:@"scratches.png"];
+        UIImageToMat(resImage, _params.scratches);
+        
+        resImage = [UIImage imageNamed:@"fuzzyBorder.png"];
+        UIImageToMat(resImage, _params.fuzzyBorder);
+        
+        _prevTime = mach_absolute_time();
+    }
     
-    resImage = [UIImage imageNamed:@"fuzzyBorder.png"];
-    UIImageToMat(resImage, _params.fuzzyBorder);
     
-    _prevTime = mach_absolute_time();
+    {
+        //face detect
+        // Load images
+        UIImage* resImage = [UIImage imageNamed:@"glasses.png"];
+        UIImageToMat(resImage, _parameters.glasses, true);
+        cvtColor(_parameters.glasses, _parameters.glasses, CV_BGRA2RGBA);
+        
+        resImage = [UIImage imageNamed:@"mustache.png"];
+        UIImageToMat(resImage, _parameters.mustache, true);
+        cvtColor(_parameters.mustache, _parameters.mustache, CV_BGRA2RGBA);
+        
+        // Load Cascade Classisiers
+        NSString* filename = [[NSBundle mainBundle]
+                              pathForResource:@"lbpcascade_frontalface"
+                              ofType:@"xml"];
+        _parameters.faceCascade.load([filename UTF8String]);
+        
+        filename = [[NSBundle mainBundle]
+                    pathForResource:@"haarcascade_mcs_eyepair_big"
+                    ofType:@"xml"];
+        _parameters.eyesCascade.load([filename UTF8String]);
+        
+        filename = [[NSBundle mainBundle]
+                    pathForResource:@"haarcascade_mcs_mouth"
+                    ofType:@"xml"];
+        _parameters.mouthCascade.load([filename UTF8String]);
+        _faceAnimator = new FaceAnimator(_parameters);
+    }
+    
+    
+    
     
     [_videoCamera start];
     
@@ -129,6 +169,9 @@
     void (^usingRetroFilterBlock)(CGFloat,NSString*,BOOL) = ^(CGFloat progress,NSString* titleStr,BOOL isSwitchOn){
         weakSelf.isUsingRetroFilter = isSwitchOn;
     };
+    void (^usingFaceDetectBlock)(CGFloat,NSString*,BOOL) = ^(CGFloat progress,NSString* titleStr,BOOL isSwitchOn){
+        weakSelf.isUsingFaceDetect = isSwitchOn;
+    };
     void (^saveVideoBlock)(CGFloat,NSString*,BOOL) = ^(CGFloat progress,NSString* titleStr,BOOL isSwitchOn){
         [weakSelf saveVideo];
     };
@@ -142,6 +185,7 @@
                                              @{@"callback":lockBalanceBlock,@"title":@"平衡开关",@"isSwitch":@(_isBalanceLocked)},
                                              @{@"callback":rotationBlock,@"title":@"旋转开关",@"isSwitch":@(_videoCamera.rotateVideo)},
                                              @{@"callback":usingRetroFilterBlock,@"title":@"复古效果",@"isSwitch":@(_isUsingRetroFilter)},
+                                             @{@"callback":usingFaceDetectBlock,@"title":@"面部识别",@"isSwitch":@(_isUsingFaceDetect)},
                                              @{@"callback":saveVideoBlock,@"title":@"保存"},
                                              @{@"callback":stopBlock,@"title":@"关闭"}
                                              ] OtherParms:@{@"parentView":self.view}];
@@ -202,6 +246,12 @@ static double machTimeToSecs(uint64_t time)
     // Do some OpenCV processing with the image
     
     
+    if (_isUsingFaceDetect) {
+        TS(DetectAndAnimateFaces);
+        _faceAnimator->detectAndAnimateFaces(image);
+        TE(DetectAndAnimateFaces);
+    }
+    
     if (_isUsingRetroFilter) {
         cv::Mat inputFrame = image;
         BOOL isNeedRotation = image.size() != _params.frameSize;
@@ -213,6 +263,8 @@ static double machTimeToSecs(uint64_t time)
         TS(ApplyingFilter);
         _filter->applyToVideo(inputFrame, finalFrame);
         TE(ApplyingFilter);
+        
+        
         
         if (isNeedRotation)
             finalFrame = finalFrame.t();
