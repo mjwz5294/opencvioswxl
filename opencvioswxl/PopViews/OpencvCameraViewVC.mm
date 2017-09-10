@@ -31,7 +31,7 @@
 
 /*
  1、将imageView赋给_photoCamera后，我的imageView会向下拉长60个点，估计是opencv为相机底部的工具条预留的位置；
- 2、我点击拍照后，照片的大小并不是imageView中展示的大小，而是与屏幕尺寸有关系；
+ 2、我点击拍照后，照片的大小并不是imageView中展示的大小。不过这里尺寸，可以通过defaultAVCaptureSessionPreset参数设置。
  */
 
 -(void)openCamera{

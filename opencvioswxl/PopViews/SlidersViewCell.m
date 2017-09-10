@@ -9,7 +9,7 @@
 #import "SlidersViewCell.h"
 
 @interface SlidersViewCell(){
-    void (^callback_)(CGFloat,NSString*);
+    void (^callback_)(CGFloat,NSString*,BOOL);
     //
     /*
      1、之前一直想通过判断block结构来实现对不同结构的block调用，没成功，只能通过‘对其它参数定义协议’来实现了。
@@ -26,6 +26,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLab;
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 
+@property (nonatomic,assign) BOOL isSwitch;
+@property (nonatomic,assign) BOOL isSwitchOn;
+
 @end
 
 @implementation SlidersViewCell
@@ -34,11 +37,19 @@
     [super awakeFromNib];
     [_titleLab setText:@"haha"];
     [_slider setValue:0];
+    _isSwitch = NO;
+    _isSwitchOn = NO;
 }
 
 -(void)refresh:(NSDictionary*)dic{
     callback_ = dic[@"callback"];
     [_titleLab setText:dic[@"title"]];
+    
+    if (dic[@"isSwitch"]) {
+        _isSwitch = YES;
+        _isSwitchOn = [dic[@"isSwitch"] boolValue];
+        [self refreshSwitchState];
+    }
     
     [_slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
     _slider.continuous = NO;//当放开手, 值才确定下来
@@ -47,7 +58,19 @@
 -(void)sliderValueChanged:(UISlider *)slider{
     
     if ([slider isEqual:_slider]) {
-        callback_(slider.value,_titleLab.text);
+        if (_isSwitch) {
+            _isSwitchOn = !_isSwitchOn;
+            [self refreshSwitchState];
+        }
+        callback_(slider.value,_titleLab.text,_isSwitchOn);
+    }
+}
+
+-(void)refreshSwitchState{
+    if (_isSwitchOn) {
+        [_titleLab setTextColor:[UIColor redColor]];
+    }else{
+        [_titleLab setTextColor:[UIColor blackColor]];
     }
 }
 
