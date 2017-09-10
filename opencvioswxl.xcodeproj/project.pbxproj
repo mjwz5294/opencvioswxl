@@ -50,6 +50,8 @@
 		341ADB6F1F62E6B70055B1C5 /* slam.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB6E1F62E6B70055B1C5 /* slam.jpeg */; };
 		341ADB711F62E8190055B1C5 /* circle.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 341ADB701F62E8190055B1C5 /* circle.jpeg */; };
 		341DF0381F642BBE0000DFEB /* RetroFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 341DF0361F642BBE0000DFEB /* RetroFilter.cpp */; };
+		341DF0481F644CF70000DFEB /* OpencvCameraViewVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 341DF0461F644CF70000DFEB /* OpencvCameraViewVC.mm */; };
+		341DF0491F644CF70000DFEB /* OpencvCameraViewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341DF0471F644CF70000DFEB /* OpencvCameraViewVC.xib */; };
 		345A2EDE1F639762005E216D /* PostcardPrinter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 345A2EDC1F639762005E216D /* PostcardPrinter.cpp */; };
 		345A2EE11F639D47005E216D /* CPPTools.mm in Sources */ = {isa = PBXBuildFile; fileRef = 345A2EE01F639D47005E216D /* CPPTools.mm */; };
 		34C48C6C1F5269EB00000373 /* 5、从头开始，死磕一天 in Resources */ = {isa = PBXBuildFile; fileRef = 34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */; };
@@ -158,6 +160,9 @@
 		341ADB701F62E8190055B1C5 /* circle.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = circle.jpeg; sourceTree = "<group>"; };
 		341DF0361F642BBE0000DFEB /* RetroFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RetroFilter.cpp; sourceTree = "<group>"; };
 		341DF0371F642BBE0000DFEB /* RetroFilter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RetroFilter.hpp; sourceTree = "<group>"; };
+		341DF0451F644CF70000DFEB /* OpencvCameraViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpencvCameraViewVC.h; sourceTree = "<group>"; };
+		341DF0461F644CF70000DFEB /* OpencvCameraViewVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpencvCameraViewVC.mm; sourceTree = "<group>"; };
+		341DF0471F644CF70000DFEB /* OpencvCameraViewVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpencvCameraViewVC.xib; sourceTree = "<group>"; };
 		345A2EDC1F639762005E216D /* PostcardPrinter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PostcardPrinter.cpp; sourceTree = "<group>"; };
 		345A2EDD1F639762005E216D /* PostcardPrinter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PostcardPrinter.hpp; sourceTree = "<group>"; };
 		345A2EDF1F639D47005E216D /* CPPTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPPTools.h; sourceTree = "<group>"; };
@@ -298,6 +303,9 @@
 				341ADB5A1F5F9BDD0055B1C5 /* SlidersViewCell.h */,
 				341ADB5B1F5F9BDD0055B1C5 /* SlidersViewCell.m */,
 				341ADB5F1F5FB7960055B1C5 /* SlidersViewCell.xib */,
+				341DF0451F644CF70000DFEB /* OpencvCameraViewVC.h */,
+				341DF0461F644CF70000DFEB /* OpencvCameraViewVC.mm */,
+				341DF0471F644CF70000DFEB /* OpencvCameraViewVC.xib */,
 			);
 			path = PopViews;
 			sourceTree = "<group>";
@@ -639,6 +647,7 @@
 				341ADB3D1F5E40250055B1C5 /* mustache.png in Resources */,
 				AF4C59991F47E3E1007F97F9 /* 2、编译C++库 in Resources */,
 				341ADB461F5E40710055B1C5 /* haarcascade_frontalface_alt.xml in Resources */,
+				341DF0491F644CF70000DFEB /* OpencvCameraViewVC.xib in Resources */,
 				34C72F991F5D9375009AD3E1 /* 8、opencv的python教程总结 in Resources */,
 				AF4C596C1F47DF93007F97F9 /* Main.storyboard in Resources */,
 				341ADB691F604B820055B1C5 /* 9、opencv的C++教程 in Resources */,
@@ -751,6 +760,7 @@
 				3412AF461F54637900AD918B /* neonVC.mm in Sources */,
 				341ADB671F5FD9B10055B1C5 /* BaseView.m in Sources */,
 				341ADB4F1F5F87870055B1C5 /* SlidersView.m in Sources */,
+				341DF0481F644CF70000DFEB /* OpencvCameraViewVC.mm in Sources */,
 				AF4C59631F47DF93007F97F9 /* main.m in Sources */,
 				AF7C16F11F4E637300484C3D /* GalleryVC.mm in Sources */,
 			);

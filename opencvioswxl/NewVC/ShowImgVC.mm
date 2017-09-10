@@ -11,6 +11,7 @@
 #import "SlidersView.h"
 #import "CPPTools.h"
 #import "ImagePickerTool.h"
+#import "OpencvCameraViewVC.h"
 
 @interface ShowImgVC ()<UITableViewDelegate,UITableViewDataSource>{
     NSArray* editArr_;
@@ -33,6 +34,7 @@
                 @{@"editName":@"saveImg",@"editBrief":@"保存图片"},
                 @{@"editName":@"nolinearBlurTest",@"editBrief":@"非线性滤波"},
                 @{@"editName":@"linearBlurTest",@"editBrief":@"线性滤波"},
+                @{@"editName":@"showOpencvCamera",@"editBrief":@"opencv相册"},
                 @{@"editName":@"galleryTest",@"editBrief":@"打开相册"},
                 @{@"editName":@"HoughLinesTest",@"editBrief":@"霍夫变换"},
                 @{@"editName":@"pyramidTest",@"editBrief":@"图像金字塔"},
@@ -50,6 +52,16 @@
     sourceImgName_ = @"lena.png";
     [_sourceImg setImage:[UIImage imageNamed:sourceImgName_]];
     [self showSourceImg];
+}
+
+-(void)showOpencvCamera{
+    
+    WeakSelf
+    void (^opencvCameraBlock)(UIImage*) = ^(UIImage *img){
+        [weakSelf.resultImg setImage:img];
+    };
+    
+    [OpencvCameraViewVC showOpencvCameraWithParms:@{@"callback":opencvCameraBlock,@"vc":self}];
 }
 
 //打开相册
@@ -194,7 +206,7 @@
             circle( sourceImg, center, radius, cv::Scalar(155,50,255), 3, 8, 0 );
         }
         [_resultImg setImage:MatToUIImage(dstImg)];
-//        DebugLog(@"HoughCircles over");
+//        Delog(@"HoughCircles over");
         return;
     }
     
@@ -228,7 +240,7 @@
 }
 
 -(void)resize:(CGFloat)size withTitle:(NSString*)titleStr{
-    DebugLog(@"size---%.2f",size);
+    Delog(@"size---%.2f",size);
     
     //pyrDown()函数和pyrUp()函数中，要求输出图像需要和源图像有一样的尺寸和类型。但在resize()函数中可以不一样。
     cv::Mat sourceImg,dstImg;
@@ -244,14 +256,14 @@
             cv::pyrUp(sourceImg, sourceImg,cv::Size(sourceImg.cols*2,sourceImg.rows*2));//这两处对参数的设置有要求，除了2还没试出其它可用参数，也懒得看了
         }
         [_resultImg setImage:MatToUIImage(sourceImg)];
-        DebugLog(@"pyrUpover");
+        Delog(@"pyrUpover");
         return;
     }else if ([titleStr isEqualToString:@"pyrDown"]){
         for (int i=0; i<size; i++) {
             cv::pyrDown(sourceImg, sourceImg,cv::Size(sourceImg.cols/2,sourceImg.rows/2));//这两处对参数的设置有要求，除了2还没试出其它可用参数，也懒得看了
         }
         [_resultImg setImage:MatToUIImage(sourceImg)];
-        DebugLog(@"pyrDownover");
+        Delog(@"pyrDownover");
         return;
     }
     
@@ -437,7 +449,7 @@
     //这里是用了block的多参数适配方案，精简了代码，查看SlidersViewCell中的代码，即可理解
     
     void (^morphologyExBlock)(CGFloat,NSString*) = ^(CGFloat progress,NSString* titleStr){
-//        DebugLog(@"progress%f---testStr:%@",progress, titleStr);
+//        Delog(@"progress%f---testStr:%@",progress, titleStr);
         
         cv::Mat sourceImg,dstImg;
         UIImageToMat([UIImage imageNamed:sourceImgName_],sourceImg);
@@ -630,8 +642,8 @@
 }
 
 -(void)contrastAndBrightWithContrast:(CGFloat)contrast withBright:(CGFloat)bright{
-    DebugLog(@"contrast:%f",contrast);
-    DebugLog(@"bright:%f",bright);
+    Delog(@"contrast:%f",contrast);
+    Delog(@"bright:%f",bright);
     
     cv::Mat sourceImg,dstImg;
     UIImageToMat([UIImage imageNamed:sourceImgName_],sourceImg);

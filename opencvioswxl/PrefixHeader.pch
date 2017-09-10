@@ -36,9 +36,9 @@
 
 #define WXLDEBUG
 #ifdef WXLDEBUG
-#define DebugLog        NSLog
+#define Delog        NSLog
 #else
-#define DebugLog
+#define Delog
 #endif
 
 

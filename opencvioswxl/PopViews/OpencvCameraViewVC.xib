@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OpencvCameraViewVC">
+            <connections>
+                <outlet property="imageView" destination="Us2-eN-g3z" id="SvO-Hm-rJA"/>
+                <outlet property="showToolBtn" destination="KR1-oO-K6B" id="3Ah-cq-KtB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Us2-eN-g3z">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="527"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KR1-oO-K6B">
+                    <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="vwn-Cs-6Nd"/>
+                    </constraints>
+                    <state key="normal" title="showTools"/>
+                    <connections>
+                        <action selector="showTools:" destination="-1" eventType="touchUpInside" id="qGf-q5-Zd3"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="KR1-oO-K6B" secondAttribute="trailing" id="2hB-p2-0Kx"/>
+                <constraint firstAttribute="bottom" secondItem="KR1-oO-K6B" secondAttribute="bottom" id="3gz-h3-pW7"/>
+                <constraint firstAttribute="trailing" secondItem="Us2-eN-g3z" secondAttribute="trailing" id="6TG-CY-tO8"/>
+                <constraint firstItem="Us2-eN-g3z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AW1-tq-vZh"/>
+                <constraint firstItem="Us2-eN-g3z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BPO-oS-Wn3"/>
+                <constraint firstItem="KR1-oO-K6B" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DA8-To-XhV"/>
+                <constraint firstItem="KR1-oO-K6B" firstAttribute="top" secondItem="Us2-eN-g3z" secondAttribute="bottom" constant="100" id="WgD-9C-GOc"/>
+            </constraints>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
+        </view>
+    </objects>
+</document>

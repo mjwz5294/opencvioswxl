@@ -16,7 +16,7 @@
 }
 
 -(void)dealloc{
-    DebugLog(@"dealloc:%@",[self class]);
+    Delog(@"dealloc:%@",[self class]);
 }
 
 /*
