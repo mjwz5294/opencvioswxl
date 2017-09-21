@@ -1,0 +1,6 @@
+20170913
+今天iphoneX出来了，买不起。
+其实本来想直接学tensorflow的，环境搭建好了，跑了一下mnist，大概能跑通。但真要要跟想用到opencv上，就需要真正理解机器学习那一套理论，并且熟练使用tensorflow，短时间内估计搞不定吧。想到opencv库里面也有人工智能模块，引用了tensorflow和caffe，有简单的api可以调用，所以我就想直接在opencv中先熟悉一下基本步骤，待熟悉了opencv中的ml使用后，再去研究tensorflow。
+另外，我已经买了几本数学书，后面就要开始深入学习理论了。
+
+

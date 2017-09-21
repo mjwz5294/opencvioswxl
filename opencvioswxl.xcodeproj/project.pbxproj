@@ -51,6 +51,7 @@
 		341DF0631F65412E0000DFEB /* Processing_NEON.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 341DF0621F65412E0000DFEB /* Processing_NEON.cpp */; };
 		345A2EDE1F639762005E216D /* PostcardPrinter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 345A2EDC1F639762005E216D /* PostcardPrinter.cpp */; };
 		345A2EE11F639D47005E216D /* CPPTools.mm in Sources */ = {isa = PBXBuildFile; fileRef = 345A2EE01F639D47005E216D /* CPPTools.mm */; };
+		34B8A2F61F6930D10071DC0C /* 10、opencv与机器学习 in Resources */ = {isa = PBXBuildFile; fileRef = 34B8A2F51F6930D10071DC0C /* 10、opencv与机器学习 */; };
 		34C48C6C1F5269EB00000373 /* 5、从头开始，死磕一天 in Resources */ = {isa = PBXBuildFile; fileRef = 34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */; };
 		34C72F981F5D9375009AD3E1 /* 7、小结 in Resources */ = {isa = PBXBuildFile; fileRef = 34C72F961F5D9375009AD3E1 /* 7、小结 */; };
 		34C72F991F5D9375009AD3E1 /* 8、opencv的python教程总结 in Resources */ = {isa = PBXBuildFile; fileRef = 34C72F971F5D9375009AD3E1 /* 8、opencv的python教程总结 */; };
@@ -150,6 +151,7 @@
 		345A2EDD1F639762005E216D /* PostcardPrinter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PostcardPrinter.hpp; sourceTree = "<group>"; };
 		345A2EDF1F639D47005E216D /* CPPTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPPTools.h; sourceTree = "<group>"; };
 		345A2EE01F639D47005E216D /* CPPTools.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CPPTools.mm; sourceTree = "<group>"; };
+		34B8A2F51F6930D10071DC0C /* 10、opencv与机器学习 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "10、opencv与机器学习"; sourceTree = "<group>"; };
 		34C48C6B1F5269EB00000373 /* 5、从头开始，死磕一天 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "5、从头开始，死磕一天"; sourceTree = "<group>"; };
 		34C72F961F5D9375009AD3E1 /* 7、小结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "7、小结"; sourceTree = "<group>"; };
 		34C72F971F5D9375009AD3E1 /* 8、opencv的python教程总结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "8、opencv的python教程总结"; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 				34C72F961F5D9375009AD3E1 /* 7、小结 */,
 				34C72F971F5D9375009AD3E1 /* 8、opencv的python教程总结 */,
 				341ADB681F604B820055B1C5 /* 9、opencv的C++教程 */,
+				34B8A2F51F6930D10071DC0C /* 10、opencv与机器学习 */,
 			);
 			path = note;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				34C72F991F5D9375009AD3E1 /* 8、opencv的python教程总结 in Resources */,
 				AF4C596C1F47DF93007F97F9 /* Main.storyboard in Resources */,
 				341ADB691F604B820055B1C5 /* 9、opencv的C++教程 in Resources */,
+				34B8A2F61F6930D10071DC0C /* 10、opencv与机器学习 in Resources */,
 				341ADB3A1F5E40250055B1C5 /* glasses.png in Resources */,
 				341ADB351F5E40250055B1C5 /* cat.jpeg in Resources */,
 				341ADB601F5FB7960055B1C5 /* SlidersViewCell.xib in Resources */,
