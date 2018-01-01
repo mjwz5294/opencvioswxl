@@ -841,7 +841,7 @@
 				DEVELOPMENT_TEAM = TU5QH7P4TH;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/longgege/git/opencvioswxl/opencvioswxl/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/opencvioswxl/PrefixHeader.pch";
 				INFOPLIST_FILE = opencvioswxl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -858,7 +858,7 @@
 				DEVELOPMENT_TEAM = TU5QH7P4TH;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/longgege/git/opencvioswxl/opencvioswxl/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/opencvioswxl/PrefixHeader.pch";
 				INFOPLIST_FILE = opencvioswxl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
