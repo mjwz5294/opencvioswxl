@@ -181,25 +181,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iuy-oM-Iov">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ClM-dg-1Sn">
-                                <rect key="frame" x="0.0" y="20" width="108" height="40"/>
+                                <rect key="frame" x="10" y="20" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="拍照，点击返回"/>
+                                <state key="normal" title="返回"/>
                                 <connections>
                                     <action selector="onClickBack:" destination="w1K-mp-cy0" eventType="touchUpInside" id="300-1e-VMt"/>
                                     <action selector="onClickBack:" destination="p6T-R4-bcF" eventType="touchUpInside" id="hC9-FO-tDv"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iuy-oM-Iov">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3YQ-Qd-IL0">
+                                <rect key="frame" x="334" y="30" width="31" height="30"/>
+                                <state key="normal" title="自拍"/>
+                                <connections>
+                                    <action selector="onClickMode:" destination="w1K-mp-cy0" eventType="touchUpInside" id="1yZ-OP-lyG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yy-Bv-rvS">
+                                <rect key="frame" x="273" y="30" width="31" height="30"/>
+                                <state key="normal" title="比例"/>
+                                <connections>
+                                    <action selector="onClickRatio:" destination="w1K-mp-cy0" eventType="touchUpInside" id="0VW-oz-gkw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywI-hC-amo">
+                                <rect key="frame" x="212" y="30" width="31" height="30"/>
+                                <state key="normal" title="闪光"/>
+                                <connections>
+                                    <action selector="onClickSpark:" destination="w1K-mp-cy0" eventType="touchUpInside" id="5Ma-Ey-heI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6p-oU-OIR">
+                                <rect key="frame" x="295" y="627" width="80" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="6cH-F4-kvd"/>
+                                    <constraint firstAttribute="height" constant="40" id="LSl-tl-nNt"/>
+                                </constraints>
+                                <state key="normal" title="拍摄方式"/>
+                                <connections>
+                                    <action selector="onClickStyle:" destination="w1K-mp-cy0" eventType="touchUpInside" id="4fT-hc-Sc4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OuN-LQ-Lpi">
+                                <rect key="frame" x="0.0" y="627" width="80" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8Ny-A8-UyQ"/>
+                                    <constraint firstAttribute="width" constant="80" id="Fdu-jg-B6a"/>
+                                </constraints>
+                                <state key="normal" title="美颜工具"/>
+                                <connections>
+                                    <action selector="onClickButify:" destination="w1K-mp-cy0" eventType="touchUpInside" id="ehz-Wp-90Q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="k6p-oU-OIR" firstAttribute="bottom" secondItem="XG8-hW-iBA" secondAttribute="bottom" id="7ko-1H-s8i"/>
+                            <constraint firstItem="OuN-LQ-Lpi" firstAttribute="leading" secondItem="XG8-hW-iBA" secondAttribute="leading" id="7lm-hh-81v"/>
+                            <constraint firstItem="4yy-Bv-rvS" firstAttribute="leading" secondItem="ywI-hC-amo" secondAttribute="trailing" constant="30" id="Acv-z4-22B"/>
+                            <constraint firstItem="3YQ-Qd-IL0" firstAttribute="leading" secondItem="4yy-Bv-rvS" secondAttribute="trailing" constant="30" id="HXN-v9-FWh"/>
+                            <constraint firstItem="ywI-hC-amo" firstAttribute="top" secondItem="XG8-hW-iBA" secondAttribute="top" constant="10" id="KcF-ud-c6Z"/>
+                            <constraint firstItem="4yy-Bv-rvS" firstAttribute="top" secondItem="XG8-hW-iBA" secondAttribute="top" constant="10" id="Ozc-yd-U09"/>
                             <constraint firstItem="iuy-oM-Iov" firstAttribute="leading" secondItem="XG8-hW-iBA" secondAttribute="leading" id="TcU-14-jsI"/>
                             <constraint firstItem="iuy-oM-Iov" firstAttribute="top" secondItem="7sc-HK-Bfl" secondAttribute="top" id="Wq0-ra-wq2"/>
+                            <constraint firstItem="XG8-hW-iBA" firstAttribute="bottom" secondItem="OuN-LQ-Lpi" secondAttribute="bottom" id="ZF5-Oq-rNg"/>
+                            <constraint firstItem="k6p-oU-OIR" firstAttribute="trailing" secondItem="XG8-hW-iBA" secondAttribute="trailing" id="cnX-iP-ddE"/>
                             <constraint firstItem="iuy-oM-Iov" firstAttribute="trailing" secondItem="XG8-hW-iBA" secondAttribute="trailing" id="jOa-mc-aQe"/>
+                            <constraint firstItem="3YQ-Qd-IL0" firstAttribute="top" secondItem="XG8-hW-iBA" secondAttribute="top" constant="10" id="o1h-Jq-12E"/>
                             <constraint firstItem="iuy-oM-Iov" firstAttribute="bottom" secondItem="XG8-hW-iBA" secondAttribute="bottom" id="y5z-Qt-4Zk"/>
+                            <constraint firstItem="XG8-hW-iBA" firstAttribute="trailing" secondItem="3YQ-Qd-IL0" secondAttribute="trailing" constant="10" id="yND-LI-O6p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XG8-hW-iBA"/>
                     </view>

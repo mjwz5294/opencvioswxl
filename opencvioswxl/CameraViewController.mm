@@ -35,6 +35,21 @@
 - (IBAction)onClickBack:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+- (IBAction)onClickMode:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (IBAction)onClickRatio:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (IBAction)onClickSpark:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (IBAction)onClickStyle:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (IBAction)onClickButify:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 /*
  1、将imageView赋给_photoCamera后，我的imageView会向下拉长60个点，估计是opencv为相机底部的工具条预留的位置；
@@ -52,13 +67,6 @@
     AVCaptureSessionPresetPhoto;
     _photoCamera.defaultAVCaptureVideoOrientation =
     AVCaptureVideoOrientationPortrait;
-    
-    // Load images
-//    UIImage* resImage = [UIImage imageNamed:@"scratches.png"];
-//    UIImageToMat(resImage, params.scratches);
-//
-//    resImage = [UIImage imageNamed:@"fuzzy_border.png"];
-//    UIImageToMat(resImage, params.fuzzyBorder);
     
     [_photoCamera start];
 }
