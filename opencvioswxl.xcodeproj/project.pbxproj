@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0415CAF5219D0FAE00DCCEF1 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0415CAF4219D0FAE00DCCEF1 /* Root.storyboard */; };
+		0415CAF9219D140800DCCEF1 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0415CAF8219D140800DCCEF1 /* RootViewController.m */; };
+		0415CAFC219D149800DCCEF1 /* AdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0415CAFB219D149800DCCEF1 /* AdViewController.m */; };
+		0415CAFF219D194200DCCEF1 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0415CAFE219D194200DCCEF1 /* CameraViewController.m */; };
+		0415CB02219D197300DCCEF1 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0415CB01219D197300DCCEF1 /* UserViewController.m */; };
+		0415CB05219D197E00DCCEF1 /* ShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0415CB04219D197E00DCCEF1 /* ShopViewController.m */; };
 		3412AF561F54FEDE00AD918B /* 6、教程实例跑完，总结 in Resources */ = {isa = PBXBuildFile; fileRef = 3412AF551F54FEDE00AD918B /* 6、教程实例跑完，总结 */; };
 		341AA2121F63D51600BC5F40 /* ImagePickerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 341AA2111F63D51600BC5F40 /* ImagePickerTool.m */; };
 		341ADB231F5E3C620055B1C5 /* ShowImgVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 341ADB221F5E3C620055B1C5 /* ShowImgVC.mm */; };
@@ -90,6 +96,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0415CAF4219D0FAE00DCCEF1 /* Root.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
+		0415CAF7219D140800DCCEF1 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		0415CAF8219D140800DCCEF1 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		0415CAFA219D149800DCCEF1 /* AdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdViewController.h; sourceTree = "<group>"; };
+		0415CAFB219D149800DCCEF1 /* AdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdViewController.m; sourceTree = "<group>"; };
+		0415CAFD219D194200DCCEF1 /* CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		0415CAFE219D194200DCCEF1 /* CameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		0415CB00219D197300DCCEF1 /* UserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		0415CB01219D197300DCCEF1 /* UserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		0415CB03219D197E00DCCEF1 /* ShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopViewController.h; sourceTree = "<group>"; };
+		0415CB04219D197E00DCCEF1 /* ShopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopViewController.m; sourceTree = "<group>"; };
 		28A02051932DD99EB4F37BCA /* Pods-opencvioswxl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opencvioswxl.release.xcconfig"; path = "Pods/Target Support Files/Pods-opencvioswxl/Pods-opencvioswxl.release.xcconfig"; sourceTree = "<group>"; };
 		3412AF551F54FEDE00AD918B /* 6、教程实例跑完，总结 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "6、教程实例跑完，总结"; sourceTree = "<group>"; };
 		341AA2101F63D51600BC5F40 /* ImagePickerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePickerTool.h; sourceTree = "<group>"; };
@@ -213,6 +230,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0415CAF6219D13DF00DCCEF1 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				0415CAFA219D149800DCCEF1 /* AdViewController.h */,
+				0415CAFB219D149800DCCEF1 /* AdViewController.m */,
+				0415CAFD219D194200DCCEF1 /* CameraViewController.h */,
+				0415CAFE219D194200DCCEF1 /* CameraViewController.m */,
+				0415CAF7219D140800DCCEF1 /* RootViewController.h */,
+				0415CAF8219D140800DCCEF1 /* RootViewController.m */,
+				0415CB03219D197E00DCCEF1 /* ShopViewController.h */,
+				0415CB04219D197E00DCCEF1 /* ShopViewController.m */,
+				0415CB00219D197300DCCEF1 /* UserViewController.h */,
+				0415CB01219D197300DCCEF1 /* UserViewController.m */,
+			);
+			name = VC;
+			sourceTree = "<group>";
+		};
 		270C0002A6A7DE48CE5FDA3E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,7 +390,8 @@
 			children = (
 				AF4C59641F47DF93007F97F9 /* AppDelegate.h */,
 				AF4C59651F47DF93007F97F9 /* AppDelegate.m */,
-				AF4C596A1F47DF93007F97F9 /* Main.storyboard */,
+				0415CAF4219D0FAE00DCCEF1 /* Root.storyboard */,
+				0415CAF6219D13DF00DCCEF1 /* VC */,
 				345A2EDB1F639762005E216D /* CPPTools */,
 				341ADB501F5F9B580055B1C5 /* Base */,
 				341ADB201F5E3C620055B1C5 /* NewVC */,
@@ -365,6 +400,7 @@
 				AFF487BE1F4BDDC000AC4A63 /* UIImage Cat */,
 				AF4C59611F47DF93007F97F9 /* Supporting Files */,
 				AF4C596D1F47DF93007F97F9 /* Assets.xcassets */,
+				AF4C596A1F47DF93007F97F9 /* Main.storyboard */,
 				AF4C596F1F47DF93007F97F9 /* LaunchScreen.storyboard */,
 				AF4C59721F47DF93007F97F9 /* Info.plist */,
 			);
@@ -453,8 +489,6 @@
 				AF4C595A1F47DF93007F97F9 /* Sources */,
 				AF4C595B1F47DF93007F97F9 /* Frameworks */,
 				AF4C595C1F47DF93007F97F9 /* Resources */,
-				60488F0B09D9AB935C860995 /* [CP] Embed Pods Frameworks */,
-				D50D35EBAC6606E7AD55ADAE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -568,6 +602,7 @@
 				341ADB6F1F62E6B70055B1C5 /* slam.jpeg in Resources */,
 				341ADB481F5E40710055B1C5 /* haarcascade_mcs_eyepair_big.xml in Resources */,
 				341ADB371F5E40250055B1C5 /* Default.png in Resources */,
+				0415CAF5219D0FAE00DCCEF1 /* Root.storyboard in Resources */,
 				341ADB3B1F5E40250055B1C5 /* lena.png in Resources */,
 				341ADB401F5E40250055B1C5 /* texture.jpg in Resources */,
 				341ADB491F5E40710055B1C5 /* haarcascade_mcs_mouth.xml in Resources */,
@@ -611,21 +646,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		60488F0B09D9AB935C860995 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-opencvioswxl/Pods-opencvioswxl-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7EDB5C9A2A694F03BB0B1EE7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -644,21 +664,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D50D35EBAC6606E7AD55ADAE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-opencvioswxl/Pods-opencvioswxl-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -666,22 +671,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0415CB02219D197300DCCEF1 /* UserViewController.m in Sources */,
 				341ADB561F5F9B7D0055B1C5 /* ViewController.mm in Sources */,
 				341ADB531F5F9B580055B1C5 /* BaseViewController.m in Sources */,
+				0415CAF9219D140800DCCEF1 /* RootViewController.m in Sources */,
 				AFF487C61F4BDDC000AC4A63 /* UIImage+fixOrientation.m in Sources */,
 				AFF487C71F4BDDC000AC4A63 /* UIImageView+ContentFrame.m in Sources */,
 				341DF0631F65412E0000DFEB /* Processing_NEON.cpp in Sources */,
 				345A2EDE1F639762005E216D /* PostcardPrinter.cpp in Sources */,
 				AF4C59661F47DF93007F97F9 /* AppDelegate.m in Sources */,
 				341DF0381F642BBE0000DFEB /* RetroFilter.cpp in Sources */,
+				0415CAFF219D194200DCCEF1 /* CameraViewController.m in Sources */,
 				341DF04E1F64FBD30000DFEB /* OpencvVideoCameraVC.mm in Sources */,
 				AFF487C51F4BDDC000AC4A63 /* UIColor+HexRepresentation.m in Sources */,
 				341DF0611F6541020000DFEB /* Processing_Accelerate.cpp in Sources */,
 				341ADB5C1F5F9BDD0055B1C5 /* SlidersViewCell.m in Sources */,
+				0415CAFC219D149800DCCEF1 /* AdViewController.m in Sources */,
 				341ADB591F5F9BAF0055B1C5 /* BaseTableViewCell.m in Sources */,
 				341DF05F1F6540C60000DFEB /* Processing.cpp in Sources */,
 				341DF05E1F6540C60000DFEB /* FaceAnimator.cpp in Sources */,
 				341AA2121F63D51600BC5F40 /* ImagePickerTool.m in Sources */,
+				0415CB05219D197E00DCCEF1 /* ShopViewController.m in Sources */,
 				341ADB231F5E3C620055B1C5 /* ShowImgVC.mm in Sources */,
 				341ADB641F5FBB290055B1C5 /* Common.m in Sources */,
 				345A2EE11F639D47005E216D /* CPPTools.mm in Sources */,

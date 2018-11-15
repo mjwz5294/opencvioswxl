@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HTP-u0-MN1">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="vnx-R2-5N8">
+            <objects>
+                <viewController id="HTP-u0-MN1" customClass="RootViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jP8-4d-vdo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYS-qB-AFQ">
+                                <rect key="frame" x="10" y="627" width="60" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="N0X-2T-mAN"/>
+                                    <constraint firstAttribute="height" constant="40" id="jCd-gB-cUY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="个人中心"/>
+                                <connections>
+                                    <segue destination="p6T-R4-bcF" kind="presentation" id="Td0-ZC-bHk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhR-de-VhB">
+                                <rect key="frame" x="305" y="627" width="60" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="56g-8U-cVW"/>
+                                    <constraint firstAttribute="height" constant="40" id="hdT-8L-xxg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="商城"/>
+                                <connections>
+                                    <segue destination="Fwc-k8-HXA" kind="presentation" id="AxK-Ee-IHd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQk-za-8Yb">
+                                <rect key="frame" x="157.5" y="597" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="j7F-E7-sW3"/>
+                                    <constraint firstAttribute="width" constant="60" id="sgw-A4-36K"/>
+                                </constraints>
+                                <state key="normal" title="拍照"/>
+                                <connections>
+                                    <action selector="onClickCamara:" destination="HTP-u0-MN1" eventType="touchUpInside" id="Yxr-nC-kTh"/>
+                                </connections>
+                            </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5q-92-tXH">
+                                <rect key="frame" x="0.0" y="20" width="375" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="IbO-7i-QuP"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="YsT-ri-CXt" kind="embed" id="Qc9-g3-xeH"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W8g-ac-sOO">
+                                <rect key="frame" x="0.0" y="170" width="375" height="407"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="工具面板，可分页" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNu-bH-TcW">
+                                        <rect key="frame" x="118" y="193" width="139" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gYS-qB-AFQ" firstAttribute="leading" secondItem="GBi-is-lyf" secondAttribute="leading" constant="10" id="8d0-Az-GD9"/>
+                            <constraint firstItem="gQk-za-8Yb" firstAttribute="centerX" secondItem="jP8-4d-vdo" secondAttribute="centerX" id="H4U-ZH-Gqq"/>
+                            <constraint firstItem="W8g-ac-sOO" firstAttribute="leading" secondItem="GBi-is-lyf" secondAttribute="leading" id="HZn-jq-iZQ"/>
+                            <constraint firstItem="A5q-92-tXH" firstAttribute="leading" secondItem="GBi-is-lyf" secondAttribute="leading" id="L5O-uR-mmO"/>
+                            <constraint firstItem="A5q-92-tXH" firstAttribute="trailing" secondItem="GBi-is-lyf" secondAttribute="trailing" id="Ly8-qh-Wmw"/>
+                            <constraint firstItem="GBi-is-lyf" firstAttribute="bottom" secondItem="gYS-qB-AFQ" secondAttribute="bottom" id="MS6-Fw-plf"/>
+                            <constraint firstItem="A5q-92-tXH" firstAttribute="top" secondItem="GBi-is-lyf" secondAttribute="top" id="b3S-Pk-gbO"/>
+                            <constraint firstItem="W8g-ac-sOO" firstAttribute="trailing" secondItem="GBi-is-lyf" secondAttribute="trailing" id="hWI-qe-jNR"/>
+                            <constraint firstAttribute="bottom" secondItem="GhR-de-VhB" secondAttribute="bottom" id="ihK-QM-Xat"/>
+                            <constraint firstItem="W8g-ac-sOO" firstAttribute="top" secondItem="A5q-92-tXH" secondAttribute="bottom" id="ihk-te-8Iy"/>
+                            <constraint firstItem="GBi-is-lyf" firstAttribute="trailing" secondItem="GhR-de-VhB" secondAttribute="trailing" constant="10" id="n7R-xD-iNA"/>
+                            <constraint firstItem="gQk-za-8Yb" firstAttribute="top" secondItem="W8g-ac-sOO" secondAttribute="bottom" constant="20" id="tqs-BI-ujA"/>
+                            <constraint firstItem="gQk-za-8Yb" firstAttribute="bottom" secondItem="GBi-is-lyf" secondAttribute="bottom" constant="-10" id="zu3-Zn-zcd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GBi-is-lyf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6FO-ua-nUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="104.8" y="183.95802098950526"/>
+        </scene>
+        <!--Ad View Controller-->
+        <scene sceneID="TSu-bG-Po1">
+            <objects>
+                <viewController storyboardIdentifier="AdViewController" id="YsT-ri-CXt" customClass="AdViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XVs-qw-L0I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="广告页" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PrD-5Y-UfB">
+                                <rect key="frame" x="166" y="65" width="52" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="lbb-Wz-PeW"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qRn-xD-xsJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1327" y="184"/>
+        </scene>
+        <!--User View Controller-->
+        <scene sceneID="PaF-qq-hT3">
+            <objects>
+                <viewController storyboardIdentifier="UserViewController" id="p6T-R4-bcF" customClass="UserViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wiI-dA-n8h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ap4-aA-q3N">
+                                <rect key="frame" x="118" y="318" width="138" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="个人中心，点击返回"/>
+                                <connections>
+                                    <action selector="onClickBack:" destination="p6T-R4-bcF" eventType="touchUpInside" id="nJs-oc-XOc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="MV2-sO-aMb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G1n-OB-eQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1328" y="-576"/>
+        </scene>
+        <!--Shop View Controller-->
+        <scene sceneID="Kdd-K3-3XN">
+            <objects>
+                <viewController storyboardIdentifier="ShopViewController" id="Fwc-k8-HXA" customClass="ShopViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nsn-yH-RNO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vu4-w2-Jmh">
+                                <rect key="frame" x="133" y="318" width="108" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="商城，点击返回"/>
+                                <connections>
+                                    <action selector="onClickBack:" destination="Fwc-k8-HXA" eventType="touchUpInside" id="3cW-F9-AC7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Kkr-T9-mMx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wTz-NJ-9Ju" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1327" y="942"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="3Bi-lg-8by">
+            <objects>
+                <viewController storyboardIdentifier="CameraViewController" id="w1K-mp-cy0" customClass="CameraViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7sc-HK-Bfl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ClM-dg-1Sn">
+                                <rect key="frame" x="133" y="318" width="108" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="拍照，点击返回"/>
+                                <connections>
+                                    <action selector="onClickBack:" destination="w1K-mp-cy0" eventType="touchUpInside" id="300-1e-VMt"/>
+                                    <action selector="onClickBack:" destination="p6T-R4-bcF" eventType="touchUpInside" id="hC9-FO-tDv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="XG8-hW-iBA"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tyI-CV-jmU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2252" y="184"/>
+        </scene>
+    </scenes>
+</document>
