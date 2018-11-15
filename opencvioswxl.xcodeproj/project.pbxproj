@@ -10,7 +10,7 @@
 		0415CAF5219D0FAE00DCCEF1 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0415CAF4219D0FAE00DCCEF1 /* Root.storyboard */; };
 		0415CAF9219D140800DCCEF1 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0415CAF8219D140800DCCEF1 /* RootViewController.m */; };
 		0415CAFC219D149800DCCEF1 /* AdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0415CAFB219D149800DCCEF1 /* AdViewController.m */; };
-		0415CAFF219D194200DCCEF1 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0415CAFE219D194200DCCEF1 /* CameraViewController.m */; };
+		0415CAFF219D194200DCCEF1 /* CameraViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0415CAFE219D194200DCCEF1 /* CameraViewController.mm */; };
 		0415CB02219D197300DCCEF1 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0415CB01219D197300DCCEF1 /* UserViewController.m */; };
 		0415CB05219D197E00DCCEF1 /* ShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0415CB04219D197E00DCCEF1 /* ShopViewController.m */; };
 		3412AF561F54FEDE00AD918B /* 6、教程实例跑完，总结 in Resources */ = {isa = PBXBuildFile; fileRef = 3412AF551F54FEDE00AD918B /* 6、教程实例跑完，总结 */; };
@@ -102,7 +102,7 @@
 		0415CAFA219D149800DCCEF1 /* AdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdViewController.h; sourceTree = "<group>"; };
 		0415CAFB219D149800DCCEF1 /* AdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdViewController.m; sourceTree = "<group>"; };
 		0415CAFD219D194200DCCEF1 /* CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
-		0415CAFE219D194200DCCEF1 /* CameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		0415CAFE219D194200DCCEF1 /* CameraViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CameraViewController.mm; sourceTree = "<group>"; };
 		0415CB00219D197300DCCEF1 /* UserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		0415CB01219D197300DCCEF1 /* UserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 		0415CB03219D197E00DCCEF1 /* ShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopViewController.h; sourceTree = "<group>"; };
@@ -236,7 +236,7 @@
 				0415CAFA219D149800DCCEF1 /* AdViewController.h */,
 				0415CAFB219D149800DCCEF1 /* AdViewController.m */,
 				0415CAFD219D194200DCCEF1 /* CameraViewController.h */,
-				0415CAFE219D194200DCCEF1 /* CameraViewController.m */,
+				0415CAFE219D194200DCCEF1 /* CameraViewController.mm */,
 				0415CAF7219D140800DCCEF1 /* RootViewController.h */,
 				0415CAF8219D140800DCCEF1 /* RootViewController.m */,
 				0415CB03219D197E00DCCEF1 /* ShopViewController.h */,
@@ -681,7 +681,7 @@
 				345A2EDE1F639762005E216D /* PostcardPrinter.cpp in Sources */,
 				AF4C59661F47DF93007F97F9 /* AppDelegate.m in Sources */,
 				341DF0381F642BBE0000DFEB /* RetroFilter.cpp in Sources */,
-				0415CAFF219D194200DCCEF1 /* CameraViewController.m in Sources */,
+				0415CAFF219D194200DCCEF1 /* CameraViewController.mm in Sources */,
 				341DF04E1F64FBD30000DFEB /* OpencvVideoCameraVC.mm in Sources */,
 				AFF487C51F4BDDC000AC4A63 /* UIColor+HexRepresentation.m in Sources */,
 				341DF0611F6541020000DFEB /* Processing_Accelerate.cpp in Sources */,

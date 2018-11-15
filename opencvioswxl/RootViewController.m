@@ -19,6 +19,8 @@
     // Do any additional setup after loading the view.
 }
 - (IBAction)onClickCamara:(id)sender {
+    UIViewController* vc = [sbRoot instantiateViewControllerWithIdentifier:@"CameraViewController"];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 /*
