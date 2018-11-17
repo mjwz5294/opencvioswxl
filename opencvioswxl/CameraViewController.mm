@@ -19,6 +19,7 @@
     RetroFilter::Parameters params;
 }
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIView *imgSaveView;
 
 @property (nonatomic, strong) CvPhotoCamera* photoCamera;
 
@@ -95,6 +96,7 @@
     if(_photoCamera && _photoCamera.running){
         [_photoCamera stop];
     }
+    [_imageView setImage:nil];//切换镜头后拍照，有一瞬间是显示的上一张照片
     _photoCamera = [[CvPhotoCamera alloc] initWithParentView:_imageView];
     _photoCamera.delegate = self;
     _photoCamera.defaultAVCaptureDevicePosition = _deviceDirection;
@@ -107,15 +109,37 @@
 - (void)photoCamera:(CvPhotoCamera*)camera
       capturedImage:(UIImage *)image;
 {
-    [camera stop];
     if(_deviceDirection == AVCaptureDevicePositionFront){
         image = [UIImage imageWithCGImage:image.CGImage scale:image.scale orientation:UIImageOrientationLeftMirrored];
     }
     [_imageView setImage:image];
+    /*
+     对于常用的相机，我们希望拍完之后，立即保存，然后可以继续拍，因此相机不会关。
+     但对于一个美图工具，一般拍完一张照片后，我们希望先看看满不满意再决定是否保存，做完这个决定之后，再开启相机继续拍。
+     */
+    [camera stop];
+    [_imgSaveView setHidden:NO];
 }
 
 - (void)photoCameraCancel:(CvPhotoCamera*)camera{
     Delog(@"photoCameraCancel");
+}
+- (IBAction)saveImgCancle:(id)sender {
+    [_imgSaveView setHidden:YES];
+    [self openCamera];
+}
+- (IBAction)saveImgOK:(id)sender {
+    [_imgSaveView setHidden:YES];
+    UIImageWriteToSavedPhotosAlbum(_imageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+}
+
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    if (error) {
+        Delog(@"%@",error.localizedDescription);
+    }else{
+        [self openCamera];
+    }
 }
 
 @end

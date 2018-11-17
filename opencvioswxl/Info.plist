@@ -26,6 +26,8 @@
 	<string>contactsDesciption</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>microphoneDesciption</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>可不可以存照片</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>photoLibraryDesciption</string>
 	<key>UILaunchStoryboardName</key>

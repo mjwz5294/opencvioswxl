@@ -240,6 +240,41 @@
                                     <action selector="onClickStyle:" destination="w1K-mp-cy0" eventType="touchUpInside" id="4fT-hc-Sc4"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PcJ-qV-DPR">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ln-Ba-UuT">
+                                        <rect key="frame" x="10" y="10" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="JOR-F1-XcG"/>
+                                            <constraint firstAttribute="height" constant="40" id="YB1-pt-Y8x"/>
+                                        </constraints>
+                                        <state key="normal" title="取消"/>
+                                        <connections>
+                                            <action selector="saveImgCancle:" destination="w1K-mp-cy0" eventType="touchUpInside" id="JTC-dp-XdS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9KA-pl-601">
+                                        <rect key="frame" x="325" y="10" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="26a-HQ-XBz"/>
+                                            <constraint firstAttribute="width" constant="40" id="wjF-Md-zbh"/>
+                                        </constraints>
+                                        <state key="normal" title="保存"/>
+                                        <connections>
+                                            <action selector="saveImgOK:" destination="w1K-mp-cy0" eventType="touchUpInside" id="PjG-tt-1Db"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Q9d-O0-4Gj"/>
+                                    <constraint firstAttribute="trailing" secondItem="9KA-pl-601" secondAttribute="trailing" constant="10" id="gDg-mV-j8g"/>
+                                    <constraint firstAttribute="bottom" secondItem="8Ln-Ba-UuT" secondAttribute="bottom" constant="10" id="gbv-QU-mEr"/>
+                                    <constraint firstAttribute="bottom" secondItem="9KA-pl-601" secondAttribute="bottom" constant="10" id="kem-1d-uF7"/>
+                                    <constraint firstItem="8Ln-Ba-UuT" firstAttribute="leading" secondItem="PcJ-qV-DPR" secondAttribute="leading" constant="10" id="mwC-ZU-XJV"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -252,18 +287,22 @@
                             <constraint firstItem="ClM-dg-1Sn" firstAttribute="top" secondItem="XG8-hW-iBA" secondAttribute="top" constant="10" id="Oqj-rU-rQe"/>
                             <constraint firstItem="iuy-oM-Iov" firstAttribute="leading" secondItem="XG8-hW-iBA" secondAttribute="leading" id="TcU-14-jsI"/>
                             <constraint firstItem="XG8-hW-iBA" firstAttribute="bottom" secondItem="OuN-LQ-Lpi" secondAttribute="bottom" id="ZF5-Oq-rNg"/>
+                            <constraint firstItem="PcJ-qV-DPR" firstAttribute="trailing" secondItem="XG8-hW-iBA" secondAttribute="trailing" id="b8k-zn-zXh"/>
                             <constraint firstItem="k6p-oU-OIR" firstAttribute="trailing" secondItem="XG8-hW-iBA" secondAttribute="trailing" id="cnX-iP-ddE"/>
+                            <constraint firstItem="PcJ-qV-DPR" firstAttribute="leading" secondItem="XG8-hW-iBA" secondAttribute="leading" id="jLg-Ql-8Mm"/>
                             <constraint firstItem="iuy-oM-Iov" firstAttribute="trailing" secondItem="XG8-hW-iBA" secondAttribute="trailing" id="jOa-mc-aQe"/>
                             <constraint firstItem="XG8-hW-iBA" firstAttribute="bottom" secondItem="iuy-oM-Iov" secondAttribute="bottom" id="jsF-5D-wbU"/>
                             <constraint firstItem="XG8-hW-iBA" firstAttribute="bottom" secondItem="4yy-Bv-rvS" secondAttribute="bottom" constant="20" id="kug-kh-e16"/>
                             <constraint firstItem="3YQ-Qd-IL0" firstAttribute="top" secondItem="XG8-hW-iBA" secondAttribute="top" constant="10" id="o1h-Jq-12E"/>
                             <constraint firstItem="ClM-dg-1Sn" firstAttribute="leading" secondItem="XG8-hW-iBA" secondAttribute="leading" constant="10" id="u42-9g-eLZ"/>
+                            <constraint firstItem="PcJ-qV-DPR" firstAttribute="bottom" secondItem="XG8-hW-iBA" secondAttribute="bottom" id="xyW-Jt-3HK"/>
                             <constraint firstItem="XG8-hW-iBA" firstAttribute="trailing" secondItem="3YQ-Qd-IL0" secondAttribute="trailing" constant="10" id="yND-LI-O6p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XG8-hW-iBA"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="iuy-oM-Iov" id="emD-PB-ktd"/>
+                        <outlet property="imgSaveView" destination="PcJ-qV-DPR" id="sCf-ho-kdR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tyI-CV-jmU" userLabel="First Responder" sceneMemberID="firstResponder"/>
