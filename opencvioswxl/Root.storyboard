@@ -43,10 +43,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQk-za-8Yb">
-                                <rect key="frame" x="157.5" y="597" width="60" height="60"/>
+                                <rect key="frame" x="127.5" y="597" width="120" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="j7F-E7-sW3"/>
-                                    <constraint firstAttribute="width" constant="60" id="sgw-A4-36K"/>
+                                    <constraint firstAttribute="width" constant="120" id="sgw-A4-36K"/>
                                 </constraints>
                                 <state key="normal" title="拍照"/>
                                 <connections>
@@ -227,6 +227,7 @@
                                 <state key="normal" title="拍摄"/>
                                 <connections>
                                     <action selector="onClickPhoto:" destination="w1K-mp-cy0" eventType="touchUpInside" id="6p8-qz-Aeu"/>
+                                    <action selector="takeVideo:" destination="w1K-mp-cy0" eventType="touchUpInside" id="Eze-J5-kuo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6p-oU-OIR">
@@ -301,6 +302,7 @@
                         <viewLayoutGuide key="safeArea" id="XG8-hW-iBA"/>
                     </view>
                     <connections>
+                        <outlet property="btnTake" destination="4yy-Bv-rvS" id="aEb-32-Zam"/>
                         <outlet property="imageView" destination="iuy-oM-Iov" id="emD-PB-ktd"/>
                         <outlet property="imgSaveView" destination="PcJ-qV-DPR" id="sCf-ho-kdR"/>
                     </connections>
