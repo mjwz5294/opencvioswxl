@@ -13,19 +13,17 @@
 
 #import <AVFoundation/AVCaptureDevice.h>
 
-#import "RetroFilter.hpp"
-
 @interface CameraViewController ()<CvPhotoCameraDelegate>{
-    RetroFilter::Parameters params;
+    
 }
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIView *imgSaveView;
 
-@property (nonatomic, strong) CvPhotoCamera* photoCamera;
-
 @property (nonatomic,assign) AVCaptureDevicePosition deviceDirection;
-@property (nonatomic,assign) AVCaptureSessionPreset sessionPreset;
 @property (nonatomic,assign) AVCaptureVideoOrientation videoOrientation;
+
+@property (nonatomic, strong) CvPhotoCamera* photoCamera;
+@property (nonatomic, strong) CvVideoCamera* videoCamera;
 
 @end
 
@@ -36,7 +34,6 @@
     // Do any additional setup after loading the view.
     
     _deviceDirection = AVCaptureDevicePositionFront;
-    _sessionPreset = AVCaptureSessionPresetPhoto;
     _videoOrientation = AVCaptureVideoOrientationPortrait;
     
 }
@@ -79,7 +76,28 @@
     [self openCamera];
 }
 - (IBAction)onClickStyle:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"拍摄方式" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    // 创建action，这里action1只是方便编写，以后再编程的过程中还是以命名规范为主
+    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"照片" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self openCamera];
+    }];
+    UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"视频" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self openCamera];
+    }];
+    UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"表情包" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self openCamera];
+    }];
+    UIAlertAction *action4 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    
+    //把action添加到actionSheet里
+    [actionSheet addAction:action1];
+    [actionSheet addAction:action2];
+    [actionSheet addAction:action3];
+    [actionSheet addAction:action4];
+    
+    //相当于之前的[actionSheet show];
+    [self presentViewController:actionSheet animated:YES completion:nil];
+    
 }
 - (IBAction)onClickButify:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -93,6 +111,12 @@
 
 -(void)openCamera{
     // Initialize camera
+    
+    /*
+     似乎可以同时开启两个，关闭一个后，另一个还会起作用，导致无法预览。所以开启前，先关掉
+     每次开启，会有一瞬间的黑屏，应该是摄像头开启时候的反应，不知道怎么解决。
+     参照天天P图，他们在拍完照之后，直接保存，只是多了一个预览的入口，这样也就没有了黑屏，这里先不折腾了
+     */
     if(_photoCamera && _photoCamera.running){
         [_photoCamera stop];
     }
@@ -100,7 +124,7 @@
     _photoCamera = [[CvPhotoCamera alloc] initWithParentView:_imageView];
     _photoCamera.delegate = self;
     _photoCamera.defaultAVCaptureDevicePosition = _deviceDirection;
-    _photoCamera.defaultAVCaptureSessionPreset = _sessionPreset;
+    _photoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPresetPhoto;
     _photoCamera.defaultAVCaptureVideoOrientation = _videoOrientation;
     [_photoCamera start];
 }
@@ -128,6 +152,7 @@
     [_imgSaveView setHidden:YES];
     [self openCamera];
 }
+//保存照片的三种方式：https://www.jianshu.com/p/bf20733ba19b
 - (IBAction)saveImgOK:(id)sender {
     [_imgSaveView setHidden:YES];
     UIImageWriteToSavedPhotosAlbum(_imageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
