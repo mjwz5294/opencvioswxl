@@ -246,7 +246,7 @@ typedef NS_ENUM(NSInteger, CamType) {
     //真正影响拍摄结果的，还是_videoCamera的参数配置
     _videoCamera.defaultAVCaptureDevicePosition = _deviceDirection;
     _videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset1280x720;
-    _videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationLandscapeLeft;
+    _videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationLandscapeRight;
     //必需是左或者右，否则视频帧变形，不知是个什么bug，看来opencv只能拿来处理图片，它提供的拍照/视频工具不行
     _videoCamera.defaultFPS = 30;
     _videoCamera.recordVideo = YES;//没这句就没法保存
@@ -291,15 +291,15 @@ typedef NS_ENUM(NSInteger, CamType) {
 {
     // Do some OpenCV processing with the image
     
-    UIImage *img = MatToUIImage(image);
-    if (!img) {
-        return;
-    }
+//    UIImage *img = MatToUIImage(image);
+//    if (!img) {
+//        return;
+//    }
 //    Delog(@"%f-----------%f",img.size.width,img.size.height);
 //    Delog(@"%d-----------%d",image.size[0],image.size[1]);
-//    _imageView.image =MatToUIImage(image);
-//    cv::Mat desImg;
-//    cv::resize(image, desImg, cv::Size(img.size.width,img.size.height));
+//    cv::resize(image, image, cv::Size(100,100));
+//    cv::flip(image, image, -1);//对成
+//    cv::transpose(image, image);//旋转90度
 }
 
 @end
