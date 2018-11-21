@@ -120,15 +120,15 @@ typedef NS_ENUM(NSInteger, CamType) {
     UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"视频" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self initVideoSetting];
     }];
-    UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"表情包" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self initEmojiSetting];
-    }];
+//    UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"表情包" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        [self initEmojiSetting];
+//    }];
     UIAlertAction *action4 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
     
     //把action添加到actionSheet里
     [actionSheet addAction:action1];
     [actionSheet addAction:action2];
-    [actionSheet addAction:action3];
+//    [actionSheet addAction:action3];
     [actionSheet addAction:action4];
     
     //相当于之前的[actionSheet show];
@@ -238,11 +238,16 @@ typedef NS_ENUM(NSInteger, CamType) {
         [_videoCamera stop];
     }
     [_imageView setContentMode:UIViewContentModeCenter];
+    //_imageView无论怎么配置，都只是影响拍摄时自己看到的样子，与拍摄结果无关
+//    [_imageView setFrame:CGRectMake(0, 0, 480, 480)];
+//    [_imageView setCenter:self.view.center];
     _videoCamera = [[CvVideoCamera alloc] initWithParentView:_imageView];
     _videoCamera.delegate = self;
+    //真正影响拍摄结果的，还是_videoCamera的参数配置
     _videoCamera.defaultAVCaptureDevicePosition = _deviceDirection;
-    _videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset640x480;
-    _videoCamera.defaultAVCaptureVideoOrientation = _videoOrientation;
+    _videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset1280x720;
+    _videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationLandscapeLeft;
+    //必需是左或者右，否则视频帧变形，不知是个什么bug，看来opencv只能拿来处理图片，它提供的拍照/视频工具不行
     _videoCamera.defaultFPS = 30;
     _videoCamera.recordVideo = YES;//没这句就没法保存
     [_videoCamera start];
@@ -285,7 +290,16 @@ typedef NS_ENUM(NSInteger, CamType) {
 - (void)processImage:(cv::Mat&)image
 {
     // Do some OpenCV processing with the image
-//    _img = MatToUIImage(image);
+    
+    UIImage *img = MatToUIImage(image);
+    if (!img) {
+        return;
+    }
+//    Delog(@"%f-----------%f",img.size.width,img.size.height);
+//    Delog(@"%d-----------%d",image.size[0],image.size[1]);
+//    _imageView.image =MatToUIImage(image);
+//    cv::Mat desImg;
+//    cv::resize(image, desImg, cv::Size(img.size.width,img.size.height));
 }
 
 @end
