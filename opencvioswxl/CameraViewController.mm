@@ -56,25 +56,6 @@ typedef NS_ENUM(NSInteger, CamType) {
     _videoOrientation = AVCaptureVideoOrientationPortrait;
     _camType = CamTypePhoto;
 }
--(void)initPhotoSetting{
-    //关闭其它的
-    if (_videoCamera && _videoCamera.running) {
-        [_videoCamera stop];
-    }
-    
-    _camType = CamTypePhoto;
-    [_btnTake setTitle:@"拍摄" forState:UIControlStateNormal];
-    [self openCamera];
-}
--(void)initVideoSetting{
-    //这里不能关闭_photoCamera，否则图片没有内容，而且录制过程中，_photoCamera就应该跑着
-//    if (_photoCamera && _photoCamera.running) {
-//        [_photoCamera stop];
-//    }
-    
-    _camType = CamTypeVideo;
-    [_btnTake setTitle:@"录制" forState:UIControlStateNormal];
-}
 -(void)initEmojiSetting{
 //    _camType = CamTypeEmoji;
     [self initPhotoSetting];
@@ -87,7 +68,7 @@ typedef NS_ENUM(NSInteger, CamType) {
     }else{                                               //正拍
         _deviceDirection = AVCaptureDevicePositionFront;
     }
-    [self openCamera];
+    [self refreshSetting];
 }
 - (IBAction)onClickOrientation:(id)sender {
     switch (_videoOrientation) {
@@ -107,9 +88,30 @@ typedef NS_ENUM(NSInteger, CamType) {
             _videoOrientation = AVCaptureVideoOrientationPortrait;
             break;
     }
-    [self openCamera];
+    [self refreshSetting];
+}
+-(void)refreshSetting{
+    switch (_camType) {
+        case CamTypePhoto:
+            [self openCamera];
+            break;
+        case CamTypeVideo:
+            [self openVideoCamera];
+            break;
+        case CamTypeEmoji:
+            [self openCamera];
+            break;
+        default:
+            [self openCamera];
+            break;
+    }
 }
 - (IBAction)onClickStyle:(id)sender {
+    
+    if(_videoCamera && _videoCamera.running){
+        [self stopVideo];
+    }
+    
     UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"拍摄方式" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     // 创建action，这里action1只是方便编写，以后再编程的过程中还是以命名规范为主
     UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"照片" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -138,6 +140,16 @@ typedef NS_ENUM(NSInteger, CamType) {
 }
 
 #pragma mark- 拍照片
+-(void)initPhotoSetting{
+    //关闭其它的
+    if (_videoCamera && _videoCamera.running) {
+        [self stopVideo];
+    }
+    
+    _camType = CamTypePhoto;
+    [_btnTake setTitle:@"拍摄" forState:UIControlStateNormal];
+    [self openCamera];
+}
 /*
  1、摄像头帧是方形的，如果_imageView是长方形的，会导致图片变形，设置ImageView的content mode就可以解决
  2、切换摄像头方向后，需要重启才能生效，直接使用switchCameras则会崩溃
@@ -156,6 +168,7 @@ typedef NS_ENUM(NSInteger, CamType) {
     if(_photoCamera && _photoCamera.running){
         [_photoCamera stop];
     }
+    [_imageView setContentMode:UIViewContentModeScaleAspectFill];
     [_imageView setImage:nil];//切换镜头后拍照，有一瞬间是显示的上一张照片
     _photoCamera = [[CvPhotoCamera alloc] initWithParentView:_imageView];
     _photoCamera.delegate = self;
@@ -207,6 +220,15 @@ typedef NS_ENUM(NSInteger, CamType) {
 }
 
 #pragma mark- 拍视频
+-(void)initVideoSetting{
+    //这里不能关闭_photoCamera，否则图片没有内容，而且录制过程中，_photoCamera就应该跑着
+//        if (_photoCamera && _photoCamera.running) {
+//            [_photoCamera stop];
+//        }
+    
+    _camType = CamTypeVideo;
+    [_btnTake setTitle:@"录制" forState:UIControlStateNormal];
+}
 -(void)openVideoCamera{
     if (_camType != CamTypeVideo) {
         return;
@@ -215,14 +237,18 @@ typedef NS_ENUM(NSInteger, CamType) {
     if(_videoCamera && _videoCamera.running){
         [_videoCamera stop];
     }
+    [_imageView setContentMode:UIViewContentModeCenter];
     _videoCamera = [[CvVideoCamera alloc] initWithParentView:_imageView];
     _videoCamera.delegate = self;
     _videoCamera.defaultAVCaptureDevicePosition = _deviceDirection;
-    _videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPresetPhoto;
+    _videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset640x480;
     _videoCamera.defaultAVCaptureVideoOrientation = _videoOrientation;
     _videoCamera.defaultFPS = 30;
     _videoCamera.recordVideo = YES;//没这句就没法保存
     [_videoCamera start];
+    
+    [_btnTake.titleLabel setText:@"录制中"];
+    [_btnTake setTitle:@"录制中" forState:UIControlStateNormal];
     
 }
 - (IBAction)takeVideo:(id)sender {
@@ -230,16 +256,21 @@ typedef NS_ENUM(NSInteger, CamType) {
         return;
     }
     if(_videoCamera.running){
-        [_btnTake setTitle:@"录制" forState:UIControlStateNormal];
         [self saveVideo];
     }else{
-        [_btnTake setTitle:@"录制中" forState:UIControlStateNormal];
         [self openVideoCamera];
     }
 }
+-(void)stopVideo{
+    if(_videoCamera && _videoCamera.running){
+        [_videoCamera stop];
+    }
+    [_btnTake.titleLabel setText:@"录制"];
+    [_btnTake setTitle:@"录制" forState:UIControlStateNormal];
+}
 -(void)saveVideo{
     Delog(@"saveVideo-----------");
-    [_videoCamera stop];
+    [self stopVideo];
     NSString* relativePath = [_videoCamera.videoFileURL relativePath];
     if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(relativePath)) {
         //保存视频到相簿
