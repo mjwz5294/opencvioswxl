@@ -39,6 +39,7 @@ typedef NS_ENUM(NSInteger, CamType) {
 @property (nonatomic, strong) CvPhotoCamera* photoCamera;
 @property (nonatomic, strong) CvVideoCamera* videoCamera;
 
+@property (nonatomic, strong) UIImage* img;
 @property (nonatomic, assign) FaceAnimator::Parameters parameters;
 @property (nonatomic, assign) cv::Ptr<FaceAnimator> faceAnimator;
 
@@ -57,7 +58,10 @@ typedef NS_ENUM(NSInteger, CamType) {
     [self openCamera];
 }
 - (IBAction)onClickBack:(id)sender {
-    [self stopVideo];
+    if(_videoCamera && _videoCamera.running){
+        [self stopVideo];
+        return;
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 -(void)initCommonSetting{
@@ -307,7 +311,8 @@ typedef NS_ENUM(NSInteger, CamType) {
         return;
     }
     if(_videoCamera.running){
-        [self saveVideo];
+//        [self saveVideo];
+        [self saveVideoImg];
     }else{
         [self openVideoCamera];
     }
@@ -330,6 +335,9 @@ typedef NS_ENUM(NSInteger, CamType) {
     }else{
         Delog(@"保存视频失败：%@",relativePath);
     }
+}
+-(void)saveVideoImg{
+    UIImageWriteToSavedPhotosAlbum(_img, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
 }
 
 // Macros for time measurements
@@ -369,6 +377,8 @@ static double machTimeToSecs(uint64_t time)
     TS(DetectAndAnimateFaces);
     _faceAnimator->detectAndAnimateFaces(image);
     TE(DetectAndAnimateFaces);
+    
+    _img = MatToUIImage(image);
     
     
 }
