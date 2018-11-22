@@ -8,10 +8,15 @@
 
 #import "CameraViewController.h"
 
+#import <AVFoundation/AVCaptureDevice.h>
+
 #import <opencv2/imgcodecs/ios.h>
 #import <opencv2/videoio/cap_ios.h>
 
-#import <AVFoundation/AVCaptureDevice.h>
+#import "RetroFilter.hpp"
+#import "FaceAnimator.hpp"
+#import <mach/mach_time.h>
+
 
 
 typedef NS_ENUM(NSInteger, CamType) {
@@ -34,6 +39,9 @@ typedef NS_ENUM(NSInteger, CamType) {
 @property (nonatomic, strong) CvPhotoCamera* photoCamera;
 @property (nonatomic, strong) CvVideoCamera* videoCamera;
 
+@property (nonatomic, assign) FaceAnimator::Parameters parameters;
+@property (nonatomic, assign) cv::Ptr<FaceAnimator> faceAnimator;
+
 @end
 
 @implementation CameraViewController
@@ -49,6 +57,7 @@ typedef NS_ENUM(NSInteger, CamType) {
     [self openCamera];
 }
 - (IBAction)onClickBack:(id)sender {
+    [self stopVideo];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 -(void)initCommonSetting{
@@ -250,6 +259,43 @@ typedef NS_ENUM(NSInteger, CamType) {
     //必需是左或者右，否则视频帧变形，不知是个什么bug，看来opencv只能拿来处理图片，它提供的拍照/视频工具不行
     _videoCamera.defaultFPS = 30;
     _videoCamera.recordVideo = YES;//没这句就没法保存
+    
+    
+    
+    {
+        //face detect
+        // Load images
+        UIImage* resImage = [UIImage imageNamed:@"glasses.png"];
+        UIImageToMat(resImage, _parameters.glasses, true);
+        cvtColor(_parameters.glasses, _parameters.glasses, CV_BGRA2RGBA);
+        
+        resImage = [UIImage imageNamed:@"mustache.png"];
+        UIImageToMat(resImage, _parameters.mustache, true);
+        cvtColor(_parameters.mustache, _parameters.mustache, CV_BGRA2RGBA);
+        
+        // Load Cascade Classisiers
+        NSString* filename = [[NSBundle mainBundle]
+                              pathForResource:@"lbpcascade_frontalface"
+                              ofType:@"xml"];
+        _parameters.faceCascade.load([filename UTF8String]);
+        
+        filename = [[NSBundle mainBundle]
+                    pathForResource:@"haarcascade_mcs_eyepair_big"
+                    ofType:@"xml"];
+        _parameters.eyesCascade.load([filename UTF8String]);
+        
+        filename = [[NSBundle mainBundle]
+                    pathForResource:@"haarcascade_mcs_mouth"
+                    ofType:@"xml"];
+        _parameters.mouthCascade.load([filename UTF8String]);
+        _faceAnimator = new FaceAnimator(_parameters);
+    }
+    
+    
+    
+    
+    
+    
     [_videoCamera start];
     
     [_btnTake.titleLabel setText:@"录制中"];
@@ -286,20 +332,45 @@ typedef NS_ENUM(NSInteger, CamType) {
     }
 }
 
+// Macros for time measurements
+#if 1
+#define TS(name) int64 t_##name = cv::getTickCount()
+#define TE(name) printf("TIMER_" #name ": %.2fms\n", \
+1000.*((cv::getTickCount() - t_##name) / cv::getTickFrequency()))
+#else
+#define TS(name)
+#define TE(name)
+#endif
+
+//TODO: may be remove this code
+static double machTimeToSecs(uint64_t time)
+{
+    mach_timebase_info_data_t timebase;
+    mach_timebase_info(&timebase);
+    return (double)time * (double)timebase.numer /
+    (double)timebase.denom / 1e9;
+}
+
 #pragma mark- CvVideoCameraDelegate
 - (void)processImage:(cv::Mat&)image
 {
     // Do some OpenCV processing with the image
     
-//    UIImage *img = MatToUIImage(image);
-//    if (!img) {
-//        return;
-//    }
+    UIImage *img = MatToUIImage(image);
+    if (!img) {//很多时候到这里都会奔溃
+        return;
+    }
 //    Delog(@"%f-----------%f",img.size.width,img.size.height);
 //    Delog(@"%d-----------%d",image.size[0],image.size[1]);
 //    cv::resize(image, image, cv::Size(100,100));
 //    cv::flip(image, image, -1);//对成
 //    cv::transpose(image, image);//旋转90度
+    
+    TS(DetectAndAnimateFaces);
+    _faceAnimator->detectAndAnimateFaces(image);
+    TE(DetectAndAnimateFaces);
+    
+    
 }
 
 @end
