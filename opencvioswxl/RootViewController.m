@@ -23,6 +23,11 @@
     [self presentViewController:vc animated:YES completion:nil];
 }
 
+- (IBAction)onClickBack:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 /*
 #pragma mark - Navigation
 

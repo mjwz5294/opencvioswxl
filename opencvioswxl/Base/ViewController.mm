@@ -61,6 +61,11 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (IBAction)onClickTest:(id)sender {
+    UIViewController* vc = [sbRoot instantiateInitialViewController];
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
 
 
 

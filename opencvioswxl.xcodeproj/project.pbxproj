@@ -347,18 +347,18 @@
 			children = (
 				345A2EDF1F639D47005E216D /* CPPTools.h */,
 				345A2EE01F639D47005E216D /* CPPTools.mm */,
-				345A2EDC1F639762005E216D /* PostcardPrinter.cpp */,
-				345A2EDD1F639762005E216D /* PostcardPrinter.hpp */,
-				341AA2101F63D51600BC5F40 /* ImagePickerTool.h */,
-				341AA2111F63D51600BC5F40 /* ImagePickerTool.m */,
-				341DF0361F642BBE0000DFEB /* RetroFilter.cpp */,
-				341DF0371F642BBE0000DFEB /* RetroFilter.hpp */,
 				341DF05A1F6540C60000DFEB /* FaceAnimator.cpp */,
 				341DF05B1F6540C60000DFEB /* FaceAnimator.hpp */,
-				341DF05C1F6540C60000DFEB /* Processing.cpp */,
-				341DF05D1F6540C60000DFEB /* Processing.hpp */,
+				341AA2101F63D51600BC5F40 /* ImagePickerTool.h */,
+				341AA2111F63D51600BC5F40 /* ImagePickerTool.m */,
+				345A2EDC1F639762005E216D /* PostcardPrinter.cpp */,
+				345A2EDD1F639762005E216D /* PostcardPrinter.hpp */,
 				341DF0601F6541020000DFEB /* Processing_Accelerate.cpp */,
 				341DF0621F65412E0000DFEB /* Processing_NEON.cpp */,
+				341DF05C1F6540C60000DFEB /* Processing.cpp */,
+				341DF05D1F6540C60000DFEB /* Processing.hpp */,
+				341DF0361F642BBE0000DFEB /* RetroFilter.cpp */,
+				341DF0371F642BBE0000DFEB /* RetroFilter.hpp */,
 			);
 			path = CPPTools;
 			sourceTree = "<group>";

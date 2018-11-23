@@ -37,7 +37,7 @@
                                     <constraint firstAttribute="height" constant="40" id="hdT-8L-xxg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="商城"/>
+                                <state key="normal" title="图片"/>
                                 <connections>
                                     <segue destination="Fwc-k8-HXA" kind="presentation" id="AxK-Ee-IHd"/>
                                 </connections>
@@ -75,6 +75,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fo0-dS-C8V">
+                                <rect key="frame" x="10" y="34" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="返回"/>
+                                <connections>
+                                    <action selector="onClickBack:" destination="HTP-u0-MN1" eventType="touchUpInside" id="eoF-UU-oT2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -157,21 +165,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vu4-w2-Jmh">
-                                <rect key="frame" x="133" y="318" width="108" height="30"/>
+                                <rect key="frame" x="0.0" y="0.0" width="108" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="商城，点击返回"/>
                                 <connections>
                                     <action selector="onClickBack:" destination="Fwc-k8-HXA" eventType="touchUpInside" id="3cW-F9-AC7"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dtg-r5-Pgp">
+                                <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="LoW-x4-GBj"/>
+                                    <constraint firstAttribute="height" constant="300" id="WvP-zF-lUR"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dtg-r5-Pgp" firstAttribute="centerX" secondItem="nsn-yH-RNO" secondAttribute="centerX" id="SmF-Dq-cVt"/>
+                            <constraint firstItem="dtg-r5-Pgp" firstAttribute="centerY" secondItem="nsn-yH-RNO" secondAttribute="centerY" id="rIo-zw-67X"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Kkr-T9-mMx"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTz-NJ-9Ju" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1327" y="942"/>
+            <point key="canvasLocation" x="1325.5999999999999" y="941.37931034482767"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="3Bi-lg-8by">
